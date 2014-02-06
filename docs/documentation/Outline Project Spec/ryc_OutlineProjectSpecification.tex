@@ -1,0 +1,172 @@
+\documentclass[11pt,fleqn,twoside]{article}
+\usepackage{makeidx}
+\makeindex
+\usepackage{palatino} %or {times} etc
+\usepackage{plain} %bibliography style 
+\usepackage{amsmath} %math fonts - just in case
+\usepackage{amsfonts} %math fonts
+\usepackage{amssymb} %math fonts
+\usepackage{lastpage} %for footer page numbers
+\usepackage{fancyhdr} %header and footer package
+\usepackage{mmpv2} 
+\usepackage{url}
+
+% the following packages are used for citations - You only need to include one. 
+%
+% Use the cite package if you are using the numeric style (e.g. IEEEannot). 
+% Use the natbib package if you are using the author-date style (e.g. authordate2annot). 
+% Only use one of these and comment out the other one. 
+\usepackage{cite}
+%\usepackage{natbib}
+
+\begin{document}
+
+	\linespread{1}
+	\small \normalsize 
+	\title{"Tonight" \\ 
+	An event agregation app \\
+	Outline Project Specification }
+	\author{Ryan Clarke (ryc)\\
+	  Supervisor - Richard Jenson (rkj)\\
+	  G401- Computer Science\\
+	\\ Version 1.0
+	\\ Release
+	  \texttt{ryc@aber.ac.uk}}
+	\date{\today}
+	\maketitle
+	\pagebreak
+	\setcounter{tocdepth}{4}
+	\pagebreak
+		
+		\section{Overview of the project}
+			The project itself revolves around producing an iOS app that allows a user to discover new events that maybe happening in a particular area or of interest to them. The app itself will give the user the ability to follow a venue or event for regular updates and to allow the system to learn about them and suggest events that maybe of interest to them. The app itself will communicate with a REST API that will hold the relevant information about each event, venue and user. The server element of the project will conduct the bulk processing of data mining from the various data sources. It will also apply the machine learning algorithms to the data to produce the, personalised feeds and the automatic categorisation of events. To undertake the machine learning aspect of the project I will need to research the various algorithms and techniques that are currently being used and decide the most appropriate method. 
+			\subsection{Machine Learning}
+			As for the machine learning side of it all I have decided to use the 'Bag of words' approach to train the system, along with a K-Nearest Neighbour algorithm to give a higher accuracy of the predicted category. This also goes in hand with the recommendation system by using events that a user has liked/followed and tags they are interested in I can find events near to them using a similar approach and recommend those events. 
+		\section{Work to be tackled}
+		%	Summarise the tasks that will form the major part of the project
+		%	List of tasks should summarise the project
+		%	Should result in outputs, some will be deliverables
+			There are 2 main elements to the project the iOS app and the serves side interface. 
+
+			\subsection{iOS App}
+
+				\begin{itemize}
+					\item Retrieve following data from the API
+					\begin{itemize}	
+						\item Events
+						\item Venues
+						\item Profile information
+						\item Notifications
+					\end{itemize}
+					\item Modifications to the following data through CRUD methods
+					\begin{itemize}
+						\item Profile information 
+						\item Notification information
+						\item Events/Venues a user is following
+					\end{itemize}
+				\end{itemize}
+				
+			\subsection{Server side application}
+				\begin{itemize}
+				\item Retrieve the following data through various API's 
+					\begin{itemize}	
+						\item Event
+						\item Venue 
+					\end{itemize}
+				\item Categorise each event via it's description into a category such as 'House Music' or 'Symphony Orchestra'
+				\item Set up jobs to routinely mine new and updated data from the API's 
+				\item Produce a recommended feed for a user from the following data
+					\begin{itemize}
+						\item Registration tags
+						\item Events and Venues being 'followed'
+						\item Previously starred events 
+					\end{itemize}
+				\end{itemize}
+
+			\subsection{Data models}
+			\begin{table}
+				\begin{tabular}{p{2in}p{2in}p{2in}}
+					Event & Venue & User \\
+					\begin{itemize}
+						\item ID for our system
+						\item ID from data source
+						\item Name
+						\item Description
+						\item Date/Time
+						\item URL
+						\item Location
+						\item Price
+						\item Categories
+						\item Users following 
+					\end{itemize} 
+					& 
+					\begin{itemize}
+						\item ID for our system
+						\item ID from data source
+						\item Name
+						\item Description
+						\item Address/Location
+						\item Website
+						\item Users following 
+					\end{itemize}
+					&
+					\begin{itemize}
+						\item ID
+						\item Name
+						\item Username
+						\item Email
+						\item Password
+						\item Recommended feed values.
+						\item Facebook/Twitter auth
+					\end{itemize}
+					 \\
+
+				\end{tabular}
+			\end{table}
+		\section{Project Deliverables}
+		The two major deliverables will be a working server side application and an iOS application. Along the way I plan on producing;
+		\begin{itemize}
+			\item Design Specification
+			\begin{itemize}
+					\item Basic UML of each pieces of software
+					\item Database design
+					\item Functional test plan
+					\item Feature list
+						\begin{itemize}
+							\item Requirements per feature
+						\end{itemize}
+				\end{itemize}
+			\item Documentation on use of the API
+			\item Documentation of the code 
+			\item Blog of what I have done and why
+		\end{itemize}
+
+		\section{Bibliography}
+		% \begin{itemize}
+		% 	\item https://github.com/nomad/houston - Pushing Notifications
+		% 	\item http://mldata.org/repository/tags/data/multi-class/ \item Decent data sets I could utilise
+		% 	\item http://www.igvita.com/2008/01/07/support-vector-machines-svm-in-ruby/ - Ruby Machine Learning
+		% 	\item http://gurge.com/2009/10/22/ruby-nearest-neighbor-fast-kdtree-gem/ - Ruby bag of words/K Nearest Neighbour
+		% \end{itemize}
+
+
+
+%
+% End of comment out / remove the lines. They are only provided for instruction for this example template. 
+%
+
+
+\nocite{*} % include everything from the bibliography, irrespective of whether it has been referenced.
+
+% the following line is included so that the bibliography is also shown in the table of contents. There is the possibility that this is added to the previous page for the bibliography. To address this, a newline is added so that it appears on the first page for the bibliography. 
+\newpage
+\addcontentsline{toc}{section}{Initial Annotated Bibliography} 
+
+%
+% example of including an annotated bibliography. The current style is an author date one. If you want to change, comment out the line and uncomment the subsequent line. You should also modify the packages included at the top (see the notes earlier in the file) and then trash your aux files and re-run. 
+%\bibliographystyle{authordate2annot}
+\bibliographystyle{IEEEannot}
+\renewcommand{\refname}{Annotated Bibliography}  % if you put text into the final {} on this line, you will get an extra title, e.g. References. This isn't necessary for the outline project specification. 
+\bibliography{mmp} % References file
+
+\end{document}
