@@ -7,7 +7,12 @@ require 'spec_helper'
 describe Facebook do
  	
  	before :each do
+ 		stub_request(:get, "http://graph.facebook.com/oauth/access_token").to_return(:body => "access_token=access|token");
 		@facebook = Facebook.new('app_id',  'app_secret')
+	end
+
+	it "when instantiated get an OAuth access token" do	
+		@facebook.getAccessToken.should eq("access|token")
 	end
 
 	it "has a constant of the base url " do
@@ -20,6 +25,12 @@ describe Facebook do
 
 	it "has an app secret set" do
 		@facebook.getAppID.should  eq("app_id")
+	end
+
+	it "#getOAuthToken" do
+		stub_request(:get, "http://graph.facebook.com/oauth/access_token").to_return(:body => "access_token=access|token");
+		@facebook.getOAuthToken;
+		@facebook.getAccessToken.should eq("access|token")
 	end
 
 	it "gets an event from it's ID" do
@@ -38,6 +49,8 @@ describe Facebook do
 		stub_request(:get, "http://graph.facebook.com/224699987546240").to_return(:body => @venueJSON);
 		@facebook.getVenue("224699987546240"). should eq(@venueJSON);
 	end
+
+	it 
 
 
 end

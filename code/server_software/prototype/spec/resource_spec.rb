@@ -25,7 +25,6 @@ describe Resource do
 
  		it "should make a http get request to a server" do
  			@resource.getResource("http://www.example.com/");
-
  			WebMock.should have_requested(:get, "http://www.example.com/");
  		end
 
