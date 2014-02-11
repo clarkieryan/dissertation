@@ -7,7 +7,7 @@ require 'spec_helper'
 describe Facebook do
  	
  	before :each do
- 		stub_request(:get, "http://graph.facebook.com/oauth/access_token").to_return(:body => "access_token=access|token");
+ 		stub_request(:get, "http://graph.facebook.com/oauth/access_token?client_id=app_id&client_secret=app_secret&grant_type=client_credentials&redirect_uri=http://localhost").to_return(:body => "access_token=access|token");
 		@facebook = Facebook.new('app_id',  'app_secret')
 	end
 
@@ -49,8 +49,5 @@ describe Facebook do
 		stub_request(:get, "http://graph.facebook.com/224699987546240").to_return(:body => @venueJSON);
 		@facebook.getVenue("224699987546240"). should eq(@venueJSON);
 	end
-
-	it 
-
 
 end
