@@ -17,5 +17,3 @@ describe GooglePlaces do
 	end	
 
 end
-
-api_key = "AIzaSyAsU5XpnhyRwiuxqSHxtJnmFJ9nAYsq-Kk";
