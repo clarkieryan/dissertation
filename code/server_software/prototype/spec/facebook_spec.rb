@@ -35,19 +35,28 @@ describe Facebook do
 
 	it "gets an event from it's ID" do
  		#Reads in the example JSON reply
- 		event = File.read(File.dirname(__FILE__) + '/fixtures/facebook/event.json');
+ 		@event = File.read(File.dirname(__FILE__) + '/fixtures/facebook/event.json');
  		#Convert to String to JSON
- 		@eventJSON = JSON.parse(event);
+ 		@eventJSON = JSON.parse(@event);
  		stub_request(:get, "http://graph.facebook.com/204504813084059").to_return(:body => @eventJSON);
  		@facebook.getEvent('204504813084059').should eq(@eventJSON);
 	end
 
 	it "gets an event from it's ID" do
+		#Read in the example JSON reply
 		 venue = File.read(File.dirname(__FILE__) + '/fixtures/facebook/venue.json');
  		#Convert to String to JSON
  		@venueJSON = JSON.parse(venue);
 		stub_request(:get, "http://graph.facebook.com/224699987546240").to_return(:body => @venueJSON);
 		@facebook.getVenue("224699987546240"). should eq(@venueJSON);
+	end
+
+	it "gets a list of events from a venue" do
+		events = File.read(File.dirname(__FILE__) + '/fixtures/facebook/events.json');
+		@eventsJSON  = JSON.parse(events);
+		stub_request(:get, "http://graph.facebook.com/204504813084059/events").to_return(:body => @eventsJSON);
+		#getEvents
+		@facebook.getEvents("204504813084059").should eq(@eventsJSON);
 	end
 
 end

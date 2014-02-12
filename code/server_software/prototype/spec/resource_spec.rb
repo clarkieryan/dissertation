@@ -33,6 +33,4 @@ describe Resource do
  		end
  	end
 
-
-
 end
