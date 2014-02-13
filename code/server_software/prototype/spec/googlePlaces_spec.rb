@@ -20,6 +20,10 @@ describe GooglePlaces do
 		expect(@googleplaces.getBaseURI).to eq("https://maps.googleapis.com/maps/api/place");
 	end
 
+	it ".getAvailableFilters" do
+		expect(@googleplaces.getAvailableFilters).to eq({"keyword" => "string", "language" => "", "name" => "string", "rankby" => {"prominence" => "", "distance" => "int"}, "types" => "string" })
+	end
+
 	it ".getVenue" do
 		venue = File.read(File.dirname(__FILE__) + '/fixtures/googleplaces/venue.json');
 		@venueJSON = JSON.parse(venue);
