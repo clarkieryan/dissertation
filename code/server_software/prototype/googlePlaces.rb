@@ -8,7 +8,7 @@ class GooglePlaces < Resource
 	def initialize(api_key)
 		@api_key = api_key;
 		@base_uri = "https://maps.googleapis.com/maps/api/place";
-		@available_filters = {"keyword" => "string", "language" => "", "name" => "string", "rankby" => {"prominence" => "", "distance" => "int"}, "types" => "string" };
+		@available_filters = {"keyword" => "string", "language" => "", "name" => "string", "rankby" => {"prominence" => "", "distance" => "int"}, "types" => "string", "radius" => "int" };
 	end
 
 	def getApiKey 
@@ -28,8 +28,24 @@ class GooglePlaces < Resource
 		return self.getResource(@url);
 	end
 
-	def getVenues()
-		@url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.41649271,-4.07785633&radius=500&sensor=false&key=AIzaSyDvq9AffhVGnPL6byYitdUB54gxlPtTCgg";
+	def getVenues(filters)
+		#Loop through and get filters
+		@filters = "?";
+		filters.each  do |key, value| 
+			if value.class == Hash 
+				@temp = "";
+				value.each_with_index do | (key2,value2),index |
+					if index == 0
+						@temp = "#{@temp}#{value2},";
+					else 
+						@temp = "#{@temp}#{value2}";
+					end
+				end 
+				value = @temp;
+			end
+			@filters = "#{@filters}#{key}=#{value}&";
+		end
+		@url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json#{@filters}key=#{@api_key}";
 		return self.getResource(@url);
 	end
 

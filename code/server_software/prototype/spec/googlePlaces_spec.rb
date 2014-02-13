@@ -21,7 +21,8 @@ describe GooglePlaces do
 	end
 
 	it ".getAvailableFilters" do
-		expect(@googleplaces.getAvailableFilters).to eq({"keyword" => "string", "language" => "", "name" => "string", "rankby" => {"prominence" => "", "distance" => "int"}, "types" => "string" })
+		@available_filters = {"keyword" => "string", "language" => "", "name" => "string", "rankby" => {"prominence" => "", "distance" => "int"}, "types" => "string", "radius" => "int" };
+		expect(@googleplaces.getAvailableFilters).to eq(@available_filters);
 	end
 
 	it ".getVenue" do
@@ -34,8 +35,10 @@ describe GooglePlaces do
 	it ".getVenues" do
 		venues = File.read(File.dirname(__FILE__) + '/fixtures/googleplaces/venues.json');
 		@venuesJSON = JSON.parse(venues);
-		stub_request(:get, "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.41649271,-4.07785633&radius=500&sensor=false&key=AIzaSyDvq9AffhVGnPL6byYitdUB54gxlPtTCgg").to_return(:body => @venuesJSON);
+		stub_request(:get, "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyAsU5XpnhyRwiuxqSHxtJnmFJ9nAYsq-Kk&location=52.41649271,-4.07785633&radius=500&sensor=false").to_return(:body => @venuesJSON);
+		#Set the relevant filters for this search
+		filters = {"location" => {"latitude" => "52.41649271", "longitude" => "-4.07785633"}, "radius" => 500, "sensor" => "false"}
 
-		expect(@googleplaces.getVenues).to eql(@venuesJSON);
+		expect(@googleplaces.getVenues(filters)).to eql(@venuesJSON);
 	end
 end
