@@ -11,7 +11,6 @@ class Facebook < Resource
 		@base_uri = "http://graph.facebook.com"
 		@access_token = "";
 		self.getOAuthToken;
-
 		@available_filters = {"q" => "string", "type" => ["page", "event", "place"], "center" => {"latitude" => "int", "longitude" => "int"}, "distance" => "int"};
 	
 	end
