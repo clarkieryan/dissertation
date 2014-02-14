@@ -33,9 +33,9 @@ describe Resource do
  		end
  	end
 
- 	it "should read hash and build a parameters list" do
+ 	it "should read hash and build a parameters string" do
  		params = {"keyword" => "test", "language" => "en", "name" => "test", "rankby" => {"prominence" => "test", "distance" => "test"}, "types" => "test", "radius" => "test" };
- 		expect(@resource.buildParams(params)).to eq("?keyword=test&language=en&name=test&rankby=test,test&types=test&radius=test&");
+ 		expect(@resource.buildParamString(params)).to eq("?keyword=test&language=en&name=test&rankby=test,test&types=test&radius=test&");
  	end
 
 end

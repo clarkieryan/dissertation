@@ -52,7 +52,9 @@ class Facebook < Resource
 	end
 
 	def getVenues(params)
-
+		paramString = self.buildParamString(params);
+		url = "#{@base_uri}/search#{paramString}access_token=#{@access_token}";
+		return self.getResource(url);
 	end
 
 	def getOAuthToken 

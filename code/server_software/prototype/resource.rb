@@ -12,7 +12,7 @@ class Resource
 		return res.body;
 	end 
 
-	def  buildParams(params)
+	def  buildParamString(params)
 		@return  = "?";
 		params.each do |key, value |
 			if value.class == Hash 

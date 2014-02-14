@@ -30,7 +30,7 @@ class GooglePlaces < Resource
 
 	def getVenues(filters)
 		#Loop through and get filters
-		@filters = self.buildParams(filters);
+		@filters = self.buildParamString(filters);
 		@url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json#{@filters}key=#{@api_key}";
 		return self.getResource(@url);
 	end

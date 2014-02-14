@@ -1,0 +1,111 @@
+{
+  "data": [
+    {
+      "category": "Bar", 
+      "category_list": [
+        {
+          "id": "110290705711626", 
+          "name": "Bar"
+        }
+      ], 
+      "location": {
+        "street": "10 Queens Road", 
+        "city": "Aberystwyth", 
+        "state": "", 
+        "country": "United Kingdom", 
+        "zip": "SY23 2HH", 
+        "latitude": 52.4166523211, 
+        "longitude": -4.08101930016
+      }, 
+      "name": "Scholars Pub", 
+      "id": "256826941102131"
+    }, 
+    {
+      "category": "Local business", 
+      "category_list": [
+        {
+          "id": "218693881483234", 
+          "name": "Pub"
+        }
+      ], 
+      "location": {
+        "street": "Thespian Street, Ceredigion ", 
+        "city": "Aberystwyth", 
+        "state": "", 
+        "country": "United Kingdom", 
+        "zip": " SY23 2JW ", 
+        "latitude": 52.4160560277, 
+        "longitude": -4.08017765563
+      }, 
+      "name": "Aber Vaults", 
+      "id": "147960905257317"
+    }, 
+    {
+      "category": "Local business", 
+      "category_list": [
+        {
+          "id": "218693881483234", 
+          "name": "Pub"
+        }
+      ], 
+      "location": {
+        "street": "Ffordd Alexandria", 
+        "city": "Aberystwyth", 
+        "state": "", 
+        "country": "United Kingdom", 
+        "zip": "SY23", 
+        "latitude": 52.414120737, 
+        "longitude": -4.08219527169
+      }, 
+      "name": "The Cambrian", 
+      "id": "167481736631926"
+    }, 
+    {
+      "category": "Local business", 
+      "category_list": [
+        {
+          "id": "218693881483234", 
+          "name": "Pub"
+        }, 
+        {
+          "id": "164049010316507", 
+          "name": "Gastropub"
+        }
+      ], 
+      "location": {
+        "street": "Alexandra Road", 
+        "city": "Aberystwyth", 
+        "state": "", 
+        "country": "United Kingdom", 
+        "zip": "SY23 1LN ", 
+        "latitude": 52.4142133192, 
+        "longitude": -4.08186094306
+      }, 
+      "name": "Yr Hen Orsaf", 
+      "id": "109191199166288"
+    }, 
+    {
+      "category": "Health/medical/pharmacy", 
+      "category_list": [
+        {
+          "id": "145118935550090", 
+          "name": "Medical & Health"
+        }
+      ], 
+      "location": {
+        "street": "Bronglais General Hospital, Caradog Road", 
+        "city": "Aberystwyth", 
+        "state": "", 
+        "country": "United Kingdom", 
+        "zip": "SY23 1ER", 
+        "latitude": 52.4158537276, 
+        "longitude": -4.07226960204
+      }, 
+      "name": "Public Health Wales Microbiology, Aberystwyth", 
+      "id": "134964199922380"
+    }
+  ], 
+  "paging": {
+    "next": "https://graph.facebook.com/search?type=place&center=52.41649271,-4.07785633&distance=500&limit=5000&offset=5000&__after_id=134964199922380"
+  }
+}
