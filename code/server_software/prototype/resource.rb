@@ -12,4 +12,22 @@ class Resource
 		return res.body;
 	end 
 
+	def  buildParams(params)
+		@return  = "?";
+		params.each do |key, value |
+			if value.class == Hash 
+				@temp = "";
+				value.each_with_index do | (key2,value2),index |
+					if index == 0
+						@temp = "#{@temp}#{value2},";
+					else 
+						@temp = "#{@temp}#{value2}";
+					end
+				end 
+				value = @temp;
+			end
+			@return = "#{@return}#{key}=#{value}&";
+		end
+		return @return;
+	end
 end

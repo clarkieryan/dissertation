@@ -11,6 +11,9 @@ class Facebook < Resource
 		@base_uri = "http://graph.facebook.com"
 		@access_token = "";
 		self.getOAuthToken;
+
+		@available_filters = {"q" => "string", "type" => ["page", "event", "place"], "center" => {"latitude" => "int", "longitude" => "int"}, "distance" => "int"};
+	
 	end
 
 	def getBaseUri 
@@ -29,6 +32,10 @@ class Facebook < Resource
 		return @access_token;
 	end
 
+	def getAvailableFilters
+		return @available_filters;
+	end
+
 	def getEvent(eventID)
 		@url = "#{@base_uri}/#{eventID}";
 		return self.getResource(@url);
@@ -42,6 +49,10 @@ class Facebook < Resource
 	def getEvents(venueID)
 		@url = "#{@base_uri}/#{venueID}/events";
 		return self.getResource(@url);
+	end
+
+	def getVenues(params)
+
 	end
 
 	def getOAuthToken 

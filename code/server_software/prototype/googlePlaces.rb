@@ -30,21 +30,7 @@ class GooglePlaces < Resource
 
 	def getVenues(filters)
 		#Loop through and get filters
-		@filters = "?";
-		filters.each  do |key, value| 
-			if value.class == Hash 
-				@temp = "";
-				value.each_with_index do | (key2,value2),index |
-					if index == 0
-						@temp = "#{@temp}#{value2},";
-					else 
-						@temp = "#{@temp}#{value2}";
-					end
-				end 
-				value = @temp;
-			end
-			@filters = "#{@filters}#{key}=#{value}&";
-		end
+		@filters = self.buildParams(filters);
 		@url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json#{@filters}key=#{@api_key}";
 		return self.getResource(@url);
 	end
