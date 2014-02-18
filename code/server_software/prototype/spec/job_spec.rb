@@ -1,6 +1,5 @@
 require_relative "../lib/scheduler/job";
 
-
 require 'yaml'
 require "json"
 require 'spec_helper'

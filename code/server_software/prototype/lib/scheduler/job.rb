@@ -17,7 +17,8 @@ class Job
 		require_relative '../resources/'+@api;
 		#TODO shouldnt have to pass in app stuff here 
 		# Possibley pulled from a database
-		return Facebook.new;
+		#Dynamically load the class
+		return eval(@api.capitalize).new;
 	end
 	#Could add in helper functions getValidFilters etc. 
 
