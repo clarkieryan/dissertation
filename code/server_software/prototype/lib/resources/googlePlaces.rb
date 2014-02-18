@@ -1,4 +1,4 @@
-require "./resource.rb";
+require_relative "resource.rb";
 require "json"
 
 class GooglePlaces < Resource

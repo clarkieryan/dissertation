@@ -1,4 +1,4 @@
-require_relative "../resource";
+require_relative "../lib/resources/resource";
 
 require 'yaml'
 

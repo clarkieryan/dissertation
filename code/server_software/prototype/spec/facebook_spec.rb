@@ -1,4 +1,4 @@
-require_relative "../facebook";
+require_relative "../lib/resources/facebook";
 
 require 'yaml'
 require "json"

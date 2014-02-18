@@ -1,4 +1,4 @@
-require_relative "../googlePlaces";
+require_relative "../lib/resources/googlePlaces";
 
 require 'yaml'
 require "json"
