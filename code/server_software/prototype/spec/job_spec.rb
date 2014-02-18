@@ -1,5 +1,6 @@
 require_relative "../lib/scheduler/job";
 
+
 require 'yaml'
 require "json"
 require 'spec_helper'
@@ -24,8 +25,11 @@ describe Job do
 	end
 
 	it 'starts a job, with the set api and filters' do
-		facebook = @job.startJob
-		expect(facebook).to be_a Facebook
+		expect(@job.getApiInstance).to be_a Facebook
+	end
+
+	it 'returns valid filters' do
+		expect(@job.getAvailableFilters).to eq()
 	end
 
 end
