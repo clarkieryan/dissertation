@@ -12,10 +12,15 @@ class Job
 		return @api;
 	end
 
+	def getFilters 
+		return @filters;
+	end
+
 	def getApiInstance 
 		return @api_instance;
 	end
 
+	#Conducts the relevant stuff
 	def startJob 
 		
 	end

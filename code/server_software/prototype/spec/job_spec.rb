@@ -1,5 +1,5 @@
 require_relative "../lib/scheduler/job";
-
+require_relative "../lib/resources/facebook";
 
 require 'yaml'
 require "json"
@@ -29,7 +29,8 @@ describe Job do
 	end
 
 	it 'returns valid filters' do
-		expect(@job.getAvailableFilters).to eq()
+		facebook = Facebook.new;
+		expect(@job.getApiInstance.getAvailableFilters).to eq(facebook.getAvailableFilters)
 	end
 
 end
