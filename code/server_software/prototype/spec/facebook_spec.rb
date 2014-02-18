@@ -8,7 +8,15 @@ describe Facebook do
  	
  	before :each do
  		stub_request(:get, "http://graph.facebook.com/oauth/access_token?client_id=app_id&client_secret=app_secret&grant_type=client_credentials&redirect_uri=http://localhost").to_return(:body => "access_token=accesstoken");
-		@facebook = Facebook.new('app_id',  'app_secret')
+		@facebook = Facebook.new;
+		@api_tokens = { :app_id =>"app_id", :app_secret => "app_secret"};
+		@facebook.setAPITokens(@api_tokens);
+	end
+
+	it "'sets the relevant api access details" do
+
+		expect(@facebook.getAppSecret).to eq(@api_tokens[:app_secret]);
+		expect(@facebook.getAppID).to eq(@api_tokens[:app_id]);
 	end
 
 	it "when instantiated get an OAuth access token" do	

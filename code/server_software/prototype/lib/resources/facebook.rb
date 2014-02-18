@@ -3,16 +3,24 @@ require "json"
 
 class Facebook < Resource
 
-	def initialize(app_id, app_secret)
-		#Set the app oAuth details
-		@app_id = app_id;
-		@app_secret = app_secret;
+	def initialize()
 		# Set the base URI
 		@base_uri = "http://graph.facebook.com"
 		@access_token = "";
-		self.getOAuthToken;
+		@api_tokens = {};
+		@app_id ="ff"
+		@app_secret ="ff"
 		@available_filters = {"q" => "string", "type" => ["page", "event", "place"], "center" => {"latitude" => "int", "longitude" => "int"}, "distance" => "int"};
-	
+	end
+
+	def setAPITokens(api_tokens)
+		@app_id = api_tokens[:app_id];
+		@app_secret = api_tokens[:app_secret];
+		self.getOAuthToken
+	end
+
+	def getAPITokens
+		return @api_tokens;
 	end
 
 	def getBaseUri 
