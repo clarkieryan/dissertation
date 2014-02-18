@@ -5,10 +5,14 @@ class GooglePlaces < Resource
 
 	
 
-	def initialize(api_key)
-		@api_key = api_key;
+	def initialize()
+		@api_key = "";
 		@base_uri = "https://maps.googleapis.com/maps/api/place";
 		@available_filters = {"keyword" => "string", "language" => "", "name" => "string", "rankby" => {"prominence" => "", "distance" => "int"}, "types" => "string", "radius" => "int" };
+	end
+
+	def 	setAPIKey(api_key)
+		@api_key  = api_key;
 	end
 
 	def getApiKey 

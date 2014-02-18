@@ -9,7 +9,8 @@ describe GooglePlaces do
 	
 	before :each do
 		#Instantiate a new GooglePlaces class
-		@googleplaces = GooglePlaces.new( "AIzaSyAsU5XpnhyRwiuxqSHxtJnmFJ9nAYsq-Kk");
+		@googleplaces = GooglePlaces.new;
+		@googleplaces.setAPIKey('AIzaSyAsU5XpnhyRwiuxqSHxtJnmFJ9nAYsq-Kk');
 	end
 
 	it ".getApiKey" do
