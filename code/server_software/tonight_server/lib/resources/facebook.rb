@@ -5,7 +5,7 @@ class Facebook < Resource
 
 	def initialize()
 		# Set the base URI
-		@base_uri = "http://graph.facebook.com"
+		@base_uri = "https://graph.facebook.com"
 		@access_token = "";
 		@api_tokens = {};
 		@app_id ="ff"
@@ -44,17 +44,17 @@ class Facebook < Resource
 	end
 
 	def getEvent(eventID)
-		@url = "#{@base_uri}/#{eventID}";
+		@url = "#{@base_uri}/#{eventID}/?access_token=#{@access_token}";
 		return self.getResource(@url);
 	end
 
 	def getVenue(venueID) 
-		@url = "#{@base_uri}/#{venueID}";
+		@url = "#{@base_uri}/#{venueID}/?access_token=#{@access_token}";
 		return self.getResource(@url);
 	end
 
 	def getEvents(venueID)
-		@url = "#{@base_uri}/#{venueID}/events";
+		@url = "#{@base_uri}/#{venueID}/events/?access_token=#{@access_token}";
 		return self.getResource(@url);
 	end
 

@@ -34,8 +34,13 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
-  gem "webmock", "~> 1.17.3"
 end
+
+group :test do
+	gem "webmock", "~> 1.17.3"
+end
+
+gem "httparty", "~> 0.13.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
