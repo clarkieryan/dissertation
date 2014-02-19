@@ -7,7 +7,12 @@ TonightServer::Application.routes.draw do
   root 'static#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  
+
+#Administrator stuff
+namespace :admin do |admin|
+  root 'static#index'
+end
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
