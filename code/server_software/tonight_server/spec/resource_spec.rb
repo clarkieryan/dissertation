@@ -13,7 +13,7 @@ describe Resource do
 
 	describe "#new" do
 		it "creates a new Resource object and returns that object" do
-			@resource.should be_an_instance_of Resource;
+			expect(@resource).to be_an_instance_of Resource;
 		end
  	end
 
@@ -25,11 +25,11 @@ describe Resource do
 
  		it "should make a http get request to a server" do
  			@resource.getResource("http://www.example.com/");
- 			WebMock.should have_requested(:get, "http://www.example.com/");
+ 			expect(WebMock).to have_requested(:get, "http://www.example.com/");
  		end
 
  		it "should respond with the text 'Example Site" do
- 			@resource.getResource("http://www.example.com/").should == "Example Site";
+ 			expect(@resource.getResource("http://www.example.com/")).to eql("Example Site");
  		end
  	end
 
