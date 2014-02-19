@@ -1,0 +1,26 @@
+{
+  "id": "204504813084059", 
+  "owner": {
+    "category": "Musician/band", 
+    "name": "Godskitchen", 
+    "id": "6995619059"
+  }, 
+  "name": "Godskitchen Presents Clash Of The Gods", 
+  "description": "The Angel Ascends. Godskitchen Returns.\n\nAfter some time out for a rethink and a change, GK returns to Birmingham on Saturday 26th April to mark a new era in 2014!\n\nIn the first of some exciting new changes on the event, GK launches Clash Of The Gods in one of the UKs most established, iconic and exciting event spaces, The Rainbow Warehouse, for the very first time.\n\nThe original back-to-back event concept and firm favourite amongst our GK community features over 40 artistes across 3 rooms, with 6 UK exclusive sets and 7 GK debut performances.\n\nAlready the fastest selling Godskitchen show, we've ever seen, with Early Bird tickets selling out in less than 2 minutes. Don't miss out on this land mark return!\n\nLet battle commence!\n\nMain Room The Warehouse\nAly & Fila\nLange vs Sean Tyas (UK Exclusive)\nMax Graham vs Protoculture (UK Exclusive)\nJordan Suckley vs Bryan Kearney\nCraig Connelly vs Luke Bond (UK Exclusive/Godskitchen Debut)\nAngry Man vs James Dymond (UK Exclusive/Godskitchen Debut)\nSteve Arnold vs Andy Croson\n\nRoom 2 The Garden\nSignum vs Manuel Le Saux (UK Exclusive)\nAdam Ellis vs Ian Standerwick (UK Exclusive/Godskitchen Debut)\nAllen & Envy (Godskitchen Debut)\nSam Mitcham vs James Alexander\nHiddenagenda\nDark Fusion\n\nRoom 3 The Kitchen\nWill Rees vs Rhys Thomas\nDavey Asprey vs Jordan Sweeney\nGio vs Jamie Harrison\nGlynn Alan vs Dave Wright\nPete Bromage vs Alex Anderson\nLewis Duggelby vs Lindon Cooper\nAsh Woolacott vs Andrew Williams\nGeorge Ford vs James Walsh\n", 
+  "start_time": "2014-04-26T22:00:00+0100", 
+  "end_time": "2014-04-27T06:00:00+0100", 
+  "timezone": "Europe/London", 
+  "is_date_only": false, 
+  "location": "The Rainbow Venues", 
+  "venue": {
+    "latitude": 52.4772468476, 
+    "longitude": -1.89287110058, 
+    "state": "", 
+    "country": "United Kingdom", 
+    "id": "224699987546240", 
+    "street": "160 Digbeth High Street", 
+    "zip": "B12 0LD"
+  }, 
+  "privacy": "OPEN", 
+  "updated_time": "2014-02-03T15:53:07+0000"
+}

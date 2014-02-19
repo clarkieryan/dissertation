@@ -1,0 +1,380 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "ClRHAAAAHcUE7nMFdrUlRTVgnYYhxZanRMtZgd_j64lzNQny-qXUDD73h8v67ezGgQAZ_WF1xmfVFrAJbsYIDI1i183YcfdhNKuRcci5GEdOeZ9VpVoSEMEjEEA3FxrascpV9dnm0aEaFJS3exVkwiGMY6JSO0-cYIG-8lKi",
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.41530299999999,
+               "lng" : -4.08292
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 52.4247936,
+                  "lng" : -4.0634082
+               },
+               "southwest" : {
+                  "lat" : 52.404143,
+                  "lng" : -4.0918733
+               }
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+         "id" : "76a4a4096687262645450c983fe070c6c10be1aa",
+         "name" : "Aberystwyth",
+         "reference" : "CpQBhwAAAApCna_dciPUewtpMWapQ42Ae8eFZNn1DiSA016HgTTP_r8TtsgDB8gRejTWSneqZdBbNPxeZOLlb7PddlldFGNabL9N5CIMxRyZYHBNuW12BxSGat82WaQruNw3mbvsbi1t69MfSXUy5fqSKPfJTksPjhM4nujpKNtJOuIyn9ah4msy5PMaWnC4XLwo7QcTzRIQwob3FnRsSYQ-Gd8GYW3VThoUheU5LUHOjd8tCxdV1n-NdRqyHoY",
+         "types" : [ "locality", "political" ],
+         "vicinity" : "Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.41656,
+               "lng" : -4.083976
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+         "id" : "79cf798bf1eb85ae4e4abb88b2470cc1483db7b8",
+         "name" : "Ceredigion Museum",
+         "reference" : "CoQBcwAAAPAWtE14NquYhpddbHAWn1SXDwyrVsCWROnfRvC81d-BloZ38L5b3dqZZgq1ePXtFGZ2K2vn4qMWKDm_Bfb7qsBex66IUgvXW4Nkrgeux47GDAJHMu0h9uOlqIVMXQ8DodkFJovjKTG0yKx1U_C3Gi7qVSmQAuu11N0BZZV-qPTsEhAbp4YZ6wU7HNGZeJFq8Ks_GhQZa7TuD0T_u0PDrISouHl3HqTQDA",
+         "types" : [ "museum", "establishment" ],
+         "vicinity" : "Ceredigion Museum, Terrace Rd, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.416953,
+               "lng" : -4.082509
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "12280b145b7923fa4e33d6b2ef0a420019094433",
+         "name" : "Four Seasons",
+         "reference" : "CnRvAAAAWmb9H6TVEIFI4-aZHoHjQHaqqBuAFzJm8nUL6UjjkEwh1X2pic_3QCMonaBAq8W6egFVc2sX6crZE2jVQCpRJI6_VTsMqi-YTg04ACYb113VI8_jfA8Q0miIZhouHQa7L2_rbrM7mCzEPXQvnhReQhIQZSgWysLYA2uThRzO3ituDhoU8iz8lZPg9AKxq38kyf1CDCJQ4Rw",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "Portland St, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.42056,
+               "lng" : -4.084379
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+         "id" : "916802d8ed05ec55ace831ab246750a3d621bc8d",
+         "name" : "The Glengower Hotel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 485,
+               "html_attributions" : [],
+               "photo_reference" : "CnRnAAAA9rZ5lgq9vjktYHi_MqgIwabBSRfwvbfemaSoxsTreP8RcCNXJDSizpizW6Gzl0uxNsEWWcI9fXk7X5QPFFSBvgY2o-Q3k6fpQZfiWFNH_ApdVc18N85IkAGUfZ0KTI4M0uFTALUE7m86cnrhzALUlhIQ3eqgUiGjq60xCIBnVZHLLRoUbPUTxJcZvOEAE8rNP1r9x4sZoP4",
+               "width" : 600
+            }
+         ],
+         "rating" : 4.1,
+         "reference" : "CoQBdQAAAKD8mCXy__AyXduKyzc9-IHpppRZhLMz82DDHopdrl-GApKEP5CPz-tIY8IIuUXPCREB3EynubaKD2t4uAIVgVLCesjcJ-zAZ1qRGQosKvmk3xsj52JksdvCcTK-UI5F-osOG1A5QkCTwB3tnvfbVE25NCkMu2T2Ps1vQeXXFNNkEhB1UF6Gq_DfZJ1Jtt7nO7JTGhQUZOkfn4OV6YdkwivNIiiakIK6mA",
+         "types" : [ "bar", "restaurant", "lodging", "food", "establishment" ],
+         "vicinity" : "3 Victoria Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.41863,
+               "lng" : -4.084484
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "44ae78dd0f9c4f319db91c03651ae3156d9fcf6a",
+         "name" : "Marine Hotel",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 987,
+               "html_attributions" : [],
+               "photo_reference" : "CoQBcwAAAOfFhZN9Q-qHL8wZOEaWFM6woz_m2z9nTSSYliNysMy5UWbdzHhuvk3ixwlYAeJ0xaHu8uPJWoYsWmdTpUvQ5Z1TkxzzmO__SzEf-GUHKjelPS42B01muSowengM1vYUrShbRgUS9ZtB90tonnNslkuOEcP1XsOnMEM1fLxpB5s2EhDezIR-zjQyjLcdSx9nJhVEGhQVHHfZSAWOW8rvLszCBAZonNBBqA",
+               "width" : 985
+            }
+         ],
+         "rating" : 3.6,
+         "reference" : "CnRvAAAAkIlUhfDeE5L1XX77c6Cb2ZtCMGbbjDjeQRxrtGakgXq1HQIZWB6ooKPgqjpb40YSXkDFH8D5Xu7i6D4SEuX0WIwUfaSfR6zxK1Irocv7bRhvjdnusVSBpZ8YgM5Q53R0s_Q02j_Bo-OECiKho2tC_RIQZzTZj43YsVLJ4JELCQnlaBoUzi55ouCrrKkN_AAdtmLTHCiYtIY",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "49-52 Marine Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.416514,
+               "lng" : -4.085023
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+         "id" : "3691260b15ea1dc1747a55f9136673e666733cb8",
+         "name" : "Belle Vue Royal Hotel",
+         "reference" : "CoQBeAAAAKiOUGlea8aTXC1vD9KQ8qVF3ol0eCfP7fu26eYr1QoNoatVhESgju32INOGAjRUR4e9kYBLFUrBfX-oklXXLxNmZC3hKBIzEz-dXPnDo7pC05F7MmrltxZcnBcdWEuH7Dh1b3azMLD8LIzne9EhL4g9YVXsIGdhAANcAv-lmljtEhDwvKr4tFUZ6RPOk9jT8Vt_GhSR2Yq6NuEbEnCuqClwRrfG3VOfgQ",
+         "types" : [ "bar", "restaurant", "lodging", "food", "establishment" ],
+         "vicinity" : "Marine Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.416752,
+               "lng" : -4.084757
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "2c30f6c35daf109d8fa2d99496d2eb3e3307128c",
+         "name" : "Ty Belgrave House",
+         "reference" : "CoQBdAAAAOHdn9qs3Um6bpPsXPdVnj8rebMrX9xkPNVhOIdMk1xsjvxoByvVShN134ZIhchP1dohgxvvfxjjr85C08oGO2jpzNfWVTp85c5cCoftziiOI_tn2KyaLJDs0i6X-GT5QtWXuCJjlZ78WZVLjW4bYiDbNdhP7ttnkLRbpzmDm5rGEhCEelad2OZ_IZP_41SvTSY_GhTMiLnuOPxEJ7sJ1KdlTRc6kKvFMA",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "26 Marine Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.418271,
+               "lng" : -4.084359
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "ddfaed47f86ba0088a8a7f2983866d434c552ca3",
+         "name" : "Richmond Hotel",
+         "photos" : [
+            {
+               "height" : 640,
+               "html_attributions" : [],
+               "photo_reference" : "CoQBcQAAAD6eST7FTiQHhtj0uh0sbeLitIy9bymFtYjQStSByFdPazi6v23v3t2ks65ImDwKjYtjvB5YBtv8tVdCg3DstwQVAeobqvRGOJk5S88XcmcYJvpp2jP70uCPuwVLR7khCsjpYTFp8e3axzL12UX2NarWAHpDjIY8O28Z9boorkuJEhBAjIrfPHXCcSR_8zQzSDAPGhRhpu2SQE4FAtidqfg0AZs5INsdOw",
+               "width" : 427
+            }
+         ],
+         "reference" : "CnRwAAAAoLbNYNZQWLcQbxMm4aRQdhQiGqP93FO7tJPc2ycnPUeJIyNFjv1mfSFgPnqyBkY3XgfRpmu2j88qymgCHxAghCMg1NPDUapiIHezgg_9_HDqoW8fLu3et2BmI-CqNwBa6rhBxW9ECh6lxss1wGNUiBIQsN-0mk0cckWZhXyg8fb1GhoUP3ZVKRhwegVlnLc5PElWif8iFlc",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "Marine Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.417589,
+               "lng" : -4.082286
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "2d3845c785f85656500ff75053299cc0eebeef30",
+         "name" : "Llwynygog Guest House",
+         "rating" : 4.2,
+         "reference" : "CoQBdwAAAMgVmLwwuGY3OYnVgGfm3PjXbXrFyyKM1VukkdZ__qlgt70PPFglDV30BYoEK84e0O0t6pq4HSWIAmauMZMOtaDVMrzkYRarE51B02Bh_vA7f0YT88Q0z6yBloYY2pJLLMNJ3vlMjjDCtm27RwFYx6AuQqrjZfUgm4jAkmjb_jXYEhDkOuMz3EvcNm1eRENGatLrGhTZmx1s5qn_vl_NDO_WfC9O9_vf7A",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "33 Queen's Rd, Aberystwyth, Ceredigion"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.417141,
+               "lng" : -4.083439
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "c57d3f3538f6c84f599169f3112cd24fff641fc4",
+         "name" : "Commodore Cinema",
+         "rating" : 4.1,
+         "reference" : "CoQBcwAAALs2daOgk3Lijq48FqDCannEFwXsogyAvMg1ng8fOzCFm1upoTNOgxYsUXIZ4L19U5H4wC181JVvS_9ZB9rdceNge_tBwCFhqrmKprFqRi3hqDRxbNKiSgsouw1m-4bjUSuW1WuwQ48NJBKknL09AZO3ZSSM8nHvfvxXlYsNF6XpEhDqnaEOPJlZPqOHsN31YDJqGhRpziTgsiWu_w6hwN876FMU52Jx-w",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bath St, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.416122,
+               "lng" : -4.083985
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+         "id" : "562d47d86ff79e165b6f67e2c93d1ff56b7e2890",
+         "name" : "The Varsity",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "rating" : 3.4,
+         "reference" : "CnRuAAAAvWIf1PAxQ6yNYr-CnCe8RX-Fx6p3CV56cn7Ams7OY3_7MSdjVdX1CaX9iHcECIkJaW0iFzRvrdTcdPH6nWra82FUi0mJ5KbaSis327x3en2QJ6cpqddo9GIJdwf6OI7N709zVbzqLMapknM8_1DaARIQdqgCL1h4o9n71DRJ1gtwxxoUQglkJpC_MJWbmVIqp3y3pHm3-DE",
+         "types" : [ "bar", "restaurant", "food", "establishment" ],
+         "vicinity" : "Portland St, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.415894,
+               "lng" : -4.081557
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+         "id" : "3b66e8e3cca92bd7ae55abd8faa9d410bb617b9f",
+         "name" : "Harry's Hotel, Bar & Bistro",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 729,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CnRoAAAAMT8fvHDSOSSZKr28q8DyJEpIgKbU7ZoEYtIdcVGyBdHYWqeAPHjnHrQcTosE9C18f80O9PNcW3EVJBmwX8nv8Y2ASMmaX_S-is474mXhV_RjQik5yLDMmLA9xfH4i1-n5xtbzc18Ns-EXWA1dcgPeRIQIzjn0nur-qVJ-SPH4knG5xoUOscZ5js-dHOjlG-LRI2OFmrL7XA",
+               "width" : 1296
+            }
+         ],
+         "rating" : 3.9,
+         "reference" : "CoQBfQAAALovNDNwgvkdLO8jgf-dsRVaOlXJEq1ex9Q2t3h4qI7DbV4F4_BcF02Q0E8Zw30P9sXeqvmM_tPZBtwt-qX86wI7y_tgKvUU6ofhYhT6m5UDuMehmvnzUOKOdo4sQnm_MBrAZmVaP4c5zKraZc3cYekGqmr0PAVaq6X5PmlIvdzSEhDUgmjEyhG77h2U7mWtJKCwGhSxK5QU_yiLbm_QViV9CVmC67zfpA",
+         "types" : [ "bar", "lodging", "establishment" ],
+         "vicinity" : "40-46 N Parade, Aberystwyth, Ceredigion"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.419505,
+               "lng" : -4.084368
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "ad48d377a6fcf819ed42625f74ed58ec840fc082",
+         "name" : "The Shelley Cardigan Bay Guest House",
+         "reference" : "CpQBhwAAABxRQ7T1Ds-Aq60AwrjODJw2Q96LanD8e9LqW93PeP2Y60t_vfkSB_wdutMlCYdf6U-4_yUXbTswgoKUwr95SYwyJ0csnTsbVfl9ehvxPw2BgzGkfAd66Nnx-y8LlHy4qbyU50sc-RH9v1Hn1DOQM8j2wby4V7oijdVPSns-0i9NGLJUHo7rPYBQ2p35A1Lt6BIQnZGlW78pTmSNrAfauLsHuBoUcJI_LwVdZxGJe_wdGuoweWHkgk0",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "62-63 Marine Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.417604,
+               "lng" : -4.082312
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "68b1c1226ade446a3fe33a266c817312cf7c7e55",
+         "name" : "Savannah Guest House",
+         "photos" : [
+            {
+               "height" : 2048,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CnRpAAAAmBeTmpA8xmrdYlYiJiKO8HE81StD1GwxbsIDDp-5sz0RZKIT7KjLOVL9GK-_IGVoxUIFRgoJuDPkacnS-USHtUPxy7ae7EMjOcttjApm5wTHkRMRqm9ni-3Mgnvk7LvBQvFFiiXRl8up515fCM6dEBIQuZ5QjG8jyd7pwTZCOygfiBoUFVTsuzHiOLyHJgaeyIxfBTvTlhU",
+               "width" : 1530
+            }
+         ],
+         "rating" : 2.7,
+         "reference" : "CoQBdwAAALClOa3gC1zloaFF_NplPMNYTGHqXkMZ_UBR7Ccj0sucgpyO3GpIGnYfVOBED-ee3vJwBuzmZUeCgLuI9WuWo-g8RVSaY0O0OmtNJEWXNxixv2U2Ze6L5RrAJddY-7Asacc2zTKiXqTUF7US_pDof3S3r98G_DkYO5WYskPvlH5XEhB-nibgzUVTMfz99kU8ipL4GhSgwdWH9WBiL0iQnpzJae9JdUIcng",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "27 Queen's Rd, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.415726,
+               "lng" : -4.081198
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "6d9993a1746599016a1f39b4c1961c853126ed5f",
+         "name" : "Little Italy",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "rating" : 3.9,
+         "reference" : "CnRvAAAAnX7ukGvc2QrS206AcuN2zFpdgEAs5ysgph2QCxwiA6zX7HYL5ps78gWxuo_3UsgLMSVzjHgv9fBUlm802NocU_PumCXuAFCCZJvbRP4PKFOWkhtEqgeiJibSrUnA1iMADYFiVYDkkEFRPzxcPGiQKxIQ1MuS2effUSfcRDoreLKnUhoUqF0Ntz8JszUzd7MWr0xFl5zQsyY",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "51 N Parade, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.418545,
+               "lng" : -4.084153
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "39bd65ac0de90b1b43c44c78c3c6e54757db9eaf",
+         "name" : "Helmsman Guesthouse",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1200,
+               "html_attributions" : [],
+               "photo_reference" : "CoQBdgAAAMIp0vprTpDmXwXbyeQGCL6XTsP7AQkxC4e19IF88r6y-1Wko1TYKkxxpCwQy3YR0VnNWDet-FNyDbeEm89VdcXXGe71-7I2Rmqee6x16jAG3gd87mLp8HKhe1sLFcQTPhtAXrSWbK54fIE2nNIZfgtBN-PmS9gk8iO-R8F3RLWMEhARCwB-LboTW8sarMUyce7aGhQRkcUVcJv46LwNPjTyMkOK73jkQw",
+               "width" : 800
+            }
+         ],
+         "reference" : "CoQBdQAAAJso2--H9ud21jubEDj6UlynQadb9acXDKnGOMxat8ch8OMNA-QuR33DuDnrgol42LH-w1l6U5iYMEw6YBw5j3Mc0tJqNH070K0KNEXl3NFdiqajtV0H111H0EDE2SgPk3xtKM72joKeQNvENypAoJ6PSh89lA0Ii9-HpCPIPytPEhCJ0ShhkK8-TF1oKHg4HS4TGhSfyKFaVjul5gIJG5RXpl5sts6dYg",
+         "types" : [ "lodging", "establishment" ],
+         "vicinity" : "43 Marine Terrace, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.415568,
+               "lng" : -4.084653
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "fec2291fcdd39ad25e3d213337a2465efa6a2d39",
+         "name" : "Treehouse",
+         "rating" : 4.2,
+         "reference" : "CnRsAAAAUIdB4lHexzHjsAbhytOWhDTKsteDKXwQ-s9wWJ5CgZdRU9hDlR7LxpDOUbi27I6P-BvTmOBVwvdw3H0KYpOMVUsiqJSTiD6nD_o8g5kjz9WBLvGtWMSAv6gqXfPbEbCGkvJFrKBeoo6_814TAmyUrhIQkH2bkcyvDidhO3KmLowC4BoUB2x6GsooOqj3f76oaRQ2ca5JeEQ",
+         "types" : [
+            "restaurant",
+            "health",
+            "grocery_or_supermarket",
+            "food",
+            "store",
+            "establishment"
+         ],
+         "vicinity" : "14 Baker St, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.416962,
+               "lng" : -4.083753
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "9ceed29ac8765acfcabc5437a426a316d097a94c",
+         "name" : "Maes-y-Mor Launderette",
+         "reference" : "CoQBegAAANcBV52mA-Hvg4Qi4LcVE0QPvDXkxHFfzvERrnDr7_nwAlvJgHbK0B4_WBXsnH05xub8jEYxr6RowDgRPBOhAEqQ5qgnSDwJaGaKGySavlHpRNba9hrWgFzHaUdZeWrtlLStGVWxI3xWXGytYBbxMylKFdg5PffIzbVazOQ4tFeFEhDO54KZjfCZVVMxCLpKFgVvGhSpBt7dLBq0TdC7vnMMEj1e0RoTZw",
+         "types" : [ "laundry", "establishment" ],
+         "vicinity" : "25 Bath St, Town Centre, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.414296,
+               "lng" : -4.082196
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "8609b4c53f7cc5292c68d11d7da50e7347ea0a14",
+         "name" : "Le Figaro",
+         "reference" : "CnRrAAAAeRk-q9xL6vqQOwLVo8A-Xuo6qMpvGlJjde5vcWGkIfWbss6pQu6aom9C9gLdbfu7jS0bDhD3-j4A1Yljyt6MS1A5IQgY82NSNo8eMMZBbF3wKCNuJsM9VY6HuuRRCavIOq-wMlC6ltQ0l8Rgqbhc4xIQIkGuJk9USLDWYknQpaLiXhoU-OTnqzCqrEExPgYyQHxmqbFTqIY",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "8 Alexandra Rd, Town Centre, Aberystwyth"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 52.41602,
+               "lng" : -4.071668
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "dfadae87662ad853baefc3b10f7168775ca3323b",
+         "name" : "Bronglais General Hospital",
+         "rating" : 3.5,
+         "reference" : "CoQBfAAAAIGGQQyCKq3_UGUdvVcIDEzcnjJgblaaP2I6zdtY9AfP7cBGaEoAfVRHZlR2XQPZSlt6jk2jc6QAW4cZoZ0dDBvIoEZZoLhQAo8AWEOW606fUstB6xWGInzyA2PYaEwukMVf6uYZ6QCa9wtPzvJ2AKMRzmIDOTQA2fDB-1TN7ap6EhBmJlK2cke0saulnzaqk4AdGhSM79SqBWdDi64ryBDOp5TIxg5Yww",
+         "types" : [ "hospital", "establishment" ],
+         "vicinity" : "Caradog Road, Aberystwyth"
+      }
+   ],
+   "status" : "OK"
+}
