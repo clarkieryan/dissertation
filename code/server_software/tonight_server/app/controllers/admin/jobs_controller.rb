@@ -5,11 +5,12 @@ class Admin::JobsController < Admin::BaseController
 	#Index will list the various jobs here
 	def index 
 		@jobs = Job.all;
+		@available_apis = ["facebook", "googlePlaces"];
 	end
 
 	#Create a new job
 	def create 
-
+		render :json => job_params
 	end
 
 	#Updates a job
@@ -21,5 +22,10 @@ class Admin::JobsController < Admin::BaseController
 	def destroy
 
 	end
+
+	private 
+		def job_params 
+			params.require(:job).permit(:name, :desc, :api, :filters, :toe);
+		end
 
 end

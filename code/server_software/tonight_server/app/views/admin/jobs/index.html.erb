@@ -1,3 +1,71 @@
-<h1>Example Jobs</h1>
+<div class="row">
+	<div class="col-sm-12">
+		<h1>Jobs</h1>
+		<p>Set up and administer the various api-scraping jobs from the API's defined in the lib/resources folder</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">Current Jobs</div>
+			<div class="panel-body tabel-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Description</th>
+							<th>API</th>
+							<th>Filters</th>
+							<th>Time of execution</th>
+							<th>Edit</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @jobs.each do |job| %>
+							<td><%= job.name %></td>
+							<td><%= job.desc %></td>
+							<td><%= job.api %></td>
+							<td><%= job.filters %></td>
+							<td><%= job.toe %></td>
+							<td><button type="button" class="btn btn-info btn-circle"><i class="fa fa-edit"></i></button></td>
+							<td><button type="button" class="btn btn-danger btn-circle"><i class="fa fa-remove"></i></button></td>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Add a job
+			</div>
+			<div class="panel-body">
+				<%= form_for :job do |f| %>
+				<div class="form-group">
+					<%= f.label :name %><br />
+					<%= f.text_field :name,  :class => "form-control" %>
+					<%= f.label :desc , "Description" %><br />
+					<%= f.text_area :desc, :class  => 'form-control' %>
+					<%= f.label :api , "API" %><br />
+	 				<%= f.select :api, @available_apis,  {}, :class => "form-control" %>
+					<%= f.label :filters %><br />
+					<%= f.text_area :filters, :class => "form-control" %>
+					<%= f.label :toe ,"Time of execution" %><br />
+					<%= f.datetime_field :toe,  :class => "form-control" %>
+					</div>
+					<button type="submit" class="btn btn-default">Add Job</button>
+				<% end -%>
+					
+					
+					
+				</form>
+			</div>
 
-<%= @jobs %>
+		</div>
+	</div>
+	<div class="col-sm-6"></div>
+</div>
