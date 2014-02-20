@@ -29,6 +29,32 @@ describe Admin::JobsController do
 			expect(response).to redirect_to(:action => "index")
 		end
 
+		it 'shows flash message when an error occurs' do
+			pending "Implement this"
+		end
+
+		it 'shows flash when succesfully added' do
+			jobDetails = FactoryGirl.attributes_for(:job);
+			post :create, job: jobDetails
+			expect(flash[:success]).to eq("Job added")  
+		end
+
+	end
+
+	describe '.destroy' do
+		
+		it 'redirects to index page after deletion' do
+			jobInstance = FactoryGirl.create(:job)
+			delete :destroy, :id => jobInstance[:id]
+			expect(response).to redirect_to(:action => "index")
+		end
+
+		it 'removes the correct job' do
+			jobInstance = FactoryGirl.create(:job)
+			delete :destroy, :id => jobInstance[:id]
+			expect(Job.all.count).to eq(0);
+		end
+
 	end
 
 
