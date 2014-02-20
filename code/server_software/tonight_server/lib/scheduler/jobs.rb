@@ -1,4 +1,4 @@
-class Job
+class Jobs
 
 	def initialize(api, filters)
 		@api = api
