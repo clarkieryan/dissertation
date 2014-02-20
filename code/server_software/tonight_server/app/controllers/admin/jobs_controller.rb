@@ -22,13 +22,16 @@ class Admin::JobsController < Admin::BaseController
 
 	#Updates a job
 	def update
-		
+
 	end
 
 	#Removes a job
 	def destroy
-		Job.find(params[:id]).destroy
-		flash[:success] = "Job #{params[:id]} deleted"
+		if Job.find(params[:id]).destroy
+			flash[:success] = "Job #{params[:id]} deleted"
+		else 
+			flash[:danger] ="Something went wrong deleting that record"
+		end
 		redirect_to :action => "index"
 	end
 
