@@ -22,7 +22,14 @@ class Admin::JobsController < Admin::BaseController
 
 	#Updates a job
 	def update
-
+		@job = Job.find(params[:id])
+		if @job.update(params[:job])
+			flash[:success] = "Updated job"
+			redirect_to :action =>'index'
+		else 
+			flash[:danger] = "Something went wrong editing that job"
+			redirect_to :action => 'index'
+		end
 	end
 
 	#Removes a job

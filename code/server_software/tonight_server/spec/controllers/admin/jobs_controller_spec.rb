@@ -41,6 +41,22 @@ describe Admin::JobsController do
 
 	end
 
+	describe '.update' do
+
+		it 'redirects to the index page after an update' do
+
+		end
+
+		it 'updates a record' do
+			jobInstance = FactoryGirl.create(:job);
+			jobInstance[:name] = "Edited Job jobInstance";
+			put :update, :job => jobInstance, :id => jobInstance[:id]
+			expect(Job.find(jobInstance[:id])).to eq(jobInstance);  
+
+		end
+
+	end
+
 	describe '.destroy' do
 		
 		it 'redirects to index page after deletion' do
@@ -56,6 +72,5 @@ describe Admin::JobsController do
 		end
 
 	end
-
 
 end
