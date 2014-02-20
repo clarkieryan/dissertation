@@ -10,7 +10,11 @@ TonightServer::Application.routes.draw do
 
 #Administrator stuff
 namespace :admin do |admin|
+  
   root 'static#index';
+
+  resources :jobs
+
 end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

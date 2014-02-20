@@ -1,4 +1,4 @@
-class Admin::StaticController < ApplicationController
+class Admin::StaticController < Admin::BaseController
 	#Set the layout to be admin
 	layout 'admin'
 
