@@ -15,19 +15,18 @@ describe Admin::JobsController do
 		end
 
 		it "produces a set of jobs" do
-
 			job = FactoryGirl.create(:job)
 			get :index
 			 expect(assigns(:jobs)).to eq([job]);
-
 		end
 	end
 
 	describe '.create' do
 
-		it "creates an object" do
-			post :create, job: FactoryGirl.attributes_for(:job)
-			expect(response).to eq(''); 
+		it 'redirects to the index page' do
+			jobDetails = FactoryGirl.attributes_for(:job);
+			post :create, job: jobDetails
+			expect(response).to redirect_to(:action => "index")
 		end
 
 	end

@@ -10,7 +10,13 @@ class Admin::JobsController < Admin::BaseController
 
 	#Create a new job
 	def create 
-		render :json => job_params
+		@job = Job.new(job_params)
+		if @job.save
+			redirect_to :action => "index"
+		else 
+			flash[:warning] = "Something went wrong"
+			redirect_to index
+		end
 	end
 
 	#Updates a job
