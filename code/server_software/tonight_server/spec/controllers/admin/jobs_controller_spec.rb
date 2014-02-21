@@ -23,9 +23,12 @@ describe Admin::JobsController do
 
 	describe '.create' do
 
+		before :each do
+			@jobDetails = FactoryGirl.attributes_for(:job);
+		end
+
 		it 'redirects to the index page' do
-			jobDetails = FactoryGirl.attributes_for(:job);
-			post :create, job: jobDetails
+			post :create, job: @jobDetails
 			expect(response).to redirect_to(:action => "index")
 		end
 
@@ -34,8 +37,7 @@ describe Admin::JobsController do
 		end
 
 		it 'shows flash when succesfully added' do
-			jobDetails = FactoryGirl.attributes_for(:job);
-			post :create, job: jobDetails
+			post :create, job: @jobDetails
 			expect(flash[:success]).to eq("Job added")  
 		end
 
@@ -43,31 +45,40 @@ describe Admin::JobsController do
 
 	describe '.update' do
 
-		it 'redirects to the index page after an update' do
+		before :each do
+			@jobInstance = FactoryGirl.create(:job);
+		end
 
+		it 'redirects to the index page after an update' do
+			# jobInstance = FactoryGirl.create(:job);
+			# jobInstance[:name] = "Edited Job jobInstance";
+			# put :update, :job => jobInstance
+			# expect(response).to  redirect_to('index') 
 		end
 
 		it 'updates a record' do
-			jobInstance = FactoryGirl.create(:job);
-			jobInstance[:name] = "Edited Job jobInstance";
-			put :update, :job => jobInstance, :id => jobInstance[:id]
-			expect(Job.find(jobInstance[:id])).to eq(jobInstance);  
-
+			prev_updated = @jobInstance[:updated_at]
+			@jobInstance[:name] = "Edited job";
+			put :update, :job => {:name => "test"}, :id => @jobInstance[:id]
+			@jobInstance.reload
+			expect(@jobInstance[:updated_at]).to_not eql(prev_updated)
 		end
 
 	end
 
 	describe '.destroy' do
 		
+		before :each do 
+			@jobInstance = FactoryGirl.create(:job)
+		end
+
 		it 'redirects to index page after deletion' do
-			jobInstance = FactoryGirl.create(:job)
-			delete :destroy, :id => jobInstance[:id]
+			delete :destroy, :id => @jobInstance[:id]
 			expect(response).to redirect_to(:action => "index")
 		end
 
 		it 'removes the correct job' do
-			jobInstance = FactoryGirl.create(:job)
-			delete :destroy, :id => jobInstance[:id]
+			delete :destroy, :id => @jobInstance[:id]
 			expect(Job.all.count).to eq(0);
 		end
 

@@ -23,7 +23,7 @@ class Admin::JobsController < Admin::BaseController
 	#Updates a job
 	def update
 		@job = Job.find(params[:id])
-		if @job.update(params[:job])
+		if @job.update(job_params)
 			flash[:success] = "Updated job"
 			redirect_to :action =>'index'
 		else 
