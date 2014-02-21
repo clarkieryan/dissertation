@@ -14,6 +14,7 @@ namespace :admin do |admin|
   root 'static#index';
 
   resources :jobs
+  resources :users
 
 end
 
