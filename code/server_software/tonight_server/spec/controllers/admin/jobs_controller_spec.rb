@@ -61,7 +61,7 @@ describe Admin::JobsController do
 			@jobInstance[:name] = "Edited job";
 			put :update, :job => {:name => "test"}, :id => @jobInstance[:id]
 			@jobInstance.reload
-			expect(@jobInstance[:updated_at]).to_not eql(prev_updated)
+			expect(@jobInstance[:updated_at]).tocl_not eql(prev_updated)
 		end
 
 	end
