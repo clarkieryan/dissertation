@@ -58,7 +58,7 @@ describe Admin::JobsController do
 
 		it 'updates a record' do
 			prev_updated = @jobInstance[:updated_at]
-			put :update, :job => {:name => "test"}, :id => @jobInstance[:id]
+			patch :update, :job => {:name => "test"}, :id => @jobInstance[:id]
 			@jobInstance.reload
 			expect(@jobInstance[:updated_at]).to_not eq(prev_updated)
 		end
