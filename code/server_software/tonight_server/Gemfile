@@ -43,6 +43,9 @@ end
 
 gem "httparty", "~> 0.13.0"
 
+#Add in editable stuff
+gem 'bootstrap-editable-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

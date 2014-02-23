@@ -10,7 +10,7 @@
 		<!-- Page-Level Plugin CSS - Dashboard -->
 		<link href="/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 		<link href="/css/plugins/timeline/timeline.css" rel="stylesheet">
-
+		<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 		<!-- SB Admin CSS - Include with every page -->
 		<link href="/css/sb-admin.css" rel="stylesheet">
 	  	<%= csrf_meta_tags %>
@@ -46,6 +46,7 @@
 	<script src="/js/jquery-1.10.2.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
 	<!-- Page-Level Plugin Scripts - Dashboard -->
 	<script src="/js/plugins/morris/raphael-2.1.0.min.js"></script>
@@ -57,5 +58,12 @@
 	<!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
 	<script src="/js/demo/dashboard-demo.js"></script>
 
+	<%= javascript_include_tag 'application' %>
+
+	<!-- Admin specific javascripts -->
+	<script src="/js/admin_app.js"></script>
+	<script type="text/javascript">
+		$.fn.editable.defaults.params = { id:1 , authenticity_token: "<%= form_authenticity_token %>" };
+	</script>
 	</body>
 </html>

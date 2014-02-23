@@ -30,11 +30,11 @@
 					<tbody>
 						<% @jobs.each do |job| %>
 							<tr>
-								<td><%= job.name %></td>
-								<td><%= job.desc %></td>
+								<td><a href="#" id="name" class="editable" data-type="text" data-resource="job" data-name="name" data-url="/admin/jobs/<%= job.id %>" data-original-title="Enter username"><%= job.name %></a></td>
+								<td><a href="#" id="desc" class="editable" data-type="textarea" data-resource="job" data-name="desc" data-url="/admin/jobs/<%= job.id %>" data-original-title="Enter description"><%= job.desc %></a></td>
 								<td><%= job.api %></td>
 								<td><%= job.filters %></td>
-								<td><%= job.toe %></td>
+								<td><a href="#" id="toe" class="editable" data-type="date" data-resource="job" data-name="toe" data-url="/admin/jobs/<%= job.id %>" data-original-title="Enter time of execution"><%= job.toe %></a></td>
 								<td><button type="button" class="btn btn-info btn-circle"><i class="fa fa-edit"></i></button></td>
 								<td><%= button_to 'X', {:controller => :jobs, :action => 'destroy', :id => job.id }, :method => :delete, :class => "btn btn-danger btn-circle" %>
 								</td>

@@ -24,8 +24,7 @@ class Admin::JobsController < Admin::BaseController
 	def update
 		@job = Job.find(params[:id])
 		if @job.update(job_params)
-			flash[:success] = "Updated job"
-			redirect_to :action =>'index'
+			render json: @job
 		else 
 			flash[:danger] = "Something went wrong editing that job"
 			redirect_to :action => 'index'
