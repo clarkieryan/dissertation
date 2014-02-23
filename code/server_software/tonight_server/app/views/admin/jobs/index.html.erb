@@ -23,7 +23,6 @@
 							<th>API</th>
 							<th>Filters</th>
 							<th>Time of execution</th>
-							<th>Edit</th>
 							<th>Remove</th>
 						</tr>
 					</thead>
@@ -35,7 +34,6 @@
 								<td><%= job.api %></td>
 								<td><%= job.filters %></td>
 								<td><a href="#" id="toe" class="editable" data-type="date" data-resource="job" data-name="toe" data-url="/admin/jobs/<%= job.id %>" data-original-title="Enter time of execution"><%= job.toe %></a></td>
-								<td><button type="button" class="btn btn-info btn-circle"><i class="fa fa-edit"></i></button></td>
 								<td><%= button_to 'X', {:controller => :jobs, :action => 'destroy', :id => job.id }, :method => :delete, :class => "btn btn-danger btn-circle" %>
 								</td>
 							</tr>
