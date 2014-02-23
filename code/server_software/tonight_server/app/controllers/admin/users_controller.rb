@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
 	before_filter :admin_required;
 
 	def index
-		@user = User.all
+		@users = User.all
 	end
 
 	def create
@@ -23,7 +23,7 @@ class Admin::UsersController < Admin::BaseController
 		else 
 			flash[:danger] = "Something went wrong"
 		end
-		redirect_to :action => "index"
+		render json: @user
 	end
 
 	def destroy
