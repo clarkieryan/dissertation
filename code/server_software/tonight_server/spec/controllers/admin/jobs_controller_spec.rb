@@ -13,11 +13,11 @@ describe Admin::JobsController do
 			get :index
 			expect(response).to render_template("index")
 		end
-
+		#Issue 8
 		it "produces a set of jobs" do
 			job = FactoryGirl.create(:job)
 			get :index
-			 expect(assigns(:jobs)).to eq([job]);
+			 expect(assigns(:jobs)).to eq([job])
 		end
 	end
 
@@ -58,10 +58,9 @@ describe Admin::JobsController do
 
 		it 'updates a record' do
 			prev_updated = @jobInstance[:updated_at]
-			@jobInstance[:name] = "Edited job";
 			put :update, :job => {:name => "test"}, :id => @jobInstance[:id]
 			@jobInstance.reload
-			expect(@jobInstance[:updated_at]).tocl_not eql(prev_updated)
+			expect(@jobInstance[:updated_at]).to_not eq(prev_updated)
 		end
 
 	end
