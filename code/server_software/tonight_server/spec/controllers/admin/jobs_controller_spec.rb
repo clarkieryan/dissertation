@@ -13,7 +13,7 @@ describe Admin::JobsController do
 			get :index
 			expect(response).to render_template("index")
 		end
-		#Issue 8
+
 		it "produces a set of jobs" do
 			job = FactoryGirl.create(:job)
 			get :index
