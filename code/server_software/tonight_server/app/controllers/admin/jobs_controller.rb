@@ -5,7 +5,7 @@ class Admin::JobsController < Admin::BaseController
 	#Index will list the various jobs here
 	def index 
 		@jobs = Job.all;
-		@available_apis = ["facebook", "googlePlaces"];
+		@available_apis = Job::VALID_MODULES.to_a;
 	end
 
 	#Create a new job
