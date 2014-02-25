@@ -3,8 +3,8 @@ FactoryGirl.define do
 		name "Facebook Test"
 		desc "Test job run for Facebook"
 		api "facebook"
-		filters ""
-		toe ""
+		filters "test filters"
+		toe "12334599930"
 		output ""
 	end
 
