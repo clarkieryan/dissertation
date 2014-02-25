@@ -19,11 +19,11 @@ class Admin::UsersController < Admin::BaseController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params) 
-			flash[:success] = "User updated"
+			render json: @user
 		else 
-			flash[:danger] = "Something went wrong"
+			render json: @user
 		end
-		render json: @user
+		
 	end
 
 	def destroy
