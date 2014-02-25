@@ -17,5 +17,9 @@ describe User do
   	it "is invalid with an email" do
   	  	expect(FactoryGirl.build(:user, :email => nil)).to_not be_valid;
   	end
-  	
+
+  	it 'returns a users name string' do
+  		expect(FactoryGirl.build(:user).name).to eq("Ryan Clarke");
+  	end	
+
 end
