@@ -8,7 +8,6 @@ class Resource
 	# TODO - Maybe use HTTP Party to do error handling etc for me
 	# https://github.com/jnunemaker/httparty
 	def getResource(rawURL)
-		puts rawURL;
 		res = HTTParty.get(URI.encode(rawURL));
 		return res.body;
 	end 
