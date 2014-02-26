@@ -4,12 +4,12 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-      adapter: postgresql
+    adapter: postgresql
     host: localhost
     port: 5432
     username: 
     password: 
-    database: ryc-diss
+    database: diss_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,7 +23,9 @@ test:
     database: diss_test
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+    adapter: postgresql
+    host: localhost
+    port: 5432
+    username: 
+    password: 
+    database: diss_prod
