@@ -3,8 +3,6 @@ require "json"
 
 class GooglePlaces < Resource
 
-	
-
 	def initialize()
 		@api_key = "";
 		@base_uri = "https://maps.googleapis.com/maps/api/place";
