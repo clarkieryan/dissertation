@@ -31,7 +31,7 @@ describe Job do
 	end
 
 	it 'produces an array of modules' do
-		expect(Job::VALID_MODULES.to_a).to eq(['facebook', 'googlePlaces'] );
+		expect(Job.new.valid_modules).to eq(['facebook', 'googlePlaces'] );
 	end	
 
 end
