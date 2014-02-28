@@ -8,8 +8,8 @@ class Facebook < Resource
 		@base_uri = "https://graph.facebook.com"
 		@access_token = "";
 		@api_tokens = {};
-		@app_id ="ff"
-		@app_secret ="ff"
+		@app_id =""
+		@app_secret =""
 		@available_filters = {"q" => "string", "type" => ["page", "event", "place"], "center" => {"latitude" => "int", "longitude" => "int"}, "distance" => "int"};
 	end
 

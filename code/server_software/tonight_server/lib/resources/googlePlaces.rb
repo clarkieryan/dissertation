@@ -27,7 +27,7 @@ class GooglePlaces < Resource
 
 	def getVenue(venueID)
 		@url = "#{@base_uri}/details/json?key=#{@api_key}&sensor=false&reference=#{venueID}";
-		return self.getResource(@url);
+		return self.getResource(@url); 
 	end
 
 	def getVenues(filters)
