@@ -15,7 +15,7 @@ class Admin::JobsController < Admin::BaseController
 			flash[:success] = "Job added"
 			redirect_to :action => "index"
 		else 
-			flase[:danger] ="Something went wrong"
+			flash[:danger] ="Something went wrong"
 			redirect_to :action => "index"
 		end
 	end
