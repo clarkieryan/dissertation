@@ -11,9 +11,8 @@ module TonightServer
     ADMIN_USERNAME = "admin";
     ADMIN_PASSWORD = "P4ssw0rd"
 
-    FACEBOOK_API_ID = "230119533786354";
-    FACEBOOK_API_SECRET = "2021cab2843592bfaee52fa8e0ea001e";
-    
+    FACEBOOK_API_TOKENS = {:app_id => "230119533786354", :app_secret => "2021cab2843592bfaee52fa8e0ea001e" }
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

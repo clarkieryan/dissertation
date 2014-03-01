@@ -15,6 +15,8 @@ namespace :admin do |admin|
 
   resources :jobs
   resources :users
+  resources :venues
+  resources :events
 
 end
 

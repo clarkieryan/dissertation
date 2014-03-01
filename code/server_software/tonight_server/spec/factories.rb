@@ -3,7 +3,7 @@ FactoryGirl.define do
 		name "Facebook Test"
 		desc "Test job run for Facebook"
 		api "facebook"
-		filters '{"q" => "club", "type" => "page", "center" => {"latitude" => "52.29", "longitude" => "-1.52"}, "distance" => "50"}'
+		filters '{"q" => "Birmingham Night Clubs", "type" => "page", "center" => {"latitude" => "52.4796", "longitude" => "-1.9030"}, "distance" => "50"}'
 		toe "12334599930"
 		output ""
 	end

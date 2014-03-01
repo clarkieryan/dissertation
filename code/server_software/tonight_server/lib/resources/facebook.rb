@@ -45,23 +45,24 @@ class Facebook < Resource
 
 	def getEvent(eventID)
 		@url = "#{@base_uri}/#{eventID}/?access_token=#{@access_token}";
-		return self.getResource(@url);
+		return JSON.parse(self.getResource(@url));
 	end
 
 	def getVenue(venueID) 
 		@url = "#{@base_uri}/#{venueID}/?access_token=#{@access_token}";
-		return self.getResource(@url);
+		return JSON.parse(self.getResource(@url));
 	end
 
 	def getEvents(venueID)
 		@url = "#{@base_uri}/#{venueID}/events/?access_token=#{@access_token}";
-		return self.getResource(@url);
+		return JSON.parse(self.getResource(@url));
 	end
 
 	def getVenues(params)
 		paramString = self.buildParamString(params);
 		url = "#{@base_uri}/search#{paramString}access_token=#{@access_token}";
-		return self.getResource(url);
+		puts url;
+		return JSON.parse(self.getResource(url));
 	end
 
 	def getOAuthToken 

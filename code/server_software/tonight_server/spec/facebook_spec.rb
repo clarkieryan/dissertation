@@ -46,7 +46,7 @@ describe Facebook do
  		@event = File.read(File.dirname(__FILE__) + '/fixtures/facebook/event.json');
  		#Convert to String to JSON
  		eventJSON = JSON.parse(@event);
- 		stub_request(:get, "https://graph.facebook.com/204504813084059/?access_token=accesstoken").to_return(:body => eventJSON);
+ 		stub_request(:get, "https://graph.facebook.com/204504813084059/?access_token=accesstoken").to_return(:body => event);
  		@facebook.getEvent('204504813084059').should eq(eventJSON);
 	end
 
@@ -55,14 +55,14 @@ describe Facebook do
 		 venue = File.read(File.dirname(__FILE__) + '/fixtures/facebook/venue.json');
  		#Convert to String to JSON
  		venueJSON = JSON.parse(venue);
-		stub_request(:get, "https://graph.facebook.com/224699987546240/?access_token=accesstoken").to_return(:body => venueJSON);
+		stub_request(:get, "https://graph.facebook.com/224699987546240/?access_token=accesstoken").to_return(:body => venue);
 		@facebook.getVenue("224699987546240"). should eq(venueJSON);
 	end
 
 	it "gets a list of events from a venue" do
 		events = File.read(File.dirname(__FILE__) + '/fixtures/facebook/events.json');
 		eventsJSON  = JSON.parse(events);
-		stub_request(:get, "https://graph.facebook.com/204504813084059/events/?access_token=accesstoken").to_return(:body => eventsJSON);
+		stub_request(:get, "https://graph.facebook.com/204504813084059/events/?access_token=accesstoken").to_return(:body => events);
 		#getEvents
 		@facebook.getEvents("204504813084059").should eq(eventsJSON);
 	end
@@ -70,7 +70,7 @@ describe Facebook do
 	it "searches for various venues" do
 		venues = File.read(File.dirname(__FILE__) + '/fixtures/facebook/venues.json');
 		venuesJSON  = JSON.parse(venues);
-		stub_request(:get, "https://graph.facebook.com/search?access_token=accesstoken&center=52.41649271,-4.07785633&distance=500&q=Pub&type=place").to_return(:body => venuesJSON);
+		stub_request(:get, "https://graph.facebook.com/search?access_token=accesstoken&center=52.41649271,-4.07785633&distance=500&q=Pub&type=place").to_return(:body => venues);
 		params = { "q" => "Pub", "distance" => 500, "center" => "52.41649271,-4.07785633", "type" => "place"}
 
 		expect(@facebook.getVenues(params)).to eq(venuesJSON);
