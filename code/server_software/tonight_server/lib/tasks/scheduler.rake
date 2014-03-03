@@ -29,6 +29,10 @@ namespace :scheduler do
 				venueDetails = @api_instance.buildVenue(@api_instance.getVenue(venue['id']));
 				#Add the venue to the DB. 
 				newVenue = Venue.create(venueDetails)
+				#If the venue already exists find the record
+				if !newVenue.save
+					newVenue = Venue.find_by_ref_id(venueDetails[:id]);
+				end
 				#Get all the events at the current venue
 			 	@events = @api_instance.getEvents(venue['id']);
 			 	#Loop through and get event details
