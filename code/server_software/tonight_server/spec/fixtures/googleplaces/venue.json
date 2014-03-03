@@ -1,6 +1,15 @@
 {
    "html_attributions" : [],
    "result" : {
+
+      "events" : [
+        {
+          "event_id" : "9lJ_jK1GfhX",
+          "start_time" : 1293865200,
+          "summary" : "<p>A visit from author John Doe, who will read from his latest book.</p><p>A limited number of signed copies will be available.</p>",
+          "url" : "http://www.example.com/john_doe_visit.html"
+        }
+      ],
       "address_components" : [
          {
             "long_name" : "Station Buildings",
@@ -138,6 +147,7 @@
       ],
       "types" : [ "meal_takeaway", "restaurant", "food", "establishment" ],
       "url" : "https://plus.google.com/118172276277442136682/about?hl=en-US",
+      "website": "http://test.com",
       "user_ratings_total" : 7,
       "utc_offset" : 0,
       "vicinity" : "Station Buildings, Alexandra Rd, Aberystwyth"
