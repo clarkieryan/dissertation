@@ -18,23 +18,23 @@ namespace :scheduler do
 			#Get the venues
 			#Using eval as the filters value is stored as a string. 
 			@venues = @api_instance.getVenues(eval(job.filters));
-			@venues['data'].each_with_index do | venue, index |
+			@venues.each_with_index do | venue, index |
 			 	#Progress indicator if in development mode
 				if Rails.env.development?
 				 	system "clear" or system "cls"
-				 	puts "#{index}/#{@venues['data'].count}"
+				 	puts "#{index}/#{@venues.count}"
 				 	puts venue['name']
 				end
 				#Create the venue object to be inputted
-				venueDetails = @api_instance.buildVenue(@api_instance.getVenue(['id']));
+				venueDetails = @api_instance.buildVenue(@api_instance.getVenue(venue['id']));
 				#Add the venue to the DB. 
 				newVenue = Venue.create(venueDetails)
 				#Get all the events at the current venue
 			 	@events = @api_instance.getEvents(venue['id']);
 			 	#Loop through and get event details
-			 	@events['data'].each do | event |
+			 	@events.each do | event |
 			 		#Get the event details and do stuff with it.
-			 		eventDetails = @api_instance.builldEvent(@api_instance.getEvent(event['id']));
+			 		eventDetails = @api_instance.buildEvent(@api_instance.getEvent(event['id']));
 			 		#Add in the event to the database in relation to the venue
 			 		newVenue.events.create(eventDetails)
 			 	end
