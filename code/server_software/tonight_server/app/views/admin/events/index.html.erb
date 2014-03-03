@@ -17,8 +17,8 @@
 							<td>Ref ID</td>
 							<td>Name</td>
 							<td>Description</td>
-							<td>Start Time</td>
-							<td>End Time</td>
+							<td style="width: 100px;">Start Time</td>
+							<td style="width: 100px;">End Time</td>
 							<td>Venue</td>
 						</tr>
 					</thead>
@@ -28,8 +28,8 @@
 								<td><%= event.ref_id %></td>
 								<td><%= event.name %></td>
 								<td><%= event.desc %></td>
-								<td><%= event.start_time     %></td>
-								<td><%= event.end_time   %></td>
+								<td><%= event.start_time.strftime "%a %b %y  - %k:%M %P"   %></td>
+								<td><%= event.end_time.strftime "%a %b %y  - %k:%M %P"   if event.end_time? %></td>
 								<td><%= event.venue.id %></td>
 							</tr>
 						<% end %>
