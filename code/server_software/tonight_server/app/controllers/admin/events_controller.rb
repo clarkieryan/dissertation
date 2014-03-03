@@ -13,7 +13,7 @@ class Admin::EventsController < Admin::BaseController
 	def create 
 		@event = Event.new
 		if @event.save 
-			flash[:success] = "Event added"
+			flash[:success] = "Event created"
 			redirect_to :action => "index"
 		else
 			flash[:danger] = "Something went wrong"
