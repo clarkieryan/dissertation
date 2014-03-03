@@ -1,4 +1,5 @@
 TonightServer::Application.routes.draw do
+  use_doorkeeper
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -20,6 +21,19 @@ namespace :admin do |admin|
 
 end
 
+
+namespace :api do 
+  #Add in OAuth 
+  use_doorkeeper
+  namespace :v1 do
+    resources :venues do
+      resources :events
+    end
+    resources :users do
+      resources :feed
+    end
+  end
+end
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
