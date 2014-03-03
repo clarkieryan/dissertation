@@ -27,14 +27,24 @@ class GooglePlaces < Resource
 
 	def getVenue(venueID)
 		@url = "#{@base_uri}/details/json?key=#{@api_key}&sensor=false&reference=#{venueID}";
-		return self.getResource(@url); 
+		return JSON.parse(self.getResource(@url)); 
 	end
 
 	def getVenues(filters)
 		#Loop through and get filters
 		@filters = self.buildParamString(filters);
 		@url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json#{@filters}key=#{@api_key}";
-		return self.getResource(@url);
+		return JSON.parse(self.getResource(@url));
+	end
+
+	def buildVenue(venueDetail)
+		venueDetails =  venueDetail['result'];
+		return {:ref_id => venueDetails['id'], :name => venueDetails['name'],  :street => venueDetails['address_components'][1]['long_name'], :city => venueDetails['address_components'][2]['long_name'], :county => venueDetails['address_components'][3]['long_name'], :country => venueDetails['address_components'][4]['long_name'], :post_code => venueDetails['address_components'][5]['long_name'], :lat => venueDetails['geometry']['location']['lat'], :lon => venueDetails['geometry']['location']['lng'], :phone => venueDetails['formatted_phone_number'], :website => venueDetails['website']};
+	end
+
+	def buildEvent(eventDetail)
+		eventDetails =  eventDetail['result']['events'][0];
+		return {:ref_id => eventDetails['event_id'], :name => eventDetails['name'], :desc => eventDetails['summary'], :start_time => eventDetails['start_time']}
 	end
 
 end

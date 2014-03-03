@@ -71,4 +71,12 @@ class Facebook < Resource
 		@access_token.slice! "access_token="
 	end
 
+	def buildVenue(venueDetails)
+		return {:ref_id => venueDetails['id'], :name => venueDetails['name'], :desc => venueDetails['description'], :street => venueDetails['location']['street'], :city => venueDetails['location']['city'], :county => venueDetails['location']['state'], :country => venueDetails['location']['country'], :post_code => venueDetails['location']['zip'], :lat => venueDetails['location']['latitude'], :lon => venueDetails['location']['longitude'], :phone => venueDetails['phone'], :website => venueDetails['website']}
+	end
+
+	def buildEvent(eventDetails)
+		return {:ref_id => eventDetails['id'], :name => eventDetails['name'], :desc => eventDetails['description'], :start_time => eventDetails['start_time'], :end_time => eventDetails['end_time'], :timezone => eventDetails['timezone'], :updated_at => eventDetails['updated_at'] }
+	end
+
 end
