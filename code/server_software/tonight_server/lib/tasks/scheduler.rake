@@ -30,7 +30,7 @@ namespace :scheduler do
 				#Add the venue to the DB. 
 				puts venueDetails
 				newVenue = Venue.create(venueDetails)
-				purs newVenue;
+				puts newVenue;
 				#If the venue already exists find the record
 				if !newVenue.save
 					newVenue = Venue.find_by_ref_id(venueDetails[:id]);
