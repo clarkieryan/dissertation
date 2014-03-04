@@ -22,4 +22,14 @@ describe User do
   		expect(FactoryGirl.build(:user).name).to eq("Ryan Clarke");
   	end	
 
+  	it 'authenticates a valid user' do
+  		user = FactoryGirl.create(:user)
+  		expect(User.authenticate("clarkie.ryan@gmail.com", "4WvGrKuMIlaOhmV")).to eq(user)
+  	end
+
+  	it 'doesnt authenticate non-valid user' do
+  		FactoryGirl.create(:user)
+  		expect(User.authenticate("ryc@aber.ac.uk", "4WvGrKuD+5WQhY=")).to eq(false)
+  	end
+
 end

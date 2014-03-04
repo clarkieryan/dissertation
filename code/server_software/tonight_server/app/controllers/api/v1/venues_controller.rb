@@ -1,5 +1,7 @@
 class API::V1::VenuesController < ApplicationController
 
+	doorkeeper_for :all
+	
 	def index
 		@venues = Venue.all
 		render json: @venues;

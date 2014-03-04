@@ -1,35 +1,48 @@
 require 'spec_helper'
 
 describe API::V1::UserController do 
-
-	before :each do
-		@user = FactoryGirl.create(:user)
-	end
 	
+	let (:user) {FactoryGirl.create(:user)}
+	let(:token) { double :accessible? => true, :resource_owner_id => user.id }
+
+	before do	
+	 	controller.stub(:doorkeeper_token) { token }
+	end
+
 	describe '.index' do
 
-		it 'error if the user is not authorised' do
+		it 'responds with 200' do
 			get :index
-			expect(response.body).to eq({"error" : "You need to pass authorisation"});
+			expect(response.status).to eq(200)
 		end
 
-		it 'shows relevant access tokens for OAuth' do
-			
+		it 'responds with user details' do
+			get :index
+			expect(response.body).to eq(user.to_json);
 		end
 
 	end
 
-	describe '.show' do
-		
-		it 'get\'s an individual page' do
-			get :show :id => @user.id
+	describe '.update' do
 
-			expect(response).to be_success
+		it 'Updates a users personal record' do
+			@params = FactoryGirl.attributes_for(:user)
+			@params[:first_name] = "test";
+			put :update, user: @params, id: user[:id]
+			expect(response.body).to_not eq(user.to_json)
+		end
+	
+	end
 
-			json = JSON.parse(response.body)
-			 expect(json['name']).to eq(@event.name) 
+	describe '.feed' do
+
+		it 'responds with 200' do
+			get :feed, :format => :json
+			expect(response.status).to eq(200)
 		end
 
+		pending("Implement the feed")
+	
 	end
 
 end

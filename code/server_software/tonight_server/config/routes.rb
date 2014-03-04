@@ -20,18 +20,24 @@ namespace :admin do |admin|
   resources :events
 
 end
-
+  
+#Add in OAuth 
+use_doorkeeper
 
 namespace :api do 
-  #Add in OAuth 
-  use_doorkeeper
   namespace :v1 do
-    resources :venues do
-      resources :events
-    end
-    resources :users do
-      resources :feed
-    end
+
+    get 'events' => 'events#index'
+    get 'events/:id' => 'events#eventByID'
+    get 'venues' => 'venues#index'
+    get 'venue/:id' => 'venue#show'
+    get 'venues/:id/events' => 'events#eventsByVenue'
+
+    #Currently logged on user details and functions
+    get 'user' => 'user#index'
+    post 'user' => 'user#update'
+    #Users feed of event
+    get 'user/feed' => 'user#feed'
   end
 end
   # Example of named route that can be invoked with purchase_url(id: product.id)

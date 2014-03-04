@@ -29,7 +29,10 @@ describe Admin::UsersController do
 		end
 
 		it "shows flash message when an error occurs" do
-			pending("implement this");
+			user = FactoryGirl.attributes_for(:user);
+			user[:password] = "";
+			post :create, user: user
+			expect(flash[:danger]).to eq("Something went wrong");
 		end  
 
 		it "shows flash when successfully added" do

@@ -9,7 +9,10 @@ Doorkeeper.configure do
     # Example implementation:
     User.find_by_id(session[:user_id]) || render(json:  {:message => "You need to login"})
   end
-
+resource_owner_from_credentials do |routes|
+  puts params;
+  User.authenticate(params[:email], params[:password])
+end
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
   # admin_authenticator do
   #   # Put your admin authentication logic here.
