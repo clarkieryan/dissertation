@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140303135457) do
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
+    t.integer  "venue_id"
     t.integer  "ref_id",     limit: 8
     t.string   "name"
     t.text     "desc"
@@ -30,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140303135457) do
 
   create_table "jobs", force: true do |t|
     t.string   "name"
-    t.integer  "venue_id"
     t.string   "desc"
     t.string   "api"
     t.string   "filters"

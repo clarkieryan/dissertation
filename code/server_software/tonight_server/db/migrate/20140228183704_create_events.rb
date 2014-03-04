@@ -10,7 +10,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :timezone
       t.integer :venue
       t.integer :updated_at
-
+      
       t.timestamps
     end
   end
