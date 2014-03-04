@@ -31,7 +31,7 @@ namespace :api do
     get 'events' => 'events#index'
     get 'events/:id' => 'events#eventByID'
     get 'venues' => 'venues#index'
-    get 'venue/:id' => 'venue#show'
+    get 'venues/:id' => 'venues#show'
     get 'venues/:id/events' => 'events#eventsByVenue'
 
     #Currently logged on user details and functions
