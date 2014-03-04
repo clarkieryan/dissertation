@@ -42,7 +42,7 @@ namespace :scheduler do
 			 		#Get the event details and do stuff with it.
 			 		eventDetails = @api_instance.buildEvent(@api_instance.getEvent(event['id']));
 			 		#Add in the event to the database in relation to the venue
-			 		newVenue.Events.create(eventDetails)
+			 		newVenue.event.create(eventDetails)
 			 	end
 			 end
 		end
