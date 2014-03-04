@@ -27,6 +27,7 @@ use_doorkeeper
 namespace :api do 
   namespace :v1 do
 
+    #Various functions to get the events
     get 'events' => 'events#index'
     get 'events/:id' => 'events#eventByID'
     get 'venues' => 'venues#index'

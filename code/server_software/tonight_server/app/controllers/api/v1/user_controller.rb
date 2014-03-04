@@ -13,7 +13,6 @@ class API::V1::UserController < ApplicationController
 		else
 			render json: {:message => user.errors}
 		end	
-
 	end
 
 	def feed 
