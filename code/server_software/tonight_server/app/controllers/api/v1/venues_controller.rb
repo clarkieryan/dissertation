@@ -11,6 +11,4 @@ class API::V1::VenuesController < ApplicationController
 		render json: @venue;
 	end
 
-
-
 end
