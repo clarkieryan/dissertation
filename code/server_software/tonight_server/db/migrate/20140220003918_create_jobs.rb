@@ -7,7 +7,6 @@ class CreateJobs < ActiveRecord::Migration
       t.string :filters
       t.string :toe
       t.string :output
-
       t.timestamps
     end
   end
