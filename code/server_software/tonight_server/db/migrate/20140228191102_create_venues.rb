@@ -2,7 +2,7 @@ class CreateVenues < ActiveRecord::Migration
   def change
     create_table :venues do |t|
       t.integer :ref_id, :limit => 8
-      t.integert :venue_id, :limit => 8
+      t.integer :venue_id, :limit => 8
       t.string :name
       t.text :desc
       t.string :street
