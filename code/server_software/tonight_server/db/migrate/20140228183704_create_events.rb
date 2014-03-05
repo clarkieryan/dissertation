@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :venue_id
       t.string :name
       t.text :desc
-      t.integer :start_time
-      t.integer :end_time
+      t.datetime :start_time
+      t.datetime :end_time
       t.string :timezone
       t.integer :venue
       t.integer :updated_at
