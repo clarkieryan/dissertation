@@ -1,5 +1,5 @@
 //
-//  LoginViewControler.h
+//  LoginViewController.h
 //  tonightapp
 //
 //  Created by Ryan Clarke on 05/03/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewControler : UIViewController
-    -(BOOL)loginUser:(NSString *)email withPassword:(NSString *)password;
+@interface LoginViewController : UIViewController
+
 @end

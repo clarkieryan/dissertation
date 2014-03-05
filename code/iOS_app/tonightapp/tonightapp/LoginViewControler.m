@@ -9,10 +9,9 @@
 #import "LoginViewControler.h"
 
 @interface LoginViewControler ()
-
 @end
 
-@implementation LoginViewControler
+@implementation LoginViewControler 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +27,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -22,10 +22,8 @@
 		945D593F18C732240061B80F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591818C7321F0061B80F /* Foundation.framework */; };
 		945D594018C732240061B80F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591C18C7321F0061B80F /* UIKit.framework */; };
 		945D594818C732240061B80F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 945D594618C732240061B80F /* InfoPlist.strings */; };
-		945D594A18C732240061B80F /* tonightappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 945D594918C732240061B80F /* tonightappTests.m */; };
-		945D595518C734850061B80F /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 945D595418C734850061B80F /* LoginViewControler.m */; };
-		945D595618C734850061B80F /* LoginViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 945D595418C734850061B80F /* LoginViewControler.m */; };
 		945D595818C7354F0061B80F /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945D595718C7354F0061B80F /* TestLoginViewController.m */; };
+		94F5024618C7474D00B7B344 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F5024518C7474D00B7B344 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +58,9 @@
 		945D593D18C732240061B80F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		945D594518C732240061B80F /* tonightappTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tonightappTests-Info.plist"; sourceTree = "<group>"; };
 		945D594718C732240061B80F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		945D594918C732240061B80F /* tonightappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tonightappTests.m; sourceTree = "<group>"; };
-		945D595318C734850061B80F /* LoginViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewControler.h; sourceTree = "<group>"; };
-		945D595418C734850061B80F /* LoginViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControler.m; sourceTree = "<group>"; };
 		945D595718C7354F0061B80F /* TestLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
+		94F5024418C7474D00B7B344 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		94F5024518C7474D00B7B344 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +130,8 @@
 				945D593418C732210061B80F /* SecondViewController.m */,
 				945D593618C732220061B80F /* Images.xcassets */,
 				945D591F18C732200061B80F /* Supporting Files */,
-				945D595318C734850061B80F /* LoginViewControler.h */,
-				945D595418C734850061B80F /* LoginViewControler.m */,
+				94F5024418C7474D00B7B344 /* LoginViewController.h */,
+				94F5024518C7474D00B7B344 /* LoginViewController.m */,
 			);
 			path = tonightapp;
 			sourceTree = "<group>";
@@ -153,7 +150,6 @@
 		945D594318C732240061B80F /* tonightappTests */ = {
 			isa = PBXGroup;
 			children = (
-				945D594918C732240061B80F /* tonightappTests.m */,
 				945D594418C732240061B80F /* Supporting Files */,
 				945D595718C7354F0061B80F /* TestLoginViewController.m */,
 			);
@@ -271,7 +267,7 @@
 				945D592918C732200061B80F /* AppDelegate.m in Sources */,
 				945D593218C732210061B80F /* FirstViewController.m in Sources */,
 				945D592518C732200061B80F /* main.m in Sources */,
-				945D595518C734850061B80F /* LoginViewControler.m in Sources */,
+				94F5024618C7474D00B7B344 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				945D595818C7354F0061B80F /* TestLoginViewController.m in Sources */,
-				945D594A18C732240061B80F /* tonightappTests.m in Sources */,
-				945D595618C734850061B80F /* LoginViewControler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +486,7 @@
 				945D594F18C732240061B80F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		945D595018C732240061B80F /* Build configuration list for PBXNativeTarget "tonightappTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +495,7 @@
 				945D595218C732240061B80F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

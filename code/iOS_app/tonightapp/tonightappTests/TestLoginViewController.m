@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "LoginViewControler.h"
 
 @interface TestLoginViewController : XCTestCase
 
@@ -26,9 +27,19 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testLoginPass
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    //Code here to test a users login
+    LoginViewControler *LoginController = [[LoginViewControler alloc]init];
+    BOOL result = [LoginController loginUser:@"clarkie.ryan@gmail.com" withPassword:@"P4ssw0rd"];
+    XCTAssertTrue(result);
+}
+
+-(void)testLoginFail
+{
+    LoginViewControler *LoginController = [[LoginViewControler alloc]init];
+    BOOL result = [LoginController loginUser:@"test@test.com" withPassword:@"test"];
+    XCTAssertFalse(result);
 }
 
 @end
