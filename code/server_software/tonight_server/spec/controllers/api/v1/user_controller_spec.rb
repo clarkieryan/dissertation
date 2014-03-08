@@ -45,4 +45,14 @@ describe API::V1::UserController do
 	
 	end
 
+	describe '.register' do
+
+		it 'adds a new user' do
+			user  = FactoryGirl.attributes_for(:user);
+			post :register, user: user;
+			expect(response).to eq();
+		end
+	
+	end
+
 end

@@ -34,6 +34,9 @@ namespace :api do
     get 'venues/:id' => 'venues#show'
     get 'venues/:id/events' => 'events#eventsByVenue'
 
+    #Registeration
+    post '/register' => 'user#register'
+
     #Currently logged on user details and functions
     get 'user' => 'user#index'
     post 'user' => 'user#update'
