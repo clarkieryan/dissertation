@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MyFeedTableViewController.h
 //  tonightapp
 //
 //  Created by Ryan Clarke on 05/03/2014.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+
+@interface MyFeedTableViewController : UITableViewController <UITableViewDataSource>
 
 @end

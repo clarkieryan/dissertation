@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  MyProfileViewController.h
 //  tonightapp
 //
 //  Created by Ryan Clarke on 05/03/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface MyProfileViewController : UIViewController
 
 @end

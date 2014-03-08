@@ -8,10 +8,26 @@
 
 #import "AppDelegate.h"
 
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Set something
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    //Set the colour
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xe74c3c)];
+    //Set the colour of the fonts of the back button
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    //Set the colour of the status bar
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    //Set the Navigation bar title colours
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,[UIFont fontWithName:@"HelveticaNeue" size:18.0], NSFontAttributeName, nil]];
+    //Login logic
+    
+    
+
     // Override point for customization after application launch.
     return YES;
 }

@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  DiscoverTableViewController.h
 //  tonightapp
 //
 //  Created by Ryan Clarke on 05/03/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@interface DiscoverTableViewController : UITableViewController
 
 @end
