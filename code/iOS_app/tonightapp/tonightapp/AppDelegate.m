@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UICKeyChainStore.h>
 
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -14,6 +15,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        // app already launched
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        // This is the first launch ever
+        
+        [UICKeyChainStore setString:@"" forKey:@"email"];
+        [UICKeyChainStore setString:@"" forKey:@"password"];
+        [UICKeyChainStore setString:@"" forKey:@"access_token"];
+        [UICKeyChainStore setString:@"" forKey:@"expires_on"];
+    }
     //Set something
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     //Set the colour

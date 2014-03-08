@@ -91,9 +91,15 @@
                               forIndexPath:indexPath];
     
     NSDictionary *row = [_events objectAtIndex:indexPath.row];
-
-    cell.eventNameLabel.text = [row objectForKey:@"name"];
-    cell.venueLabel.text = [[row objectForKey:@"venue"] objectForKey:@"name"];
+    NSLog(@"%@", [row objectForKey:@"name"]);
+    if([row objectForKey:@"name"] != [NSNull null] &&  [[row objectForKey:@"venue"] objectForKey:@"name"] != [NSNull null]){
+        cell.eventNameLabel.text = [row objectForKey:@"name"];
+        cell.venueLabel.text = [[row objectForKey:@"venue"] objectForKey:@"name"];
+    } else {
+        cell.eventNameLabel.text = @"";
+        cell.venueLabel.text = @"";
+    }
+   
     return cell;
 }
 
