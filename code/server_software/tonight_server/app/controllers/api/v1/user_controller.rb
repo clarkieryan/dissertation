@@ -22,9 +22,9 @@ class API::V1::UserController < ApplicationController
 	def register 
 		user = User.new(user_params)
 		if user.save 
-			render json: user;
+			render json: {:message => "User created", :user => user};
 		else 
-			render json: {:error => "Something went wrong"} 
+			render json: {:error => user.errors} 
 		end
 	end
 

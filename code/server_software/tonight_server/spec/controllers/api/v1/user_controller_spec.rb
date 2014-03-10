@@ -50,7 +50,8 @@ describe API::V1::UserController do
 		it 'adds a new user' do
 			user  = FactoryGirl.attributes_for(:user);
 			post :register, user: user;
-			expect(response).to eq();
+			output = JSON.parse(response.body);
+			expect(output['message']).to eq("User created");
 		end
 	
 	end
