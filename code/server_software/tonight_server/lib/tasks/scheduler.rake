@@ -38,7 +38,8 @@ namespace :scheduler do
 			 		@newEvent = @newVenue.events
 			 		@newEvent.where(eventDetails).first_or_create
 			 	end
-			 end
+			end
+			job.update({:completed => true});
 		end
 
 	end

@@ -43,7 +43,6 @@ namespace :api do
     #Users feed of event
     get 'user/feed' => 'user#feed'
 
-
     #Lists all of the categories
     get '/categories' =>'categories#index'
     get '/categories/:id/events' => 'events#eventsByCategory'
