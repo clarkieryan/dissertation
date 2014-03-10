@@ -43,13 +43,15 @@ namespace :api do
     #Users feed of event
     get 'user/feed' => 'user#feed'
 
-    # TODO -> Implement
+
     #Lists all of the categories
     get '/categories' =>'categories#index'
     get '/categories/:id/events' => 'events#eventsByCategory'
     #List events by city
     get '/cities' => 'cities#index'
     get '/cities/:id/events' => 'events#eventsByCity'
+
+    # TODO -> Implement
     #Add in the ability to follow events
     get 'user/following' => 'user#following'
     post 'user/follow' => 'user#follow'
