@@ -42,6 +42,16 @@ namespace :api do
     post 'user' => 'user#update'
     #Users feed of event
     get 'user/feed' => 'user#feed'
+
+    # TODO -> Implement
+    #Lists all of the categories
+    get '/categories' =>'categories#index'
+    #List events by city
+    get '/cities' => 'cities#index'
+    get '/cities/events' => 'cities#events'
+    #Add in the ability to follow events
+    get 'user/following' => 'user#following'
+    post 'user/follow' => 'user#follow'
   end
 end
   # Example of named route that can be invoked with purchase_url(id: product.id)
