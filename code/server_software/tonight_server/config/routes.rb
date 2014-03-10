@@ -46,9 +46,10 @@ namespace :api do
     # TODO -> Implement
     #Lists all of the categories
     get '/categories' =>'categories#index'
+    get '/categories/:id/events' => 'events#eventsByCategory'
     #List events by city
     get '/cities' => 'cities#index'
-    get '/cities/events' => 'cities#events'
+    get '/cities/:id/events' => 'events#eventsByCity'
     #Add in the ability to follow events
     get 'user/following' => 'user#following'
     post 'user/follow' => 'user#follow'

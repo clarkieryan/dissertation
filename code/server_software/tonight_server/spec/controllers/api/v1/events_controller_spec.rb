@@ -35,4 +35,28 @@ describe API::V1::EventsController do
 
 	end
 
+	describe '.eventsByVenue' do
+
+		it 'gets the events by venue' do
+
+		end
+	
+	end
+
+	describe '.eventsByCity' do
+
+		it "gets events by city" do
+			
+		end
+
+	end
+
+	describe '.eventsByCategory' do
+
+		it "gets event by category" do
+			
+		end
+
+	end
+
 end
