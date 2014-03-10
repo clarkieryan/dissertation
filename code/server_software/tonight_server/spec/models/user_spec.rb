@@ -11,7 +11,7 @@ describe User do
   	end
 
   	it ' is invalid without a password' do
-  		expect(FactoryGirl.build(:user, :password => nil)).to_not be_valid;
+  		expect(FactoryGirl.build(:user, :password_in => nil)).to_not be_valid;
   	end
 
   	it "is invalid with an email" do
@@ -23,8 +23,9 @@ describe User do
   	end	
 
   	it 'authenticates a valid user' do
-  		user = FactoryGirl.create(:user)
-  		expect(User.authenticate("clarkie.ryan@gmail.com", "4WvGrKuMIlaOhmV")).to eq(user)
+  		user = FactoryGirl.build(:user)
+  		user.save!
+  		expect(User.authenticate("clarkie.ryan@gmail.com", "P4ssw0rd")).to eq(true)
   	end
 
   	it 'doesnt authenticate non-valid user' do
