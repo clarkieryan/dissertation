@@ -1,5 +1,5 @@
 TonightServer::Application.routes.draw do
-  use_doorkeeper
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -21,9 +21,7 @@ namespace :admin do |admin|
 
 end
   
-#Add in OAuth 
 use_doorkeeper
-
 namespace :api do 
   namespace :v1 do
 
@@ -44,8 +42,8 @@ namespace :api do
     get 'user/feed' => 'user#feed'
 
     #Lists all of the categories
-    get '/categories' =>'categories#index'
-    get '/categories/:id/events' => 'events#eventsByCategory'
+    get 'categories' =>'categories#index'
+    get 'categories/:id/events' => 'events#eventsByCategory'
     #List events by city
     get '/cities' => 'cities#index'
     get '/cities/:id/events' => 'events#eventsByCity'
