@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 		if(user.count == 1 ) 
 			encrypted_password = BCrypt::Engine.hash_secret(password, user[0].salt)
 			if(user[0].enc_password == encrypted_password)
-				return true;
+				return user[0];
 			else 
 				return false;
 			end
