@@ -2,6 +2,8 @@ class API::V1::UserController < ApplicationController
 
 	doorkeeper_for :all,:except => :register
 
+	protect_from_forgery except: :index
+
 	def index 
 		render json: current_resource_owner
 	end
