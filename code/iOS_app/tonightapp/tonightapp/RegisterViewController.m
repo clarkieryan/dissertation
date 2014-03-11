@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import <UNIRest.h>
+#import <UICKeyChainStore.h>
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
@@ -50,13 +51,12 @@
 - (IBAction)registerButton:(id)sender {
     
     //Split up the namme to first/last
-    NSArray *values = [_nameField.text componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSArray *names = [_nameField.text componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     
 //    NSDictionary *user = @{@"email" : _emailField.text, @"first_name" : values[0], @"last_name": values[1], @"password": _passwordField.text};
-    NSString *userParams =[NSString stringWithFormat:@"{\"email\": \"%@\", \"first_name\": \"%@\", \"last_name\": \"%@\",\"password\": \"%@\" }", _emailField.text, values[0], values[1], _passwordField.text];
     
     NSDictionary* headers = @{@"accept": @"application/json"};
-    NSDictionary* parameters = @{@"user": userParams};
+    NSDictionary* parameters = @{@"user[first_name]": names[0], @"user[last_name]": names[1], @"user[email]": _emailField.text, @"user[password]": _passwordField.text};
     
     UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
         [request setUrl:@"http://ryc-diss.herokuapp.com/api/v1/register"];
@@ -66,6 +66,35 @@
     
     NSLog(@"%@", response.body);
     
+    
+    //If the response is a created user use username/password and get an access token -> move to the main screen
+    if([[response.body.object objectForKey:@"message"] isEqualToString:@"User created"]) {
+        NSDictionary* headers = @{@"accept": @"application/json"};
+        NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": @"52ed42059a524e66d64a67ac64211a124d49768fd7b9041ea9c168ca7f25ddeb", @"client_secret": @"bd402410a6099481f156f1e8b629b982208fdaabda3a1d4cf7d745ee17838d9c", @"email":_emailField.text, @"password":_passwordField.text};
+        
+        UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
+            [request setUrl:@"http://ryc-diss.herokuapp.com/oauth/token"];
+            [request setHeaders:headers];
+            [request setParameters:parameters];
+        }] asJson];
+        
+        NSString *accessToken = [response.body.object valueForKey:@"access_token"];
+        NSString *expiresIn = [response.body.object valueForKey:@"expires_in"];
+        
+        //Set the details into the keychain
+        [UICKeyChainStore setString:_emailField.text forKey:@"email"];
+        [UICKeyChainStore setString:_passwordField.text forKey:@"password"];
+        [UICKeyChainStore setString:accessToken forKey:@"access_token"];
+        //Create a timestamp of when the token will expire
+        float expiresOn = [expiresIn floatValue] + [[NSDate date]timeIntervalSince1970];
+        [UICKeyChainStore setString:[NSString stringWithFormat:@"%f", expiresOn] forKey:@"expires_on"];
+        
+        //Perform segue
+        [self performSegueWithIdentifier:@"registerSegue" sender:self];
+        
+    } else {
+        //Some error handling
+    }
     
     
     NSLog(@"Register Clicked");

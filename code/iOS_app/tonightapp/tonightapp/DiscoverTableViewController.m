@@ -15,6 +15,7 @@
 @interface DiscoverTableViewController (){
     NSArray *venues;
     NSArray *categories;
+    NSArray *cities;
     NSArray *content;
 }
 @property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegment;
@@ -35,20 +36,38 @@
 
 - (void)viewDidLoad
 {
-    
+    //Set the title (Somewhat redundant)
     self.title = @"Discover";
     
+    //Show the progress bar and load the data
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSDictionary* headers = @{@"accept": @"application/json"};
         NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
         
-        UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest* request) {
+        UNIHTTPJsonResponse* venue_response = [[UNIRest get:^(UNISimpleRequest* request) {
             [request setUrl:@"http://ryc-diss.heroku.com/api/v1/venues/"];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
-        venues = response.body.array;
+        venues = venue_response.body.array;;
+        
+        UNIHTTPJsonResponse* cat_response = [[UNIRest get:^(UNISimpleRequest* request) {
+            [request setUrl:@"http://ryc-diss.heroku.com/api/v1/categories/"];
+            [request setHeaders:headers];
+            [request setParameters:parameters];
+        }] asJson];
+        
+        UNIHTTPJsonResponse* cities_response = [[UNIRest get:^(UNISimpleRequest* request) {
+            [request setUrl:@"http://ryc-diss.heroku.com/api/v1/cities/"];
+            [request setHeaders:headers];
+            [request setParameters:parameters];
+        }] asJson];
+        
+        categories = cat_response.body.array;
+        cities = cities_response.body.array;
+        venues = venue_response.body.array;
+        
         content = venues;
         [self.tableView reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -79,8 +98,10 @@
     //Refresh the table view controller
     if([_filterSegment selectedSegmentIndex] == 0){
         content = venues;
-    } else {
+    } else if([_filterSegment selectedSegmentIndex] == 1){
         content = categories;
+    } else {
+        content = cities;
     }
     [self.tableView reloadData];
 }
