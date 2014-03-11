@@ -5,15 +5,15 @@ class User < ActiveRecord::Base
 	before_save :encrypt_password
 	after_save :clear_password
 
-	attr_accessor  :password_in
+	attr_accessor  :password
 
 	#EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :email, presence: true, :uniqueness => true
-	validates :password_in, presence: true
-	validates_length_of :password_in, :in => 6..20, :on => :create
+	validates :password, presence: true
+	validates_length_of :password, :in => 6..20, :on => :create
 
 	def name 
 		return "#{first_name} #{last_name}"
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 		user  = User.where(email: email);
 		if(user.count == 1 ) 
 			encrypted_password = BCrypt::Engine.hash_secret(password, user[0].salt)
-			if(user[0].password == encrypted_password)
+			if(user[0].enc_password == encrypted_password)
 				return true;
 			else 
 				return false;
@@ -34,13 +34,13 @@ class User < ActiveRecord::Base
 	end
 
 	def encrypt_password
-		if password_in.present?
+		if password.present?
 			self.salt = BCrypt::Engine.generate_salt
-			self.password= BCrypt::Engine.hash_secret(password_in, salt)
+			self.enc_password= BCrypt::Engine.hash_secret(password, salt)
 		end
 	end
 
 	def clear_password
-		password_in = nil
+		password = nil
 	end
 end

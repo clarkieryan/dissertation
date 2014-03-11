@@ -11,7 +11,7 @@ FactoryGirl.define do
 	factory :user do
 		first_name "Ryan"
 		last_name "Clarke"
-		password_in "P4ssw0rd";
+		password "P4ssw0rd";
 		email "clarkie.ryan@gmail.com"
 	end
 
