@@ -7,7 +7,10 @@
 //
 
 #import "RegisterViewController.h"
+#import <UNIRest.h>
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -45,6 +48,26 @@
 
 //TODO - Need to add in functions for register
 - (IBAction)registerButton:(id)sender {
+    
+    //Split up the namme to first/last
+    NSArray *values = [_nameField.text componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    
+//    NSDictionary *user = @{@"email" : _emailField.text, @"first_name" : values[0], @"last_name": values[1], @"password": _passwordField.text};
+    NSString *userParams =[NSString stringWithFormat:@"{\"email\": \"%@\", \"first_name\": \"%@\", \"last_name\": \"%@\",\"password\": \"%@\" }", _emailField.text, values[0], values[1], _passwordField.text];
+    
+    NSDictionary* headers = @{@"accept": @"application/json"};
+    NSDictionary* parameters = @{@"user": userParams};
+    
+    UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
+        [request setUrl:@"http://ryc-diss.herokuapp.com/api/v1/register"];
+        [request setHeaders:headers];
+        [request setParameters:parameters];
+    }] asJson];
+    
+    NSLog(@"%@", response.body);
+    
+    
+    
     NSLog(@"Register Clicked");
 }
 

@@ -8,14 +8,14 @@
 
 #import "AppDelegate.h"
 #import <UICKeyChainStore.h>
-
+#import <Crashlytics/Crashlytics.h>
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    [Crashlytics startWithAPIKey:@"435cf48aecbd9c923549ac0057b69e7405f900b5"];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
         // app already launched

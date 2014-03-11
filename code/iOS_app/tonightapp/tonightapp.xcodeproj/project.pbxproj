@@ -13,6 +13,7 @@
 		9405EDB818C799FF0031CA28 /* DiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */; };
 		9405EDBB18C7A4CF0031CA28 /* IndivEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */; };
 		9405EDBE18C7C6200031CA28 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBD18C7C6200031CA28 /* Event.m */; };
+		945D14EB18CF8E0B0069C416 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D14EA18CF8E0B0069C416 /* Crashlytics.framework */; };
 		945D591918C7321F0061B80F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591818C7321F0061B80F /* Foundation.framework */; };
 		945D591B18C7321F0061B80F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591A18C7321F0061B80F /* CoreGraphics.framework */; };
 		945D591D18C7321F0061B80F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591C18C7321F0061B80F /* UIKit.framework */; };
@@ -83,6 +84,7 @@
 		9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivEventViewController.m; sourceTree = "<group>"; };
 		9405EDBC18C7C6200031CA28 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		9405EDBD18C7C6200031CA28 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		945D14EA18CF8E0B0069C416 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		945D591518C7321E0061B80F /* tonightapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tonightapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945D591818C7321F0061B80F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		945D591A18C7321F0061B80F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,7 @@
 				945D591B18C7321F0061B80F /* CoreGraphics.framework in Frameworks */,
 				945D591D18C7321F0061B80F /* UIKit.framework in Frameworks */,
 				945D591918C7321F0061B80F /* Foundation.framework in Frameworks */,
+				945D14EB18CF8E0B0069C416 /* Crashlytics.framework in Frameworks */,
 				CED9FBDC45E5483CB90820D3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +187,7 @@
 		945D591718C7321E0061B80F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				945D14EA18CF8E0B0069C416 /* Crashlytics.framework */,
 				9405EDA818C76D5C0031CA28 /* Security.framework */,
 				945D591818C7321F0061B80F /* Foundation.framework */,
 				945D591A18C7321F0061B80F /* CoreGraphics.framework */,
@@ -347,6 +351,7 @@
 				945D591218C7321D0061B80F /* Frameworks */,
 				945D591318C7321D0061B80F /* Resources */,
 				B6FE34A2C34243C2B8DD3AF9 /* Copy Pods Resources */,
+				945D14E818CF8D4D0069C416 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -476,6 +481,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		945D14E818CF8D4D0069C416 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 435cf48aecbd9c923549ac0057b69e7405f900b5 d372c21acb5861ec618a5de4b50c4a992d1e21088810f75fef30a5e7ab1622c5";
 		};
 		B6FE34A2C34243C2B8DD3AF9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -648,6 +666,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = tonightapp/tonightapp.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tonightapp/tonightapp-Prefix.pch";
 				INFOPLIST_FILE = "tonightapp/tonightapp-Info.plist";
@@ -663,6 +685,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = tonightapp/tonightapp.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tonightapp/tonightapp-Prefix.pch";
 				INFOPLIST_FILE = "tonightapp/tonightapp-Info.plist";
