@@ -14,6 +14,7 @@
     @property (weak, nonatomic) IBOutlet UITextField *emailField;
     @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
     @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+    @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
     - (IBAction)loginButton:(id)sender;
 
 @end
@@ -40,6 +41,7 @@
     _titleLabel.textColor = UIColorFromRGB(0xFFFFFF);
     self.view.backgroundColor = UIColorFromRGB(0xe74c3c);
     _passwordField.delegate = self;
+     [_activityIndicator setHidden:TRUE];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -78,51 +80,67 @@
 }
 
 
-- (BOOL)loginUser:(NSString *)email withPassword:(NSString *)password
+- (void)loginUser:(NSString *)email withPassword:(NSString *)password
 {
-    //TODO - Enable loading thing
+    
+    
+    
     //Start a request
     NSDictionary* headers = @{@"accept": @"application/json"};
     NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": CLIENT_KEY, @"client_secret": CLIENT_KEY, @"email":email, @"password":password};
     
-    UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
-        [request setUrl:LOGIN_URL];
-        [request setHeaders:headers];
-        [request setParameters:parameters];
-    }] asJson];
     
+    
+    _loginErrorText.text = @"";
+    _emailField.enabled = FALSE;
+    _emailField.backgroundColor = UIColorFromRGB(0xd3d3d3);
+    _passwordField.enabled = FALSE;
+    _passwordField.backgroundColor = UIColorFromRGB(0xd3d3d3);
+    [_activityIndicator setHidden:false];
+    [_activityIndicator startAnimating];
     //Get the values from the response
-    NSString *accessToken = [response.body.object valueForKey:@"access_token"];
-    NSString *expiresIn = [response.body.object valueForKey:@"expires_in"];
+    __block UNIHTTPJsonResponse* response;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        response = [[UNIRest post:^(UNISimpleRequest* request) {
+            [request setUrl:LOGIN_URL];
+            [request setHeaders:headers];
+            [request setParameters:parameters];
+        }] asJson];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *accessToken = [response.body.object valueForKey:@"access_token"];
+            NSString *expiresIn = [response.body.object valueForKey:@"expires_in"];
+            if(accessToken == NULL){
+                //Set the error text as something
+                [_activityIndicator stopAnimating];
+                _loginErrorText.text = @"Incorrect email/password";
+                _emailField.enabled = TRUE;
+                _emailField.backgroundColor = [UIColor whiteColor];
+                _passwordField.enabled = TRUE;
+                _passwordField.backgroundColor = [UIColor whiteColor];
+                
+            } else {
+                //Set the details into the keychain
+                [UICKeyChainStore setString:email forKey:@"email"];
+                [UICKeyChainStore setString:password forKey:@"password"];
+                [UICKeyChainStore setString:accessToken forKey:@"access_token"];
+                //Create a timestamp of when the token will expire
+                float expiresOn = [expiresIn floatValue] + [[NSDate date]timeIntervalSince1970];
+                [UICKeyChainStore setString:[NSString stringWithFormat:@"%f", expiresOn] forKey:@"expires_on"];
+                [self performSegueWithIdentifier:@"loginSegue" sender:self];
+            }
+        });
+    });
     
-    if(accessToken == NULL){
-        //Set the error text as something
-        _loginErrorText.text = @"Incorrect email/password";
-        return NO;
-    } else {
-        //Set the details into the keychain
-        [UICKeyChainStore setString:email forKey:@"email"];
-        [UICKeyChainStore setString:password forKey:@"password"];
-        [UICKeyChainStore setString:accessToken forKey:@"access_token"];
-        //Create a timestamp of when the token will expire
-        float expiresOn = [expiresIn floatValue] + [[NSDate date]timeIntervalSince1970];
-        [UICKeyChainStore setString:[NSString stringWithFormat:@"%f", expiresOn] forKey:@"expires_on"];
-        return YES;
-    }
+
 }
 - (IBAction)loginButton:(id)sender {
-    if([self loginUser:_emailField.text withPassword:_passwordField.text]) {
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
-    }
+    [self loginUser:_emailField.text withPassword:_passwordField.text];
 }
 
 //Hook up return key
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if([self loginUser:_emailField.text withPassword:_passwordField.text]) {
-        [self performSegueWithIdentifier:@"loginSegue" sender:self];
-    }
-    
+    [self loginUser:_emailField.text withPassword:_passwordField.text];
     return YES;
 }
 

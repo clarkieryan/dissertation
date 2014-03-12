@@ -35,6 +35,7 @@
 		947A892B18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 947A892A18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg */; };
 		947AFDEC18C8894D006EB9E9 /* Lovelo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 947AFDEB18C8894D006EB9E9 /* Lovelo-Black.otf */; };
 		947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */; };
+		94A7DF8318D07A7F0074B831 /* 2014-03-06 16.45.44.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */; };
 		94B9823418C8A56000D32125 /* IndivVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9823318C8A56000D32125 /* IndivVenueViewController.m */; };
 		94B9823718C8AED300D32125 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B9823618C8AED300D32125 /* Pacifico.ttf */; };
 		94B9823B18C8D04600D32125 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9823A18C8D04600D32125 /* RegisterViewController.m */; };
@@ -112,6 +113,7 @@
 		947CF87718CA97BF0036F2A4 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
 		947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		94A7DF8118D060A90074B831 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2014-03-06 16.45.44.png"; sourceTree = "<group>"; };
 		94B9823218C8A56000D32125 /* IndivVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndivVenueViewController.h; sourceTree = "<group>"; };
 		94B9823318C8A56000D32125 /* IndivVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivVenueViewController.m; sourceTree = "<group>"; };
 		94B9823618C8AED300D32125 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Resources/Pacifico.ttf; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		947A892118C89AAA00CA40C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */,
 				94B9823C18C9232400D32125 /* feed@2x.png */,
 				947A892A18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg */,
 				947A892218C89ACD00CA40C3 /* Signpost@2x.png */,
@@ -442,6 +445,7 @@
 				945D593718C732220061B80F /* Images.xcassets in Resources */,
 				94B9827118C92E0600D32125 /* AppIcon40x40.png in Resources */,
 				945D592C18C732200061B80F /* Main_iPhone.storyboard in Resources */,
+				94A7DF8318D07A7F0074B831 /* 2014-03-06 16.45.44.png in Resources */,
 				94B9827D18C92E0600D32125 /* iTunesArtwork.png in Resources */,
 				947A892718C89ACD00CA40C3 /* Contact@2x.png in Resources */,
 				94B9827218C92E0600D32125 /* AppIcon40x40@2x.png in Resources */,

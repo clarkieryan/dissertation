@@ -333,7 +333,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-iA-Bno">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-iA-Bno">
                                 <rect key="frame" x="42" y="256" width="237" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -382,10 +382,15 @@
                                     <action selector="loginButton:" destination="Z9c-cg-SGY" eventType="touchUpInside" id="mU8-YE-UC2"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rI8-Sl-wis">
+                                <rect key="frame" x="150" y="227" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="rI8-Sl-wis" id="Ydo-hs-emy"/>
                         <outlet property="emailField" destination="F4I-iA-Bno" id="ELh-Zq-3gD"/>
                         <outlet property="loginErrorText" destination="JsV-c9-jek" id="vun-kc-DpH"/>
                         <outlet property="passwordField" destination="68Z-dg-Vhh" id="89f-Ud-2ZQ"/>
@@ -567,6 +572,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Z4v-07-iov"/>
-        <segue reference="0vs-he-LbE"/>
+        <segue reference="5d1-H6-ocJ"/>
     </inferredMetricsTieBreakers>
 </document>
