@@ -20,7 +20,7 @@ namespace :scheduler do
 			@venues = @api_instance.getVenues(eval(job.filters));
 			@venues.each_with_index do | venue, index |
 			 	#Progress indicator if in development mode
-				if Rails.env.production?
+				if Rails.env.development?
 				 	system "clear" or system "cls"
 				 	puts "#{index}/#{@venues.count}"
 				 	puts venue['name']

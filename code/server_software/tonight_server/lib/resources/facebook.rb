@@ -44,7 +44,7 @@ class Facebook < Resource
 	end
 
 	def getEvent(eventID)
-		@url = "#{@base_uri}/#{eventID}/?access_token=#{@access_token}";
+		@url = "#{@base_uri}/#{eventID}/?access_token=#{@access_token}&fields=cover,name,end_time,picture,description,timezone,id,owner,venue,location";
 		return JSON.parse(self.getResource(@url));
 	end
 
@@ -77,7 +77,7 @@ class Facebook < Resource
 	end
 
 	def buildEvent(eventDetails)
-		return {:ref_id => eventDetails['id'], :name => eventDetails['name'], :desc => eventDetails['description'], :start_time => eventDetails['start_time'], :end_time => eventDetails['end_time'], :timezone => eventDetails['timezone'], :updated_at => eventDetails['updated_at'] }
+		return {:ref_id => eventDetails['id'], :name => eventDetails['name'], :desc => eventDetails['description'], :start_time => eventDetails['start_time'], :end_time => eventDetails['end_time'], :timezone => eventDetails['timezone'], :updated_at => eventDetails['updated_at'] , :cover_photo => eventDetails['cover']['source']}
 	end
 
 end

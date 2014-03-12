@@ -50,7 +50,7 @@ describe Facebook do
  		@facebook.getEvent('204504813084059').should eq(eventJSON);
 	end
 
-	it "gets an event from it's ID" do
+	it "gets an venue from it's ID" do
 		#Read in the example JSON reply
 		 venue = File.read(File.dirname(__FILE__) + '/fixtures/facebook/venue.json');
  		#Convert to String to JSON
