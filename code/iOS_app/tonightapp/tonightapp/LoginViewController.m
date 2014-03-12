@@ -7,10 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import <UICKeyChainStore/UICKeyChainStore.h>
-#import <UNIRest.h>
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface LoginViewController ()
     @property (weak, nonatomic) IBOutlet UILabel *loginErrorText;
@@ -48,19 +45,23 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     _loginErrorText.text = @"";
+    NSString *email = [UICKeyChainStore stringForKey:@"email"];
+    NSString *password = [UICKeyChainStore stringForKey:@"password"];
+    NSString *access_token = [UICKeyChainStore stringForKey:@"access_token"];
+    float expiresOn = [[UICKeyChainStore stringForKey:@"expires_on"] floatValue];
+    float currentTime =[[NSDate date]timeIntervalSince1970];
+    
+    NSLog(@"%f %f", expiresOn, currentTime);
+    NSLog(@"%@", access_token);
+    NSLog(@"%@ %@", email, password);
     
     //Login logic
-    float expiresOn = [[UICKeyChainStore stringForKey:@"expires_on"] floatValue];
-    NSLog(@"%f %f", expiresOn, [[NSDate date]timeIntervalSince1970]);
-    NSLog(@"%@", [UICKeyChainStore stringForKey:@"access_token"]);
-    NSLog(@"%@ %@", [UICKeyChainStore stringForKey:@"email"], [UICKeyChainStore stringForKey:@"password"]);
-    
     // Check if the current access_token is valid or not
-    if(expiresOn > [[NSDate date]timeIntervalSince1970] && ![[UICKeyChainStore stringForKey:@"email"] isEqual:@""] && ![[UICKeyChainStore stringForKey:@"password"] isEqual:@""] && ![[UICKeyChainStore stringForKey:@"access_token"] isEqual:@""]) {
+    if(expiresOn > currentTime && ![email length] == 0 && ![password length] == 0 && ![access_token length] == 0) {
         [self performSegueWithIdentifier: @"loginSegue" sender: self];
     //Else check if there is a valid username/password if so log them in with these. 
-    } else if( ![[UICKeyChainStore stringForKey:@"email"] isEqual:@""] && ![[UICKeyChainStore stringForKey:@"password"]  isEqual: @""]) {
-        [self loginUser:[UICKeyChainStore stringForKey:@"email"] withPassword:[UICKeyChainStore stringForKey:@"password"]];
+    } else if( ![email length] == 0 && ![password length] == 0) {
+        [self loginUser:email withPassword:password];
     }
 }
 
@@ -79,16 +80,18 @@
 
 - (BOOL)loginUser:(NSString *)email withPassword:(NSString *)password
 {
+    //TODO - Enable loading thing
     //Start a request
     NSDictionary* headers = @{@"accept": @"application/json"};
-    NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": @"52ed42059a524e66d64a67ac64211a124d49768fd7b9041ea9c168ca7f25ddeb", @"client_secret": @"bd402410a6099481f156f1e8b629b982208fdaabda3a1d4cf7d745ee17838d9c", @"email":email, @"password":password};
+    NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": CLIENT_KEY, @"client_secret": CLIENT_KEY, @"email":email, @"password":password};
     
     UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
-        [request setUrl:@"http://ryc-diss.herokuapp.com/oauth/token"];
+        [request setUrl:LOGIN_URL];
         [request setHeaders:headers];
         [request setParameters:parameters];
     }] asJson];
     
+    //Get the values from the response
     NSString *accessToken = [response.body.object valueForKey:@"access_token"];
     NSString *expiresIn = [response.body.object valueForKey:@"expires_in"];
     

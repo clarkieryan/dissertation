@@ -7,10 +7,6 @@
 //
 
 #import "RegisterViewController.h"
-#import <UNIRest.h>
-#import <UICKeyChainStore.h>
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -59,7 +55,7 @@
     NSDictionary* parameters = @{@"user[first_name]": names[0], @"user[last_name]": names[1], @"user[email]": _emailField.text, @"user[password]": _passwordField.text};
     
     UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
-        [request setUrl:@"http://ryc-diss.herokuapp.com/api/v1/register"];
+        [request setUrl:REGISTER_URL];
         [request setHeaders:headers];
         [request setParameters:parameters];
     }] asJson];
@@ -70,10 +66,10 @@
     //If the response is a created user use username/password and get an access token -> move to the main screen
     if([[response.body.object objectForKey:@"message"] isEqualToString:@"User created"]) {
         NSDictionary* headers = @{@"accept": @"application/json"};
-        NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": @"52ed42059a524e66d64a67ac64211a124d49768fd7b9041ea9c168ca7f25ddeb", @"client_secret": @"bd402410a6099481f156f1e8b629b982208fdaabda3a1d4cf7d745ee17838d9c", @"email":_emailField.text, @"password":_passwordField.text};
+        NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": CLIENT_KEY, @"client_secret": CLIENT_SECRET, @"email":_emailField.text, @"password":_passwordField.text};
         
         UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
-            [request setUrl:@"http://ryc-diss.herokuapp.com/oauth/token"];
+            [request setUrl:LOGIN_URL];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
@@ -93,11 +89,9 @@
         [self performSegueWithIdentifier:@"registerSegue" sender:self];
         
     } else {
-        //Some error handling
+        //Show error message IE (Email already used)
     }
     
-    
-    NSLog(@"Register Clicked");
 }
 
 //Hide the keyboard

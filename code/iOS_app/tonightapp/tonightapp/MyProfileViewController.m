@@ -43,7 +43,7 @@
         NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
         
         UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest* request) {
-            [request setUrl:@"http://ryc-diss.heroku.com/api/v1/user/"];
+            [request setUrl:USER_URL];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
@@ -62,7 +62,7 @@
     NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
     
     UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest* request) {
-        [request setUrl:@"http://ryc-diss.heroku.com/api/v1/user/"];
+        [request setUrl:USER_URL];
         [request setHeaders:headers];
         [request setParameters:parameters];
     }] asJson];

@@ -111,6 +111,7 @@
 		947AFDEB18C8894D006EB9E9 /* Lovelo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lovelo-Black.otf"; path = "Resources/Lovelo-Black.otf"; sourceTree = "<group>"; };
 		947CF87718CA97BF0036F2A4 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
 		947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
+		94A7DF8118D060A90074B831 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		94B9823218C8A56000D32125 /* IndivVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndivVenueViewController.h; sourceTree = "<group>"; };
 		94B9823318C8A56000D32125 /* IndivVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivVenueViewController.m; sourceTree = "<group>"; };
 		94B9823618C8AED300D32125 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Resources/Pacifico.ttf; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 				945D592A18C732200061B80F /* Main_iPhone.storyboard */,
 				945D592D18C732200061B80F /* Main_iPad.storyboard */,
 				945D593618C732220061B80F /* Images.xcassets */,
+				94A7DF8118D060A90074B831 /* constants.h */,
 				94B9823518C8A57800D32125 /* Main Screen Controllers */,
 				945D591F18C732200061B80F /* Supporting Files */,
 				94B9823818C8D02400D32125 /* Login/Register Controllers */,
@@ -296,11 +298,11 @@
 		94B9823518C8A57800D32125 /* Main Screen Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9405EDB118C799A10031CA28 /* MyProfileViewController.m */,
 				947CF87618CA97700036F2A4 /* My Feed Controllers */,
 				9405EDB618C799FF0031CA28 /* DiscoverTableViewController.h */,
 				9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */,
 				9405EDB018C799A10031CA28 /* MyProfileViewController.h */,
+				9405EDB118C799A10031CA28 /* MyProfileViewController.m */,
 			);
 			name = "Main Screen Controllers";
 			sourceTree = "<group>";

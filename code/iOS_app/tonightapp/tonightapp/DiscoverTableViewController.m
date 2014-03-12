@@ -7,8 +7,6 @@
 //
 
 #import "DiscoverTableViewController.h"
-#import <UICKeyChainStore.h>
-#import <UNIRest.h>
 #import "IndivVenueViewController.h"
 #import "MBProgressHUD.h"
 
@@ -46,20 +44,20 @@
         NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
         
         UNIHTTPJsonResponse* venue_response = [[UNIRest get:^(UNISimpleRequest* request) {
-            [request setUrl:@"http://ryc-diss.heroku.com/api/v1/venues/"];
+            [request setUrl:VENUES_URL];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
         venues = venue_response.body.array;;
         
         UNIHTTPJsonResponse* cat_response = [[UNIRest get:^(UNISimpleRequest* request) {
-            [request setUrl:@"http://ryc-diss.heroku.com/api/v1/categories/"];
+            [request setUrl:CATEGORIES_URL];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
         
         UNIHTTPJsonResponse* cities_response = [[UNIRest get:^(UNISimpleRequest* request) {
-            [request setUrl:@"http://ryc-diss.heroku.com/api/v1/cities/"];
+            [request setUrl:CITIES_URL];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
@@ -76,10 +74,6 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
-    
-    //Get the venues
-    categories = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"test", @"name", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"test", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"test", @"name", nil], nil];
-    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -128,8 +122,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VenueCell"];
     
     NSDictionary *row = [content objectAtIndex:indexPath.row];
-    cell.textLabel.text = [row objectForKey:@"name"];
-    
+    if([_filterSegment selectedSegmentIndex] == 1){
+        cell.textLabel.text = [row objectForKey:@"cat_name"];
+    } else {
+        cell.textLabel.text = [row objectForKey:@"name"];
+    }
+
     return cell;
 }
 
