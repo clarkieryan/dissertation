@@ -28,9 +28,9 @@
 								<td><%= event.ref_id %></td>
 								<td><%= event.name %></td>
 								<td><%= event.desc %></td>
-								<td><%= event.start_time.strftime "%a %b %y  - %k:%M %P"   %></td>
+								<td><%= event.start_time.strftime "%a %b %y  - %k:%M %P"  if event.start_time? %></td>
 								<td><%= event.end_time.strftime "%a %b %y  - %k:%M %P"   if event.end_time? %></td>
-								<td><%= event.venue.id %></td>
+								<td><%= event.venue.id if event.venue.id? %></td>
 							</tr>
 						<% end %>
 					</tbody>
