@@ -1,6 +1,6 @@
 class API::V1::VenuesController < ApplicationController
 
-	#doorkeeper_for :all
+	doorkeeper_for :all
 	
 	def index
 		@venues = Venue.all
@@ -13,8 +13,8 @@ class API::V1::VenuesController < ApplicationController
 	end
 
 	def venuesByCity
-		city = City.joins(:venues).find(params[:city_id]);
-		render json: city.venues;
+		city = City.find(params[:city_id]).venues.all;
+		render json: city;
 	end
 
 end

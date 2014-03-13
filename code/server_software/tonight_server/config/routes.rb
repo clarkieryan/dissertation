@@ -43,6 +43,7 @@ namespace :api do
 
     #Lists all of the categories
     get 'categories' =>'categories#index'
+    get 'categories/:id' => 'categories#show'
     get 'categories/:id/events' => 'events#eventsByCategory'
 
     #List events by city

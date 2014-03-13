@@ -1,10 +1,15 @@
 class API::V1::CategoriesController  < ApplicationController
 
-	#doorkeeper_for :all	
+	doorkeeper_for :all	
 
 	def index 
 		cats = Category.find(:all, :order => "name");
 		render json: cats;
+	end
+
+	def show 
+		cat = Category.find(params[:id])
+		render json: cat;
 	end
 
 	#Get categories by city
