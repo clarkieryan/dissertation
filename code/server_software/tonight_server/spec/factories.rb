@@ -20,7 +20,7 @@ FactoryGirl.define do
 		name "The Rainow Venues"
 		desc "Pub in the heart of digbeth"
 		street "Rainbow Road"
-		city "Birmingham"
+		city_id 1
 		county "West Midlands"
 		country "United Kingdom"
 		post_code "B1 45Y"
@@ -39,6 +39,10 @@ FactoryGirl.define do
 		timezone "Europe/London"
 		venue "9479454944748"
 		updated_at "2014-05-05 05:00:00 UTC"
+	end
+
+	factory :city do
+		name "Birmingham"
 	end
 
 end

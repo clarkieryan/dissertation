@@ -18,6 +18,17 @@ describe API::V1::UserController do
 
 	end
 
-	des
+	describe '.catsByCity' do
+
+		it 'should list the categories by city' do
+			venue = FactoryGirl.create(:venue)
+			event = FactoryGirl.build_attributes(:event)
+			get :catsByCity 
+			event  = venue.create(event);
+			puts venue
+
+		end
+
+	end
 
 end

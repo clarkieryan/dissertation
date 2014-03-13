@@ -44,11 +44,15 @@ namespace :api do
     #Lists all of the categories
     get 'categories' =>'categories#index'
     get 'categories/:id/events' => 'events#eventsByCategory'
-    
+
     #List events by city
     get '/cities' => 'cities#index'
     get '/cities/:id' => 'cities#show'
     get '/cities/:id/events' => 'events#eventsByCity'
+
+    #2 Main screns 
+    get '/cities/:city_id/venues' => 'venues#venuesByCity'
+    get '/cities/:city_id/categories' => 'categories#catsByCity'
 
     # TODO -> Implement
     #Add in the ability to follow events
