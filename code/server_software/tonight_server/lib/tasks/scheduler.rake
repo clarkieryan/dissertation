@@ -28,13 +28,19 @@ namespace :scheduler do
 				#Create the venue object to be inputted
 				venueDetails = @api_instance.buildVenue(@api_instance.getVenue(venue['id']));
 				#Add the venue to the DB. 
+				city = City.where({:name => venueDetails[:city]}).first_or_create
+				venueDetails[:city_id] = city
+				#Remove temp
+				venueDetails.delete(:city);
 				@newVenue = Venue.where(venueDetails).first_or_create
+
 				#Get all the events at the current venue
 			 	@events = @api_instance.getEvents(venue['id']);
 			 	#Loop through and get event details
 			 	@events.each do | event |
 			 		#Get the event details and do stuff with it.
 			 		eventDetails = @api_instance.buildEvent(@api_instance.getEvent(event['id']));
+			 		
 			 		@newEvent = @newVenue.events
 			 		@newEvent.where(eventDetails).first_or_create
 			 	end

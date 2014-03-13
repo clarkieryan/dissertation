@@ -1,6 +1,6 @@
 class API::V1::EventsController < ApplicationController
 
-	doorkeeper_for :all
+	# doorkeeper_for :all
 	
 	def index
 		events  = Event.all
@@ -20,8 +20,9 @@ class API::V1::EventsController < ApplicationController
 
 	def eventsByCity
 		city = City.find(params[:id]);
-		events = city.events.all
-		render json: city;
+		venues = city.venues.all
+		events = Event.where(:venue_id => venues);
+		render json: events;
 	end
 
 	def eventsByCategory

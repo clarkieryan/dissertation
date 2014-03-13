@@ -44,8 +44,10 @@ namespace :api do
     #Lists all of the categories
     get 'categories' =>'categories#index'
     get 'categories/:id/events' => 'events#eventsByCategory'
+    
     #List events by city
     get '/cities' => 'cities#index'
+    get '/cities/:id' => 'cities#show'
     get '/cities/:id/events' => 'events#eventsByCity'
 
     # TODO -> Implement
