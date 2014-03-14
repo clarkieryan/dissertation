@@ -16,7 +16,8 @@
 
 @interface MyFeedTableViewController (){
      NSArray *tableData;
-     NSArray *_events;
+     NSMutableArray *events;
+    
 }
 @end
 
@@ -46,20 +47,16 @@
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
-        _events = response.body.array;
+        
+        for (id event in response.body.array) {
+            [events addObject:[[Event alloc] initWithEvent:event]];
+        }
         [self.tableView reloadData];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +76,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_events count];
+    return [events count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,16 +87,12 @@
                               dequeueReusableCellWithIdentifier:CellIdentifier
                               forIndexPath:indexPath];
     
-    NSDictionary *row = [_events objectAtIndex:indexPath.row];
-    NSLog(@"%@", [row objectForKey:@"name"]);
-    if([row objectForKey:@"name"] != [NSNull null] &&  [[row objectForKey:@"venue"] objectForKey:@"name"] != [NSNull null]){
-        cell.eventNameLabel.text = [row objectForKey:@"name"];
-        cell.venueLabel.text = [[row objectForKey:@"venue"] objectForKey:@"name"];
-    } else {
-        cell.eventNameLabel.text = @"";
-        cell.venueLabel.text = @"";
-    }
-   
+    Event *row = [events objectAtIndex:indexPath.row];
+    
+    cell.eventNameLabel.text = row.name;
+    cell.eventDateLabel.text = row.start_time;
+    cell.venueLabel.text = [row.venue objectForKey:@"venue"];
+    
     return cell;
 }
 
@@ -147,9 +140,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     IndivEventViewController *detailViewController = (IndivEventViewController *)segue.destinationViewController;
-    detailViewController.event = [_events objectAtIndex:indexPath.row];
-    detailViewController.eventName = [[_events objectAtIndex:indexPath.row] objectForKey:@"name"];
-    detailViewController.eventDesc = [[_events objectAtIndex:indexPath.row] objectForKey:@"desc"];
+    detailViewController.event = [events objectAtIndex:indexPath.row];
 }
 
 

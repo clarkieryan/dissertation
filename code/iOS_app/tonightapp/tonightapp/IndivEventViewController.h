@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface IndivEventViewController : UIViewController
-@property (strong, nonatomic) NSString *eventName;
-@property (strong, nonatomic) NSString *eventDesc;
-@property (strong, nonatomic)NSDictionary *event;
+@property (strong, nonatomic)Event *event;
 @end

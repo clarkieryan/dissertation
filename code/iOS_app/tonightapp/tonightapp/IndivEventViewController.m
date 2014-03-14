@@ -7,6 +7,7 @@
 //
 
 #import "IndivEventViewController.h"
+#import "Event.h"
 
 @interface IndivEventViewController ()
     @property (weak, nonatomic) IBOutlet UILabel *nameField;
@@ -26,7 +27,7 @@
     return self;
 }
 - (IBAction)vistEventButton:(id)sender {
-    NSString *urlString  = [NSString stringWithFormat:@"%@%@", @"http://facebook.com/", [_event objectForKey:@"ref_id"]];
+    NSString *urlString  = [NSString stringWithFormat:@"%@%@", @"http://facebook.com/", _event.ref_id];
     NSLog(@"%@", urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     [[UIApplication sharedApplication] openURL:url];
@@ -35,9 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	_nameField.text = [_event objectForKey:@"name"];
-    _descField.text = [_event objectForKey:@"desc"];
-    _cityLabel.text = [[_event objectForKey:@"venue"] objectForKey:@"city"];
+	_nameField.text = _event.name;
+    _descField.text = _event.desc;
+    _cityLabel.text = [_event.venue objectForKey:@"city"];
+    
     _descField.editable = false;
     _descField.dataDetectorTypes = UIDataDetectorTypeLink;
 
