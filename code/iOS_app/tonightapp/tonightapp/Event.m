@@ -13,6 +13,8 @@
 
 - (id)initWithEvent:(NSMutableArray *) event {
     
+    //Need to implement some data validation
+    
     _name = [event valueForKey:@"name"];
     _desc = [event valueForKey:@"desc"];
     _ref_id = [event valueForKey:@"ref_id"];

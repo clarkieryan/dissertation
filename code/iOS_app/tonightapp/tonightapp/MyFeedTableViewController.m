@@ -37,6 +37,8 @@
     [super viewDidLoad];
     self.title = @"My Feed";
     
+    events = [NSMutableArray array];
+
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSDictionary* headers = @{@"accept": @"application/json"};
@@ -51,10 +53,11 @@
         for (id event in response.body.array) {
             [events addObject:[[Event alloc] initWithEvent:event]];
         }
-        [self.tableView reloadData];
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.tableView reloadData];
         });
     });
 }
@@ -90,7 +93,8 @@
     Event *row = [events objectAtIndex:indexPath.row];
     
     cell.eventNameLabel.text = row.name;
-    cell.eventDateLabel.text = row.start_time;
+    cell.coverImageView.image = row.cover_image;
+    //cell.eventDateLabel.text = row.start_time;
     cell.venueLabel.text = [row.venue objectForKey:@"venue"];
     
     return cell;
