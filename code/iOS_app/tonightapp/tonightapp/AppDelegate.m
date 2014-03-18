@@ -35,6 +35,7 @@
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     //Set the colour
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xe74c3c)];
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     //Set the colour of the fonts of the back button
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     //Set the colour of the status bar

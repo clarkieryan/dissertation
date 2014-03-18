@@ -24,8 +24,16 @@
 #define CITIES_URL          API_URL("/cities")
 #define CATEGORIES_URL      API_URL("/categories")
 
+#define CATEGORIES_EVENTS_URL(venue_id, cat_id) [NSString stringWithFormat:@"%@%@%@%@%@%@",API_URL(),@"/venues/",venue_id ,@"/categories/", cat_id, @"/events"]
+
+//Define algmation of URL's
+#define CATEGORY_BY_CITY_URL(id)[NSString stringWithFormat:@"%@%@%@%@",API_URL(),@"/cities/",id ,@"/categories"]
+#define VENUE_BY_CITY(id) [NSString stringWithFormat:@"%@%@%@%@",API_URL(),@"/cities/",id ,@"/venues"]
+
+
 //Venue URL's
 #define VENUES_URL          API_URL("/venues")
+#define VENUE_EVENTS_URL(id) [NSString stringWithFormat:@"%@%@%@%@",API_URL(),@"/venues/",id ,@"/events"]
 
 //Event URL's
 #define EVENTS_URL          API_URL("/events")

@@ -36,6 +36,7 @@
 		947AFDEC18C8894D006EB9E9 /* Lovelo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 947AFDEB18C8894D006EB9E9 /* Lovelo-Black.otf */; };
 		947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */; };
 		94A7DF8318D07A7F0074B831 /* 2014-03-06 16.45.44.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */; };
+		94A8C13F18D7323800472121 /* CatVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8C13E18D7323800472121 /* CatVenueViewController.m */; };
 		94B9823418C8A56000D32125 /* IndivVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9823318C8A56000D32125 /* IndivVenueViewController.m */; };
 		94B9823718C8AED300D32125 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B9823618C8AED300D32125 /* Pacifico.ttf */; };
 		94B9823B18C8D04600D32125 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9823A18C8D04600D32125 /* RegisterViewController.m */; };
@@ -114,6 +115,8 @@
 		947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		94A7DF8118D060A90074B831 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2014-03-06 16.45.44.png"; sourceTree = "<group>"; };
+		94A8C13D18D7323800472121 /* CatVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatVenueViewController.h; sourceTree = "<group>"; };
+		94A8C13E18D7323800472121 /* CatVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatVenueViewController.m; sourceTree = "<group>"; };
 		94B9823218C8A56000D32125 /* IndivVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndivVenueViewController.h; sourceTree = "<group>"; };
 		94B9823318C8A56000D32125 /* IndivVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivVenueViewController.m; sourceTree = "<group>"; };
 		94B9823618C8AED300D32125 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Resources/Pacifico.ttf; sourceTree = "<group>"; };
@@ -287,6 +290,26 @@
 			name = "My Feed Controllers";
 			sourceTree = "<group>";
 		};
+		9490B3D718D376F200071865 /* Discover Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9405EDB618C799FF0031CA28 /* DiscoverTableViewController.h */,
+				9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */,
+				94A8C13D18D7323800472121 /* CatVenueViewController.h */,
+				94A8C13E18D7323800472121 /* CatVenueViewController.m */,
+			);
+			name = "Discover Controllers";
+			sourceTree = "<group>";
+		};
+		9490B3D818D3770300071865 /* My Profile Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9405EDB018C799A10031CA28 /* MyProfileViewController.h */,
+				9405EDB118C799A10031CA28 /* MyProfileViewController.m */,
+			);
+			name = "My Profile Controllers";
+			sourceTree = "<group>";
+		};
 		94B9823118C8A53F00D32125 /* Indiv Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,11 +324,9 @@
 		94B9823518C8A57800D32125 /* Main Screen Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9490B3D818D3770300071865 /* My Profile Controllers */,
+				9490B3D718D376F200071865 /* Discover Controllers */,
 				947CF87618CA97700036F2A4 /* My Feed Controllers */,
-				9405EDB618C799FF0031CA28 /* DiscoverTableViewController.h */,
-				9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */,
-				9405EDB018C799A10031CA28 /* MyProfileViewController.h */,
-				9405EDB118C799A10031CA28 /* MyProfileViewController.m */,
 			);
 			name = "Main Screen Controllers";
 			sourceTree = "<group>";
@@ -527,6 +548,7 @@
 				9405EDB818C799FF0031CA28 /* DiscoverTableViewController.m in Sources */,
 				945D592918C732200061B80F /* AppDelegate.m in Sources */,
 				94B9823418C8A56000D32125 /* IndivVenueViewController.m in Sources */,
+				94A8C13F18D7323800472121 /* CatVenueViewController.m in Sources */,
 				945D592518C732200061B80F /* main.m in Sources */,
 				947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */,
 				94B9823B18C8D04600D32125 /* RegisterViewController.m in Sources */,
