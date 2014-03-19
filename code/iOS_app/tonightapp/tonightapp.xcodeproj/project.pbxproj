@@ -13,6 +13,8 @@
 		9405EDB818C799FF0031CA28 /* DiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */; };
 		9405EDBB18C7A4CF0031CA28 /* IndivEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */; };
 		9405EDBE18C7C6200031CA28 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBD18C7C6200031CA28 /* Event.m */; };
+		9441A2BB18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9441A2BA18D9B9EE0023B124 /* EventFeedTableViewCell.m */; };
+		9441A2BC18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9441A2BA18D9B9EE0023B124 /* EventFeedTableViewCell.m */; };
 		945D14EB18CF8E0B0069C416 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D14EA18CF8E0B0069C416 /* Crashlytics.framework */; };
 		945D591918C7321F0061B80F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591818C7321F0061B80F /* Foundation.framework */; };
 		945D591B18C7321F0061B80F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945D591A18C7321F0061B80F /* CoreGraphics.framework */; };
@@ -37,6 +39,8 @@
 		947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */; };
 		94A7DF8318D07A7F0074B831 /* 2014-03-06 16.45.44.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */; };
 		94A8C13F18D7323800472121 /* CatVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8C13E18D7323800472121 /* CatVenueViewController.m */; };
+		94A8C14218D8C99100472121 /* EventFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8C14118D8C99100472121 /* EventFeedTableViewController.m */; };
+		94A8C14318D8C99100472121 /* EventFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8C14118D8C99100472121 /* EventFeedTableViewController.m */; };
 		94B9823418C8A56000D32125 /* IndivVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9823318C8A56000D32125 /* IndivVenueViewController.m */; };
 		94B9823718C8AED300D32125 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94B9823618C8AED300D32125 /* Pacifico.ttf */; };
 		94B9823B18C8D04600D32125 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9823A18C8D04600D32125 /* RegisterViewController.m */; };
@@ -86,6 +90,8 @@
 		9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivEventViewController.m; sourceTree = "<group>"; };
 		9405EDBC18C7C6200031CA28 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		9405EDBD18C7C6200031CA28 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		9441A2B918D9B9EE0023B124 /* EventFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventFeedTableViewCell.h; sourceTree = "<group>"; };
+		9441A2BA18D9B9EE0023B124 /* EventFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFeedTableViewCell.m; sourceTree = "<group>"; };
 		945D14EA18CF8E0B0069C416 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		945D591518C7321E0061B80F /* tonightapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tonightapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945D591818C7321F0061B80F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,6 +123,8 @@
 		94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2014-03-06 16.45.44.png"; sourceTree = "<group>"; };
 		94A8C13D18D7323800472121 /* CatVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatVenueViewController.h; sourceTree = "<group>"; };
 		94A8C13E18D7323800472121 /* CatVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatVenueViewController.m; sourceTree = "<group>"; };
+		94A8C14018D8C99100472121 /* EventFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventFeedTableViewController.h; sourceTree = "<group>"; };
+		94A8C14118D8C99100472121 /* EventFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventFeedTableViewController.m; sourceTree = "<group>"; };
 		94B9823218C8A56000D32125 /* IndivVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndivVenueViewController.h; sourceTree = "<group>"; };
 		94B9823318C8A56000D32125 /* IndivVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivVenueViewController.m; sourceTree = "<group>"; };
 		94B9823618C8AED300D32125 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Pacifico.ttf; path = Resources/Pacifico.ttf; sourceTree = "<group>"; };
@@ -170,6 +178,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9441A2B818D9B9D10023B124 /* Event Feed Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				94A8C14018D8C99100472121 /* EventFeedTableViewController.h */,
+				94A8C14118D8C99100472121 /* EventFeedTableViewController.m */,
+				9441A2B918D9B9EE0023B124 /* EventFeedTableViewCell.h */,
+				9441A2BA18D9B9EE0023B124 /* EventFeedTableViewCell.m */,
+			);
+			name = "Event Feed Controllers";
+			sourceTree = "<group>";
+		};
 		945D590C18C7321D0061B80F = {
 			isa = PBXGroup;
 			children = (
@@ -282,10 +301,10 @@
 		947CF87618CA97700036F2A4 /* My Feed Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */,
+				947CF87718CA97BF0036F2A4 /* EventTableViewCell.h */,
 				9405EDB318C799E30031CA28 /* MyFeedTableViewController.h */,
 				9405EDB418C799E30031CA28 /* MyFeedTableViewController.m */,
-				947CF87718CA97BF0036F2A4 /* EventTableViewCell.h */,
-				947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */,
 			);
 			name = "My Feed Controllers";
 			sourceTree = "<group>";
@@ -324,6 +343,7 @@
 		94B9823518C8A57800D32125 /* Main Screen Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9441A2B818D9B9D10023B124 /* Event Feed Controllers */,
 				9490B3D818D3770300071865 /* My Profile Controllers */,
 				9490B3D718D376F200071865 /* Discover Controllers */,
 				947CF87618CA97700036F2A4 /* My Feed Controllers */,
@@ -550,11 +570,13 @@
 				94B9823418C8A56000D32125 /* IndivVenueViewController.m in Sources */,
 				94A8C13F18D7323800472121 /* CatVenueViewController.m in Sources */,
 				945D592518C732200061B80F /* main.m in Sources */,
+				94A8C14218D8C99100472121 /* EventFeedTableViewController.m in Sources */,
 				947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */,
 				94B9823B18C8D04600D32125 /* RegisterViewController.m in Sources */,
 				9405EDBE18C7C6200031CA28 /* Event.m in Sources */,
 				9405EDB518C799E30031CA28 /* MyFeedTableViewController.m in Sources */,
 				9405EDB218C799A10031CA28 /* MyProfileViewController.m in Sources */,
+				9441A2BB18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */,
 				94F5024618C7474D00B7B344 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,7 +585,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A8C14318D8C99100472121 /* EventFeedTableViewController.m in Sources */,
 				945D595818C7354F0061B80F /* TestLoginViewController.m in Sources */,
+				9441A2BC18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

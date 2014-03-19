@@ -17,7 +17,6 @@
 @interface MyFeedTableViewController (){
      NSArray *tableData;
      NSMutableArray *events;
-    
 }
 @end
 
@@ -85,9 +84,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString *CellIdentifier = @"EventCell";
     EventTableViewCell *cell = [tableView
-                              dequeueReusableCellWithIdentifier:CellIdentifier
+                              dequeueReusableCellWithIdentifier:@"EventCell"
                               forIndexPath:indexPath];
     
     Event *row = [events objectAtIndex:indexPath.row];

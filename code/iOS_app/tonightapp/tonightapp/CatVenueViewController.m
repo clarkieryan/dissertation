@@ -7,6 +7,7 @@
 //
 
 #import "CatVenueViewController.h"
+#import "EventFeedTableViewController.h"
 #import <MBProgressHUD.h>
 
 @interface CatVenueViewController (){
@@ -44,7 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     //Remove the border from bottom
+    self.title = [_city objectForKey:@"name"];
 
     //navigationBar.backgroundColor = UIColorFromRGB(0xe74c3c);
     _segmentToolBar.barTintColor = UIColorFromRGB(0xe74c3c);
@@ -118,17 +119,16 @@
     return cell;
 }
 
-
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [_outputTable indexPathForSelectedRow];
+    EventFeedTableViewController *detailViewController = (EventFeedTableViewController *)segue.destinationViewController;
+    detailViewController.venue = [content objectAtIndex:indexPath.row];
+    detailViewController.city = _city;
 }
-*/
+
 
 @end
