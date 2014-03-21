@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 	validates :password, presence: true
 	validates_length_of :password, :in => 6..20, :on => :create
 
+	has_many :events
+
 	def name 
 		return "#{first_name} #{last_name}"
 	end
