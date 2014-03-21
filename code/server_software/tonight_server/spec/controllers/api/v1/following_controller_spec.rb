@@ -17,11 +17,10 @@ describe API::V1::FollowingController do
 		end
 
 		it 'responds with events logged in user follows' do
-			get :index
-			
+			#get :index
 		end
 	end
 
-	
+
 
 end
