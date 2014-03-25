@@ -24,7 +24,7 @@ class Admin::EventsController < Admin::BaseController
 	def update
 		@event = Event.find(params[:id])
 		if @event.update(event_params)
-			render json: @job
+			render json: @event
 		else 
 			flash[:danger] = "something went wrong"
 			redirect_to :action => 'index'
@@ -42,7 +42,7 @@ class Admin::EventsController < Admin::BaseController
 
 	private
 		def event_params
-			params.require(:event).permit();
+			params.require(:event).permit(:id, :name, :ref_id, :desc, :start_time, :end_time, :timezone, :cover_photo);
 		end
 
 end

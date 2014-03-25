@@ -11,7 +11,7 @@ describe User do
   	end
 
   	it ' is invalid without a password' do
-  		expect(FactoryGirl.build(:user, :password_in => nil)).to_not be_valid;
+  		expect(FactoryGirl.build(:user, :password => nil)).to_not be_valid;
   	end
 
   	it "is invalid with an email" do
@@ -25,12 +25,31 @@ describe User do
   	it 'authenticates a valid user' do
   		user = FactoryGirl.build(:user)
   		user.save!
-  		expect(User.authenticate("clarkie.ryan@gmail.com", "P4ssw0rd")).to eq(true)
+  		expect(User.authenticate("clarkie.ryan@gmail.com", "P4ssw0rd")).to eq(user)
   	end
 
   	it 'doesnt authenticate non-valid user' do
   		FactoryGirl.create(:user)
   		expect(User.authenticate("ryc@aber.ac.uk", "4WvGrKuD+5WQhY=")).to eq(false)
   	end
+
+  	describe "following functions" do
+
+  		before :each do
+			@user = FactoryGirl.create(:user);
+			@event = FactoryGirl.create(:event);
+			@user.follow!(@event.id);
+  		end
+
+	  	it "returns false for not following a event" do
+	  		expect(@user.following?(9033)).to eq(false);
+	  	end
+
+	  	it "returns true for a correct event" do
+	  		expect(@user.following?(@event.id)).to eq(true)
+	  	end
+
+  	end
+
 
 end

@@ -6,7 +6,7 @@ describe API::V1::CitiesController do
 	let(:token) { double :accessible? => true, :resource_owner_id => user.id }
 
 	before do	
-	 	controller.stub(:doorkeeper_token) { token }
+	 	allow(controller).to receive(:doorkeeper_token){token}
 	end
 
 	describe 'index' do

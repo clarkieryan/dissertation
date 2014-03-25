@@ -58,7 +58,7 @@ namespace :api do
     # TODO -> Implement
     #Add in the ability to follow events
     get 'user/following' => 'following#index'
-    post 'user/follow' => 'following#follow'
+    post 'user/follow/:id' => 'following#followEvent'
   end
 end
   # Example of named route that can be invoked with purchase_url(id: product.id)

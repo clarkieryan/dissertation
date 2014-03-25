@@ -6,7 +6,7 @@ describe API::V1::UserController do
 	let(:token) { double :accessible? => true, :resource_owner_id => user.id }
 
 	before do	
-	 	controller.stub(:doorkeeper_token) { token }
+	 	allow(controller).to receive(:doorkeeper_token){token}
 	end
 
 	describe '.index' do
@@ -18,7 +18,8 @@ describe API::V1::UserController do
 
 		it 'responds with user details' do
 			get :index
-			expect(response.body).to eq(user.to_json);
+			toCheck = user.to_json(:except => [:enc_password, :salt])
+			expect(response.body).to eq(toCheck);
 		end
 
 	end

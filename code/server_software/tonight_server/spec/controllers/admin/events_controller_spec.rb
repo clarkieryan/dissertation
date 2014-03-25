@@ -28,9 +28,7 @@ describe Admin::EventsController do
 			expect(response).to redirect_to(:action => "index")
 		end
 
-		it "shows flash message when an error occurs" do
-			pending("implement this");
-		end  
+		pending("shows flash message when an error occurs");
 
 		it "shows flash when successfully added" do
 			post :create, event: @event;
@@ -45,9 +43,7 @@ describe Admin::EventsController do
 			@event = FactoryGirl.create(:event);
 		end
 
-		it 'redirects to the index page' do
-			pending("implement this")
-		end
+		pending('redirects to index after update');
 
 		it 'updates a record' do
 			prev_updated = @event[:updated_at];
@@ -71,7 +67,7 @@ describe Admin::EventsController do
 
 		it 'removes the correct user' do
 			delete :destroy, :id => @event[:id];
-			expect(event.all.count).to eq(0);
+			expect(Event.all.count).to eq(0);
 		end
 
 	end

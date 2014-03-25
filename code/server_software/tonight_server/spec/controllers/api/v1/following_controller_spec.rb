@@ -3,10 +3,11 @@ require 'spec_helper'
 describe API::V1::FollowingController do 
 	
 	let (:user) {FactoryGirl.create(:user)}
+	let(:event){FactoryGirl.create(:event)}
 	let(:token) { double :accessible? => true, :resource_owner_id => user.id }
 
 	before do	
-	 	controller.stub(:doorkeeper_token) { token }
+		allow(controller).to receive(:doorkeeper_token){token}
 	end
 
 	describe '.index' do
@@ -16,11 +17,20 @@ describe API::V1::FollowingController do
 			expect(response.status).to eq(200)
 		end
 
-		it 'responds with events logged in user follows' do
-			#get :index
-		end
+		pending('responds with events logged in user follows')
 	end
 
+	describe ".followEvent" do
 
+		it "responds with success" do
+			post :followEvent, :id => event.id
+			usersEvents = EventUser.all;
+			jsonResponse = JSON.parse(response.body)
+			expect(jsonResponse['code']).to eq("201"); 
+		end
+			
+	end
+
+	pending('Implement the following venue stuff');
 
 end

@@ -20,7 +20,7 @@ FactoryGirl.define do
 		name "The Rainow Venues"
 		desc "Pub in the heart of digbeth"
 		street "Rainbow Road"
-		city_id 1
+		city_id { |p| p.association(:city) }
 		county "West Midlands"
 		country "United Kingdom"
 		post_code "B1 45Y"
@@ -37,7 +37,7 @@ FactoryGirl.define do
 		start_time "2014-05-04 21:00:00 UTC"
 		end_time "2014-05-05 05:00:00 UTC"
 		timezone "Europe/London"
-		venue "9479454944748"
+		venue { |p| p.association(:venue) }
 		updated_at "2014-05-05 05:00:00 UTC"
 	end
 

@@ -115,7 +115,6 @@ ActiveRecord::Schema.define(version: 20140321144641) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "salt"
-    t.integer  "events_id"
   end
 
   create_table "venues", force: true do |t|

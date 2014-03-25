@@ -5,7 +5,7 @@ class API::V1::UserController < ApplicationController
 	protect_from_forgery except: :index
 
 	def index 
-		render json: current_resource_owner
+		render json: current_resource_owner, except: [:enc_password, :salt]
 	end
 
 	def update 
