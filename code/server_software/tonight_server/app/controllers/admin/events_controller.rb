@@ -3,7 +3,7 @@ class Admin::EventsController < Admin::BaseController
 	before_filter :admin_required;
 
 	def index 
-		@events = Event.all
+		@events = Event.all.page(params[:page]).per(5)
 	end
 
 	def show 

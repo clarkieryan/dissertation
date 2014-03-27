@@ -1,10 +1,11 @@
 class API::V1::EventsController < ApplicationController
 
 	doorkeeper_for :all
+	after_filter only: [:index, :eventsByVenue, :eventsByCity, :eventsByCategory] { paginate(:events) }
 	
 	def index
-		events  = Event.all
-		render json: events
+		@events  = Event.all;
+		render json: @events
 	end
 
 	def eventByID
@@ -14,21 +15,21 @@ class API::V1::EventsController < ApplicationController
 
 	def eventsByVenue 
 		venue = Venue.find(params[:id]);
-		events= venue.events.all
-		render json: events
+		@events= venue.events.all
+		render json: @events
 	end
 
 	def eventsByCity
 		city = City.find(params[:id]);
 		venues = city.venues.all
-		events = Event.where(:venue_id => venues);
-		render json: events;
+		@events = Event.where(:venue_id => venues);
+		render json: @events;
 	end
 
 	def eventsByCategory
 		category = Category.find(params[:id]);
-		events = category.events.all
-		render json: events;
+		@events = category.events.all
+		render json: @events;
 	end
 
 end

@@ -4,7 +4,7 @@ class Admin::JobsController < Admin::BaseController
 
 	#Index will list the various jobs here
 	def index 
-		@jobs = Job.all;
+		@jobs = Job.all.page(params[:page]).per(5);
 		@available_apis = Job.new.valid_modules.to_a;
 	end
 

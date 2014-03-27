@@ -33,6 +33,11 @@ gem 'doorkeeper'
 #For password encryption
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
+#For pagination
+gem 'kaminari'
+
+gem 'api-pagination'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

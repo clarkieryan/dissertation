@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
 	before_filter :admin_required;
 
 	def index
-		@users = User.all
+		@users = User.all.page(params[:page]).per(10)
 	end
 
 	def create

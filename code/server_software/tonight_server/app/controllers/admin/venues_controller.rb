@@ -3,7 +3,7 @@ class Admin::VenuesController < Admin::BaseController
 	before_filter :admin_required;
 
 	def  index 
-		@venues = Venue.all
+		@venues = Venue.all.page(params[:page]).per(5)
 	end
 
 	def create

@@ -1,10 +1,12 @@
 class API::V1::FollowingController < ApplicationController
 
 	doorkeeper_for :all
+	after_filter only: [:index] { paginate(:events) }
 
-	#Responds with events the logged in user is followinf
+	#Responds with events the logged in user is following
 	def index 
-		render json: current_resource_owner.events
+		@events = current_resource_owner.events;
+		render json: @events;
 	end
 
 	#Follow an event

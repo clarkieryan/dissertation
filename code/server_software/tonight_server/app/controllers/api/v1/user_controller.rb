@@ -1,6 +1,7 @@
 class API::V1::UserController < ApplicationController
 
 	doorkeeper_for :all,:except => :register
+	after_filter only: [:feed ] { paginate(:events) }
 
 	protect_from_forgery except: :index
 
@@ -18,7 +19,8 @@ class API::V1::UserController < ApplicationController
 	end
 
 	def feed 
-		render json: {:message => "To be implemented"}
+		@events = Events.all;
+		render json: @events;
 	end
 
 	def register 
