@@ -16,6 +16,7 @@
     NSMutableArray *events;
     NSString *url;
     NSArray *sortedArray;
+    NSArray *searchResults;
 }
 
 @end
@@ -35,6 +36,10 @@
 {
     [super viewDidLoad];
     
+    [_searchBar setTranslucent:NO];
+    [_searchBar setBackgroundImage:[UIImage new]];
+    _searchBar.backgroundColor = UIColorFromRGB(0xe74c3c);
+    _searchBar.barTintColor =UIColorFromRGB(0xe74c3c);
     
     //Use the url string to se the relevant data source
     if([_venue count] == 0) {
@@ -48,6 +53,8 @@
         self.title = @"Categories";
         url = CATEGORIES_EVENTS_URL([_city objectForKey:@"id"], [_category objectForKey:@"id"]);
     }
+    
+    //_searchBar.barTintColor = UIColorFromRGB(0xe74c3c);
     
     
     events = [NSMutableArray array];
@@ -107,14 +114,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [sortedArray count];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+    } else {
+        return [sortedArray count];
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Event *row = [sortedArray objectAtIndex:indexPath.row];
-    EventFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Event"];
+    Event *row = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        row = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        row = [sortedArray objectAtIndex:indexPath.row];
+    }
+    
+    
+    EventFeedTableViewCell *cell = (EventFeedTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:@"Event"];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd-MM-yyyy"];
     
@@ -125,6 +143,28 @@
 
     return cell;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 220;
+}
+
+//Search methods
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    //Replace this with a get request
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    searchResults = [sortedArray filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
 
 
 
@@ -134,9 +174,19 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSIndexPath *indexPath = nil;
+    Event *event = nil;
+    
+    if (self.searchDisplayController.active) {
+        indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+        event = [searchResults objectAtIndex:indexPath.row];
+    } else {
+        indexPath = [self.tableView indexPathForSelectedRow];
+        event = [sortedArray objectAtIndex:indexPath.row];
+    }
+    
     IndivEventViewController *detailViewController = (IndivEventViewController *)segue.destinationViewController;
-    detailViewController.event = [sortedArray objectAtIndex:indexPath.row];
+    detailViewController.event = event;
 }
 
 @end
