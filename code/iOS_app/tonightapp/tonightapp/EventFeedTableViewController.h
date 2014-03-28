@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EventFeedTableViewController : UITableViewController
+    @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
     @property (strong, nonatomic) NSDictionary *venue;
     @property (strong, nonatomic) NSDictionary *category;
     @property (strong, nonatomic) NSDictionary *city;
