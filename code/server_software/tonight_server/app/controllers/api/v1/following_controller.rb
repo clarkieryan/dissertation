@@ -2,6 +2,7 @@ class API::V1::FollowingController < ApplicationController
 
 	doorkeeper_for :all
 	after_filter only: [:index] { paginate(:events) }
+	protect_from_forgery except: :followEvent
 
 	#Responds with events the logged in user is following
 	def index 
