@@ -10,6 +10,7 @@
 #import "Event.h"
 
 @interface IndivEventViewController ()
+    @property (weak, nonatomic) IBOutlet UIButton *followButton;
     @property (weak, nonatomic) IBOutlet UILabel *nameField;
     @property (weak, nonatomic) IBOutlet UITextView *descField;
     @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
@@ -32,6 +33,31 @@
     NSLog(@"%@", urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     [[UIApplication sharedApplication] openURL:url];
+}
+
+//Action to follow a user
+- (IBAction)followButton:(id)sender {
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        NSDictionary* headers = @{@"accept": @"application/json"};
+        NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
+        
+        UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest* request) {
+            [request setUrl:FOLLOW_EVENT(_event.id)];
+            [request setHeaders:headers];
+            [request setParameters:parameters];
+        }] asJson];
+        
+        NSArray *body = response.body.array;
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //If something
+            [_followButton setTitleColor:UIColorFromRGB(0x0BD318)forState: UIControlStateNormal];
+            _followButton.titleLabel.text = @"Following Event";
+        });
+    });
+
 }
 
 - (void)viewDidLoad

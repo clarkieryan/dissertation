@@ -263,6 +263,7 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" id="bfr-aF-qfQ">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="xhG-W1-xg4" id="i03-me-ZEq"/>
@@ -421,7 +422,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="14L-El-N66">
-                                <rect key="frame" x="20" y="191" width="280" height="57"/>
+                                <rect key="frame" x="20" y="221" width="280" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -435,7 +436,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJq-V8-XUe">
-                                <rect key="frame" x="227" y="245" width="73" height="30"/>
+                                <rect key="frame" x="227" y="195" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Visit Event">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -445,11 +446,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK1-ta-wrX">
-                                <rect key="frame" x="20" y="245" width="88" height="30"/>
+                                <rect key="frame" x="20" y="195" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Follow Event">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="followButton:" destination="fE8-wF-QEs" eventType="touchUpInside" id="31x-cS-SdA"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1175131_10152135066287306_734393091_n.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-0x-jEk">
                                 <rect key="frame" x="0.0" y="63" width="320" height="124"/>
@@ -467,6 +471,7 @@
                     <connections>
                         <outlet property="coverImageView" destination="m8a-0x-jEk" id="KhN-db-c1o"/>
                         <outlet property="descField" destination="EuZ-Fe-Qe4" id="Vdf-lU-EA6"/>
+                        <outlet property="followButton" destination="cK1-ta-wrX" id="CTR-YF-P1R"/>
                         <outlet property="nameField" destination="14L-El-N66" id="MRP-H0-nyq"/>
                     </connections>
                 </viewController>

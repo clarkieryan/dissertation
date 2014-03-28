@@ -118,12 +118,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tonightapp/IndivEventViewController.m"
-            timestampString = "417706311.996774"
+            timestampString = "417708630.230607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-followEventButton:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-followButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

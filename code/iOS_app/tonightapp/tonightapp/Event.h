@@ -10,6 +10,7 @@
 
 @interface Event : NSObject
 
+@property(nonatomic, copy) NSString *id;
 @property(nonatomic, copy) NSString *name;
 @property(nonatomic, copy) NSString *desc;
 @property(nonatomic, copy) NSString *ref_id;

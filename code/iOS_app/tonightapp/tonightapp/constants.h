@@ -16,6 +16,10 @@
 #define LOGIN_URL           SITE_URL("/oauth/token")
 #define REGISTER_URL        API_URL("/register")
 #define USER_URL            API_URL("/user")
+#define USER_FOLLOWING      API_URL("/following")
+#define FOLLOW_EVENT(id)   [NSString stringWithFormat:@"%@%@",API_URL("/following/"),id]
+
+
 
 //Feeds
 #define USER_FEED_URL        API_URL("/user/feed");
