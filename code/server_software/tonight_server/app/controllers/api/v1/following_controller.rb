@@ -11,7 +11,7 @@ class API::V1::FollowingController < ApplicationController
 
 	#Follow an event
 	def followEvent
-		relation  = current_resource_owner.follow!(params[:id]);
+		relation  = current_resource_owner.follow!(event_params[:id]);
 		if relation.errors.any?
 			render json: {:error => "400", :message => relation.errors.full_messages}
 		else 
@@ -25,6 +25,10 @@ class API::V1::FollowingController < ApplicationController
 	end
 
 	private
+		def event_params
+			params.require(:event).permit(:id, :name)
+		end
+
 		def current_resource_owner
 			User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
 		end

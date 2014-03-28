@@ -23,7 +23,7 @@ describe API::V1::FollowingController do
 	describe ".followEvent" do
 
 		it "responds with success" do
-			post :followEvent, :id => event.id
+			post :followEvent, :event => event.attributes
 			usersEvents = EventUser.all;
 			jsonResponse = JSON.parse(response.body)
 			expect(jsonResponse['code']).to eq("201"); 
