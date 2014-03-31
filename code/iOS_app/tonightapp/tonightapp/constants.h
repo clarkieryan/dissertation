@@ -9,16 +9,15 @@
 #ifndef _constants_h
 #define _constants_h
 
-#define SITE_URL(url) @"http://ryc-diss.herokuapp.com/" url
+#define SITE_URL(url) @"http://ryc-diss.herokuapp.com" url
 #define API_URL(url) SITE_URL("/api/v1") url
 
 //User URL's
 #define LOGIN_URL           SITE_URL("/oauth/token")
 #define REGISTER_URL        API_URL("/register")
 #define USER_URL            API_URL("/user")
-#define USER_FOLLOWING      API_URL("/following")
-#define FOLLOW_EVENT(id)   [NSString stringWithFormat:@"%@%@",API_URL("/following/"),id]
-
+#define USER_FOLLOWING      API_URL("/user/following")
+#define USER_FOLLOW         [NSString stringWithFormat:@"%@%@", API_URL(), @"/user/follow"]
 
 
 //Feeds

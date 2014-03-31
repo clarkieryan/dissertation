@@ -8,13 +8,14 @@
 
 #import "IndivEventViewController.h"
 #import "Event.h"
+#import <MBProgressHUD.h>
 
 @interface IndivEventViewController ()
     @property (weak, nonatomic) IBOutlet UIButton *followButton;
     @property (weak, nonatomic) IBOutlet UILabel *nameField;
     @property (weak, nonatomic) IBOutlet UITextView *descField;
     @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+    @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 
 @end
 
@@ -38,26 +39,28 @@
 //Action to follow a user
 - (IBAction)followButton:(id)sender {
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSDictionary* headers = @{@"accept": @"application/json"};
-        NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
+        NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"], @"event[id]": [_event.event_id stringValue]};
         
-        UNIHTTPJsonResponse* response = [[UNIRest get:^(UNISimpleRequest* request) {
-            [request setUrl:FOLLOW_EVENT(_event.id)];
+        UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
+            [request setUrl:USER_FOLLOW];
             [request setHeaders:headers];
             [request setParameters:parameters];
         }] asJson];
-        
-        NSArray *body = response.body.array;
-        
+
+        NSString *code = [response.body.object objectForKey:@"code"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            //If something
-            [_followButton setTitleColor:UIColorFromRGB(0x0BD318)forState: UIControlStateNormal];
-            _followButton.titleLabel.text = @"Following Event";
+            //Sort the output
+            if([code  isEqual: @"201"] ){
+                _followButton.titleLabel.text = @"Following";
+            }
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
-
 }
 
 - (void)viewDidLoad
@@ -65,7 +68,7 @@
     [super viewDidLoad];
 	_nameField.text = _event.name;
     _descField.text = _event.desc;
-    _cityLabel.text = [_event.venue objectForKey:@"city"];
+    _cityLabel.text = _event.venue.name;
     _coverImageView.image = _event.cover_image;
     
     _descField.editable = false;

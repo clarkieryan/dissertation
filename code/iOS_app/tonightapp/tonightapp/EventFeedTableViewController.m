@@ -137,7 +137,7 @@
     [formatter setDateFormat:@"dd-MM-yyyy"];
     
     cell.eventName.text = row.name;
-    cell.venueName.text = [row.venue objectForKey:@"name"];
+    cell.venueName.text = row.venue.name;
     cell.eventCoverImage.image = row.cover_image;
     cell.eventTime.text = [formatter stringFromDate:row.start_time];
     
@@ -145,7 +145,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 220;
+    return 200;
 }
 
 //Search methods

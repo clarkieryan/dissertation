@@ -93,7 +93,7 @@
     cell.eventNameLabel.text = row.name;
     cell.coverImageView.image = row.cover_image;
     //cell.eventDateLabel.text = row.start_time;
-    cell.venueLabel.text = [row.venue objectForKey:@"venue"];
+    cell.venueLabel.text = row.venue.name;
     
     return cell;
 }

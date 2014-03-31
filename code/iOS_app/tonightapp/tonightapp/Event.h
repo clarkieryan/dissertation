@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Venue.h"
 
 @interface Event : NSObject
 
-@property(nonatomic, copy) NSString *id;
+@property(nonatomic, copy) NSNumber *event_id;
 @property(nonatomic, copy) NSString *name;
 @property(nonatomic, copy) NSString *desc;
 @property(nonatomic, copy) NSString *ref_id;
 @property(nonatomic, copy) NSDate *start_time;
 @property(nonatomic, copy) NSDate *end_time;
 @property(nonatomic, copy) UIImage *cover_image;
-@property(nonatomic, copy) NSDictionary *venue;
+@property(nonatomic, copy) Venue *venue;
 
 
 - (id)initWithEvent:(NSMutableArray *) event;
