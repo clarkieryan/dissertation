@@ -15,7 +15,8 @@ class API::V1::VenuesController < ApplicationController
 	end
 
 	def venuesByCity
-		@venues = City.find(params[:city_id]).venues.all;
+		city = City.find(params[:city_id])
+		@venues = city.venues
 		render json: @venues;
 	end
 

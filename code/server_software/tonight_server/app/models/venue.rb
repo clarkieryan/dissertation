@@ -1,7 +1,7 @@
 class Venue < ActiveRecord::Base
 
 	has_many :events
-	belongs_to :cities, :foreign_key => "city"
+	belongs_to :city
 
 	validates :ref_id,  uniqueness: true
 end

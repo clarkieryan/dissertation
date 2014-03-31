@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe API::V1::VenuesController do 
 
+	let (:user) {FactoryGirl.create(:user)}
+	let(:token) { double :accessible? => true, :resource_owner_id => user.id }
+
 	before :each do
+		allow(controller).to receive(:doorkeeper_token){token}
 		@venue = FactoryGirl.create(:venue)
 	end
 	
@@ -15,8 +19,7 @@ describe API::V1::VenuesController do
 
 		it 'responds with a list of the current attributes' do
 			get :index
-			json = JSON.parse(response.body)
-	   		expect(json.length).to eq(1);
+	   		expect(response.body).to eq(Venue.all.to_json);
 		end
 
 	end
@@ -25,11 +28,17 @@ describe API::V1::VenuesController do
 		
 		it 'get\'s an individual page' do
 			get :show, :id => @venue.id
-
 			expect(response).to be_success
+			expect(response.body).to eq(@venue.to_json) 
+		end
 
-			json = JSON.parse(response.body)
-			 expect(json['name']).to eq(@venue.name) 
+	end
+
+	describe ".venuesByCity" do
+		
+		it "Returns all the venues of a particular city" do
+			get :venuesByCity, city_id: @venue.city.id
+			expect(response.body).to eq(Venue.all.to_json); 
 		end
 
 	end

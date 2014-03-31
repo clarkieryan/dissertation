@@ -2,7 +2,12 @@ require 'spec_helper'
 
 describe API::V1::EventsController do 
 
+	let (:user) {FactoryGirl.create(:user)}
+	let(:event){FactoryGirl.create(:event)}
+	let(:token) { double :accessible? => true, :resource_owner_id => user.id }
+
 	before :each do
+		allow(controller).to receive(:doorkeeper_token){token}
 		@venue = FactoryGirl.create(:venue)
 		@event = FactoryGirl.create(:event, venue: @venue)
 	end
@@ -22,15 +27,12 @@ describe API::V1::EventsController do
 
 	end
 
-	describe '.show' do
+	describe '.eventByID' do
 		
 		it 'get\'s an individual page' do
-			get :show, :venue_id => @venue.id, :id => @event.id
-
+			get :eventByID, :id => @event.id
 			expect(response).to be_success
-
-			json = JSON.parse(response.body)
-			 expect(json['name']).to eq(@event.name) 
+			 expect(response.body).to eq(@event.to_json) 
 		end
 
 	end
@@ -38,7 +40,8 @@ describe API::V1::EventsController do
 	describe '.eventsByVenue' do
 
 		it 'gets the events by venue' do
-
+			get :eventsByVenue, :id => @venue.id
+			expect(response.body).to eq(@venue.events.to_json)
 		end
 	
 	end

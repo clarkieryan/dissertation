@@ -20,7 +20,7 @@ FactoryGirl.define do
 		name "The Rainow Venues"
 		desc "Pub in the heart of digbeth"
 		street "Rainbow Road"
-		city_id { |p| p.association(:city) }
+		city { |p| p.association(:city) }
 		county "West Midlands"
 		country "United Kingdom"
 		post_code "B1 45Y"
@@ -39,10 +39,24 @@ FactoryGirl.define do
 		timezone "Europe/London"
 		venue { |p| p.association(:venue) }
 		updated_at "2014-05-05 05:00:00 UTC"
+		
+		factory :event_with_category do
+			ignore do
+        			count 1
+      			end
+
+      			after(:create) do |event, evaluator|
+      				event.categories << FactoryGirl.create(:category)
+			end
+		end
 	end
 
 	factory :city do
 		name "Birmingham"
+	end
+
+	factory :category do
+		name "House"
 	end
 
 end

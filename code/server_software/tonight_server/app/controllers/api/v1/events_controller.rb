@@ -14,8 +14,8 @@ class API::V1::EventsController < ApplicationController
 	end
 
 	def eventsByVenue 
-		venue = Venue.find(params[:id]);
-		@events= venue.events.all
+		venue = Venue.find_by_id(params[:id]);
+		@events= venue.events
 		render json: @events
 	end
 

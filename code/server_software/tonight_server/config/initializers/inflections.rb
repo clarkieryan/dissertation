@@ -18,4 +18,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'API'
   inflect.acronym 'V1'
   inflect.irregular 'event_user', 'events_users'
+  inflect.irregular 'category_event', 'categories_events'
 end

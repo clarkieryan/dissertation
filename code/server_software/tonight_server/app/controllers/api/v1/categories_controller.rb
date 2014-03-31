@@ -3,7 +3,7 @@ class API::V1::CategoriesController  < ApplicationController
 	doorkeeper_for :all	
 
 	def index 
-		cats = Category.find(:all, :order => "name");
+		cats = Category.all.order(:name => :asc);
 		render json: cats;
 	end
 
