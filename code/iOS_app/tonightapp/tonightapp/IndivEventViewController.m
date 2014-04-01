@@ -55,7 +55,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //Sort the output
             if([code  isEqual: @"201"] ){
-                _followButton.titleLabel.text = @"Following";
+                [_followButton setTitle: @"Following" forState: UIControlStateNormal];
+                [_followButton setTitleColor:UIColorFromRGB(0x0BD318) forState:UIControlStateNormal];
             }
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -73,7 +74,18 @@
     
     _descField.editable = false;
     _descField.dataDetectorTypes = UIDataDetectorTypeLink;
-
+    
+    
+    //Check if it's following
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", _event.event_id];
+    NSArray *results = [_following filteredArrayUsingPredicate:predicate];
+    
+    if([results count] > 0){
+        [_followButton setTitle: @"Following" forState: UIControlStateNormal];
+        [_followButton setTitleColor:UIColorFromRGB(0x0BD318) forState:UIControlStateNormal];
+    } else {
+        _followButton.titleLabel.text = @"Follow";
+    }
     
 }
 

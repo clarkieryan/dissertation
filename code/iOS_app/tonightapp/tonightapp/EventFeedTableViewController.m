@@ -17,6 +17,7 @@
     NSString *url;
     NSArray *sortedArray;
     NSArray *searchResults;
+    NSArray *following;
 }
 
 @end
@@ -70,9 +71,18 @@
             [request setParameters:parameters];
         }] asJson];
         
+        UNIHTTPJsonResponse* followingResponse = [[UNIRest get:^(UNISimpleRequest* request) {
+            [request setUrl:USER_FOLLOWING];
+            [request setHeaders:headers];
+            [request setParameters:parameters];
+        }] asJson];
+
+        
         for (id event in response.body.array) {
             [events addObject:[[Event alloc] initWithEvent:event]];
         }
+        
+        following = followingResponse.body.array;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //Sort the output
@@ -151,7 +161,7 @@
 //Search methods
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    //Replace this with a get request
+    //Replace with a get maybe - for the search request, will ease the search function.
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
     searchResults = [sortedArray filteredArrayUsingPredicate:resultPredicate];
 }
@@ -187,6 +197,7 @@
     
     IndivEventViewController *detailViewController = (IndivEventViewController *)segue.destinationViewController;
     detailViewController.event = event;
+    detailViewController.following = following;
 }
 
 @end

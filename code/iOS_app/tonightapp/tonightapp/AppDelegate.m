@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <UICKeyChainStore.h>
 #import <Crashlytics/Crashlytics.h>
+#import "LoginViewControler.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation AppDelegate
@@ -42,10 +43,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //Set the Navigation bar title colours
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,[UIFont fontWithName:@"HelveticaNeue" size:18.0], NSFontAttributeName, nil]];
-    //Login logic
     
-    
-
     // Override point for customization after application launch.
     return YES;
 }
@@ -70,6 +68,20 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    //Check the token
+    NSString *email = [UICKeyChainStore stringForKey:@"email"];
+    NSString *password = [UICKeyChainStore stringForKey:@"password"];
+    NSString *access_token = [UICKeyChainStore stringForKey:@"access_token"];
+    float expiresOn = [[UICKeyChainStore stringForKey:@"expires_on"] floatValue];
+    float currentTime =[[NSDate date]timeIntervalSince1970];
+    
+    NSLog(@"%f %f", expiresOn, currentTime);
+    NSLog(@"%@", access_token);
+    NSLog(@"%@ %@", email, password);
+    
+    //Login logic
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

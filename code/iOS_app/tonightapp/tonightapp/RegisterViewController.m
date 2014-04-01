@@ -7,8 +7,11 @@
 //
 
 #import "RegisterViewController.h"
+#import "User.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController (){
+    User *user;
+}
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
@@ -34,6 +37,7 @@
     [[self titleLabel] setFont:[UIFont fontWithName:@"Pacifico" size:48]];
     _titleLabel.textColor = UIColorFromRGB(0xFFFFFF);
     self.view.backgroundColor = UIColorFromRGB(0xe74c3c);
+    user = [[User alloc] initWithUser];
 	// Do any additional setup after loading the view.
 }
 
@@ -46,50 +50,12 @@
 //TODO - Need to add in functions for register
 - (IBAction)registerButton:(id)sender {
     
-    //Split up the namme to first/last
-    NSArray *names = [_nameField.text componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString *registerResponse = [user registerUser:_emailField.text withPassword:_passwordField.text withName:_nameField.text];
     
-//    NSDictionary *user = @{@"email" : _emailField.text, @"first_name" : values[0], @"last_name": values[1], @"password": _passwordField.text};
-    
-    NSDictionary* headers = @{@"accept": @"application/json"};
-    NSDictionary* parameters = @{@"user[first_name]": names[0], @"user[last_name]": names[1], @"user[email]": _emailField.text, @"user[password]": _passwordField.text};
-    
-    UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
-        [request setUrl:REGISTER_URL];
-        [request setHeaders:headers];
-        [request setParameters:parameters];
-    }] asJson];
-    
-    NSLog(@"%@", response.body);
-    
-    
-    //If the response is a created user use username/password and get an access token -> move to the main screen
-    if([[response.body.object objectForKey:@"message"] isEqualToString:@"User created"]) {
-        NSDictionary* headers = @{@"accept": @"application/json"};
-        NSDictionary* parameters = @{@"grant_type": @"password", @"client_key": CLIENT_KEY, @"client_secret": CLIENT_SECRET, @"email":_emailField.text, @"password":_passwordField.text};
-        
-        UNIHTTPJsonResponse* response = [[UNIRest post:^(UNISimpleRequest* request) {
-            [request setUrl:LOGIN_URL];
-            [request setHeaders:headers];
-            [request setParameters:parameters];
-        }] asJson];
-        
-        NSString *accessToken = [response.body.object valueForKey:@"access_token"];
-        NSString *expiresIn = [response.body.object valueForKey:@"expires_in"];
-        
-        //Set the details into the keychain
-        [UICKeyChainStore setString:_emailField.text forKey:@"email"];
-        [UICKeyChainStore setString:_passwordField.text forKey:@"password"];
-        [UICKeyChainStore setString:accessToken forKey:@"access_token"];
-        //Create a timestamp of when the token will expire
-        float expiresOn = [expiresIn floatValue] + [[NSDate date]timeIntervalSince1970];
-        [UICKeyChainStore setString:[NSString stringWithFormat:@"%f", expiresOn] forKey:@"expires_on"];
-        
-        //Perform segue
+    if([registerResponse isEqualToString:@"true"]){
         [self performSegueWithIdentifier:@"registerSegue" sender:self];
-        
     } else {
-        //Show error message IE (Email already used)
+        //Return an error
     }
     
 }

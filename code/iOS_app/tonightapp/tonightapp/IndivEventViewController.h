@@ -11,4 +11,5 @@
 
 @interface IndivEventViewController : UIViewController
 @property (strong, nonatomic)Event *event;
+@property (strong, nonatomic)NSArray *following;
 @end

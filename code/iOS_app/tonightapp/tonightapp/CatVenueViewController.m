@@ -53,9 +53,7 @@
     _segmentToolBar.layer.borderColor = [UIColorFromRGB(0xe74c3c) CGColor];
     [_segmentToolBar setClipsToBounds:YES];
     
-
-    // Do any additional setup after loading the view.
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         NSDictionary* headers = @{@"accept": @"application/json"};
         NSDictionary* parameters = @{@"access_token": [UICKeyChainStore stringForKey:@"access_token"]};
@@ -80,18 +78,11 @@
         venues = venue_response.body.array;
         
         content = categories;
-        NSLog(@"%@", CATEGORY_BY_CITY_URL(@"13"));
         dispatch_async(dispatch_get_main_queue(), ^{
             [_outputTable reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -111,11 +102,7 @@
 {
     NSDictionary *row = [content objectAtIndex:indexPath.row];
     UITableViewCell *cell = [_outputTable dequeueReusableCellWithIdentifier:@"VenueCell" forIndexPath:indexPath];
-    
     cell.textLabel.text = [row objectForKey:@"name"];
-    
-    // Configure the cell...
-    
     return cell;
 }
 
@@ -128,6 +115,12 @@
     EventFeedTableViewController *detailViewController = (EventFeedTableViewController *)segue.destinationViewController;
     detailViewController.venue = [content objectAtIndex:indexPath.row];
     detailViewController.city = _city;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 
