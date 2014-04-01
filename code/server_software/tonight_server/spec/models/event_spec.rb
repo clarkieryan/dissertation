@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Job do
+describe Event do
 
 	
 	

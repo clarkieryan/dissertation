@@ -15,7 +15,9 @@ class User < ActiveRecord::Base
 	validates :password, presence: true
 	validates_length_of :password, :in => 6..20, :on => :create
 
-	has_and_belongs_to_many :events
+	
+
+	has_and_belongs_to_many :events, -> { uniq }
 
 
 	def name 
@@ -48,6 +50,7 @@ class User < ActiveRecord::Base
 	end
 
 	def follow!(eventID)
+		#Need to check wether or not it's unique
 		return EventUser.create(user_id: self.id, event_id: eventID);
 	end
 

@@ -4,8 +4,8 @@ class API::V1::EventsController < ApplicationController
 	after_filter only: [:index, :eventsByVenue, :eventsByCity, :eventsByCategory] { paginate(:events) }
 	
 	def index
-		@events  = Event.all;
-		render json: @events
+		@events  = Event.all
+		render json: @events.to_json(:methods => :following)
 	end
 
 	def eventByID
@@ -31,5 +31,12 @@ class API::V1::EventsController < ApplicationController
 		@events = category.events.all
 		render json: @events;
 	end
+
+	private
+		def current_resource_owner
+			User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+		end
+
+
 
 end

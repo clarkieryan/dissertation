@@ -7,7 +7,7 @@ class API::V1::FollowingController < ApplicationController
 	#Responds with events the logged in user is following
 	def index 
 		@events = current_resource_owner.events;
-		render json: @events;
+		render json: @events, only: [:id, :name]
 	end
 
 	#Follow an event
