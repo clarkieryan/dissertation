@@ -10,6 +10,7 @@
 #import <UICKeyChainStore.h>
 #import <Crashlytics/Crashlytics.h>
 #import "LoginViewControler.h"
+#import "User.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @implementation AppDelegate
@@ -63,26 +64,19 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    //Check the token
+    User *user = [[User alloc] initWithUser];
+//  [UICKeyChainStore setString:@"0000000000.000000" forKey:@"expires_on"];
+    
+    if(![[user checkToken] isEqualToString:@"true"]){
+        NSLog(@"Something went wrong");
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    //Check the token
-    NSString *email = [UICKeyChainStore stringForKey:@"email"];
-    NSString *password = [UICKeyChainStore stringForKey:@"password"];
-    NSString *access_token = [UICKeyChainStore stringForKey:@"access_token"];
-    float expiresOn = [[UICKeyChainStore stringForKey:@"expires_on"] floatValue];
-    float currentTime =[[NSDate date]timeIntervalSince1970];
-    
-    NSLog(@"%f %f", expiresOn, currentTime);
-    NSLog(@"%@", access_token);
-    NSLog(@"%@ %@", email, password);
-    
-    //Login logic
-    
-}
+ }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {

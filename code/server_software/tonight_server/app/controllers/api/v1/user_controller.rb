@@ -1,7 +1,7 @@
 class API::V1::UserController < ApplicationController
 
 	doorkeeper_for :all,:except => :register
-	after_filter only: [:feed ] { paginate(:events) }
+	# after_filter only: [ :feed ] { paginate(:events) }
 
 	protect_from_forgery except: :index
 
@@ -19,8 +19,36 @@ class API::V1::UserController < ApplicationController
 	end
 
 	def feed 
-		@events = Events.all;
-		render json: @events;
+=begin
+		Get all of the events similar
+		usersEvents = EventUser.find(current_resource_owner)
+		EventUser.where(EVENT_ID contains userEvents),group(USER_ID)
+
+		Find % difference
+
+		Loop through found users
+		Check array of ints against the users  -> Find % similarity (Add to hash)?
+		
+		FInd the events a user is not following that the top 10% similar are + include ones that the user is following -> (Personal feed)
+=end
+
+		@events ||= Array.new
+		#Get all of the users following events
+		userEvents = current_resource_owner.events;
+		#Get the similar users events (SQL for optimisation)
+		usersEvents = User.joins(:events).find_each(:conditions => { 'events.id' => userEvents }) do | user |
+			#Check if it's the same as the current user		
+			if user != current_resource_owner
+				#Remove the users events already following
+				@events.concat(user.events - userEvents);
+				#Sort and output
+				@events = @events.group_by { |e | e }.sort_by{| e | e[1].count}.map{|e, i| e }.reverse.take(10);
+			end
+		end
+
+		@events = @events | userEvents
+
+		render json: @events.uniq;
 	end
 
 	def register 
