@@ -56,7 +56,7 @@ class API::V1::UserController < ApplicationController
 		if user.save 
 			render json: {:message => "User created", :user => user};
 		else 
-			render json: {:error => user.errors} 
+			render json: {:error => user.errors.full_messages} 
 		end
 	end
 
