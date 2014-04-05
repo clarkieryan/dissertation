@@ -66,7 +66,7 @@
     if([[response.body.object objectForKey:@"message"] isEqualToString:@"User created"]) {
         return [self loginUser:email withPassword:password];
     } else {
-        return [response.body.object objectForKey:@"message"];
+        return [response.body.object objectForKey:@"error"];
     }
 }
 

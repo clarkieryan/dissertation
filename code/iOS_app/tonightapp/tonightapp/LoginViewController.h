@@ -9,6 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
-- (void)loginUser:(NSString *)email withPassword:(NSString *)password;
-
 @end

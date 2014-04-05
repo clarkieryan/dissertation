@@ -11,7 +11,7 @@
 @interface User : NSObject
 -(id)initWithUser;
     - (NSString *)loginUser:(NSString *)email withPassword:(NSString *)password;
--(NSString *)registerUser:(NSString *)email withPassword:(NSString *)password withName:(NSString*)name;
+    -(NSString *)registerUser:(NSString *)email withPassword:(NSString *)password withName:(NSString*)name;
     -(NSString *)checkToken;
     -(void)logoutUser;
 @end

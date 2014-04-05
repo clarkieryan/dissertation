@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9405EDA918C76D5C0031CA28 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9405EDA818C76D5C0031CA28 /* Security.framework */; };
 		9405EDB218C799A10031CA28 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDB118C799A10031CA28 /* MyProfileViewController.m */; };
-		9405EDB518C799E30031CA28 /* MyFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDB418C799E30031CA28 /* MyFeedTableViewController.m */; };
 		9405EDB818C799FF0031CA28 /* DiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */; };
 		9405EDBB18C7A4CF0031CA28 /* IndivEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */; };
 		9405EDBE18C7C6200031CA28 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBD18C7C6200031CA28 /* Event.m */; };
@@ -39,7 +38,6 @@
 		947A892918C89ACD00CA40C3 /* Near_Me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947A892518C89ACD00CA40C3 /* Near_Me@2x.png */; };
 		947A892B18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 947A892A18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg */; };
 		947AFDEC18C8894D006EB9E9 /* Lovelo-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 947AFDEB18C8894D006EB9E9 /* Lovelo-Black.otf */; };
-		947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */; };
 		94A7DF8318D07A7F0074B831 /* 2014-03-06 16.45.44.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */; };
 		94A8C13F18D7323800472121 /* CatVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8C13E18D7323800472121 /* CatVenueViewController.m */; };
 		94A8C14218D8C99100472121 /* EventFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8C14118D8C99100472121 /* EventFeedTableViewController.m */; };
@@ -85,8 +83,6 @@
 		9405EDA818C76D5C0031CA28 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9405EDB018C799A10031CA28 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		9405EDB118C799A10031CA28 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
-		9405EDB318C799E30031CA28 /* MyFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeedTableViewController.h; sourceTree = "<group>"; };
-		9405EDB418C799E30031CA28 /* MyFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFeedTableViewController.m; sourceTree = "<group>"; };
 		9405EDB618C799FF0031CA28 /* DiscoverTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewController.h; sourceTree = "<group>"; };
 		9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableViewController.m; sourceTree = "<group>"; };
 		9405EDB918C7A4CF0031CA28 /* IndivEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndivEventViewController.h; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 		947A892518C89ACD00CA40C3 /* Near_Me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Near_Me@2x.png"; path = "Resources/Near_Me@2x.png"; sourceTree = "<group>"; };
 		947A892A18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1175131_10152135066287306_734393091_n.jpg; path = Resources/1175131_10152135066287306_734393091_n.jpg; sourceTree = "<group>"; };
 		947AFDEB18C8894D006EB9E9 /* Lovelo-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lovelo-Black.otf"; path = "Resources/Lovelo-Black.otf"; sourceTree = "<group>"; };
-		947CF87718CA97BF0036F2A4 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
-		947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		94A7DF8118D060A90074B831 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2014-03-06 16.45.44.png"; sourceTree = "<group>"; };
 		94A8C13D18D7323800472121 /* CatVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatVenueViewController.h; sourceTree = "<group>"; };
@@ -257,9 +251,9 @@
 				945D592D18C732200061B80F /* Main_iPad.storyboard */,
 				945D593618C732220061B80F /* Images.xcassets */,
 				94A7DF8118D060A90074B831 /* constants.h */,
+				94B9823818C8D02400D32125 /* Login/Register Controllers */,
 				94B9823518C8A57800D32125 /* Main Screen Controllers */,
 				945D591F18C732200061B80F /* Supporting Files */,
-				94B9823818C8D02400D32125 /* Login/Register Controllers */,
 				94B9823118C8A53F00D32125 /* Indiv Controller */,
 				941556BE18E9B43C00716B45 /* Data Models */,
 			);
@@ -319,17 +313,6 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		947CF87618CA97700036F2A4 /* My Feed Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				947CF87818CA97BF0036F2A4 /* EventTableViewCell.m */,
-				947CF87718CA97BF0036F2A4 /* EventTableViewCell.h */,
-				9405EDB318C799E30031CA28 /* MyFeedTableViewController.h */,
-				9405EDB418C799E30031CA28 /* MyFeedTableViewController.m */,
-			);
-			name = "My Feed Controllers";
-			sourceTree = "<group>";
-		};
 		9490B3D718D376F200071865 /* Discover Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +350,6 @@
 				9441A2B818D9B9D10023B124 /* Event Feed Controllers */,
 				9490B3D818D3770300071865 /* My Profile Controllers */,
 				9490B3D718D376F200071865 /* Discover Controllers */,
-				947CF87618CA97700036F2A4 /* My Feed Controllers */,
 			);
 			name = "Main Screen Controllers";
 			sourceTree = "<group>";
@@ -595,10 +577,8 @@
 				94A8C13F18D7323800472121 /* CatVenueViewController.m in Sources */,
 				945D592518C732200061B80F /* main.m in Sources */,
 				94A8C14218D8C99100472121 /* EventFeedTableViewController.m in Sources */,
-				947CF87918CA97BF0036F2A4 /* EventTableViewCell.m in Sources */,
 				94B9823B18C8D04600D32125 /* RegisterViewController.m in Sources */,
 				9405EDBE18C7C6200031CA28 /* Event.m in Sources */,
-				9405EDB518C799E30031CA28 /* MyFeedTableViewController.m in Sources */,
 				9405EDB218C799A10031CA28 /* MyProfileViewController.m in Sources */,
 				9441A2BB18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */,
 				94F5024618C7474D00B7B344 /* LoginViewController.m in Sources */,
@@ -749,8 +729,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tonightapp/tonightapp-Prefix.pch";
 				INFOPLIST_FILE = "tonightapp/tonightapp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -769,8 +750,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tonightapp/tonightapp-Prefix.pch";
 				INFOPLIST_FILE = "tonightapp/tonightapp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

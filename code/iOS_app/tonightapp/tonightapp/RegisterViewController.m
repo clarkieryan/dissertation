@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UILabel *errorTextLabel;
 
 @end
 
@@ -55,7 +56,7 @@
     if([registerResponse isEqualToString:@"true"]){
         [self performSegueWithIdentifier:@"registerSegue" sender:self];
     } else {
-        //Return an error
+        _errorTextLabel.text = registerResponse;
     }
     
 }

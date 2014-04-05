@@ -17,23 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Include the Crashlytics library
     [Crashlytics startWithAPIKey:@"435cf48aecbd9c923549ac0057b69e7405f900b5"];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
-    {
-        // app already launched
-    }
-    else
+    
+    //Check if the app has been launched before, if not set some key values as null
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        // This is the first launch ever
         
+        // This is the first launch ever
         [UICKeyChainStore setString:@"" forKey:@"email"];
         [UICKeyChainStore setString:@"" forKey:@"password"];
         [UICKeyChainStore setString:@"" forKey:@"access_token"];
         [UICKeyChainStore setString:@"" forKey:@"expires_on"];
     }
-    //Set something
+    //Set the style of the header bar
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     //Set the colour
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xe74c3c)];
@@ -63,12 +62,11 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    //Check the token
-    User *user = [[User alloc] initWithUser];
-//  [UICKeyChainStore setString:@"0000000000.000000" forKey:@"expires_on"];
     
+    //Check the users token when the application loads back
+    User *user = [[User alloc] initWithUser];
     if(![[user checkToken] isEqualToString:@"true"]){
+        //Should never be called
         NSLog(@"Something went wrong");
     }
 }

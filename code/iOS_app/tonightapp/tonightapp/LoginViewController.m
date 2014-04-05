@@ -38,17 +38,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Text stuff
+    
+    //Set how things look
     [[self titleLabel] setFont:[UIFont fontWithName:@"Pacifico" size:48]];
     _titleLabel.textColor = UIColorFromRGB(0xFFFFFF);
     self.view.backgroundColor = UIColorFromRGB(0xe74c3c);
     _passwordField.delegate = self;
-    
-     [_activityIndicator setHidden:TRUE];
+    //Hide the activity indicator
+    [_activityIndicator setHidden:TRUE];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    //Reset the login error text
     _loginErrorText.text = @"";
     
     //Create the user object
@@ -76,24 +78,28 @@
     [super touchesBegan:touches withEvent:event];
 }
 
-
+//Local login function
+//Defining here as it's called by the login button and the return button.
 - (void)loginUser:(NSString *)email withPassword:(NSString *)password
 {
+    //Start the loading icon
+    [_activityIndicator setHidden:false];
+    [_activityIndicator startAnimating];
+    //Reset the login errro text and blank out boxes.
     _loginErrorText.text = @"";
     _emailField.enabled = FALSE;
     _emailField.backgroundColor = UIColorFromRGB(0xd3d3d3);
     _passwordField.enabled = FALSE;
     _passwordField.backgroundColor = UIColorFromRGB(0xd3d3d3);
-    [_activityIndicator setHidden:false];
-    [_activityIndicator startAnimating];
-    
-    //Login the user
+
+
+    //Attempt a login
     NSString *loginResponse = [user loginUser:_emailField.text withPassword:_passwordField.text];
-    
     if([loginResponse isEqualToString:@"true"]) {
         //Redirect to the new page
         [self performSegueWithIdentifier:@"loginSegue" sender:self];
     } else {
+        //Stop the loading icon and render, re-enable the inputs and output login error
         [_activityIndicator stopAnimating];
         _loginErrorText.text = loginResponse;
         _emailField.enabled = TRUE;
@@ -103,11 +109,14 @@
     }
 
 }
+
+//Action called when login button is clicked
 - (IBAction)loginButton:(id)sender {
     [self loginUser:_emailField.text withPassword:_passwordField.text];
+    
 }
 
-//Hook up return key
+//Hook up return key on keyboard.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [self loginUser:_emailField.text withPassword:_passwordField.text];

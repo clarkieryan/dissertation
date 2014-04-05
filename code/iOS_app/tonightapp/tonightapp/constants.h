@@ -1,6 +1,8 @@
 //
 //  constants.h
-//  
+//
+// This file defines the various constants needed for operation.
+// The majority of which are the various URL's needed for operation and API Secrets for the OAuth handshake
 //
 //  Created by Ryan Clarke on 12/03/2014.
 //
