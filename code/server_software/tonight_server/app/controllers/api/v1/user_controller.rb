@@ -54,9 +54,9 @@ class API::V1::UserController < ApplicationController
 	def register 
 		user = User.new(user_params)
 		if user.save 
-			render json: {:message => "User created", :user => user};
+			render json: {:code => "201", :message => "User created", :user => user};
 		else 
-			render json: {:error => user.errors.full_messages} 
+			render json: {:code => "400", :message => user.errors.full_messages} 
 		end
 	end
 

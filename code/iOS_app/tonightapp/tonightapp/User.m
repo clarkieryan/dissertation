@@ -63,10 +63,11 @@
     }] asJson];
     
     //If the response is a created user use username/password and get an access token -> move to the main screen
-    if([[response.body.object objectForKey:@"message"] isEqualToString:@"User created"]) {
+    if([[response.body.object objectForKey:@"code"] isEqualToString:@"201"]) {
         return [self loginUser:email withPassword:password];
     } else {
-        return [response.body.object objectForKey:@"error"];
+        NSArray *output = [response.body.object objectForKey:@"error"];
+        return [output objectAtIndex:0];
     }
 }
 
