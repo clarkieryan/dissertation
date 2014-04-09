@@ -50,16 +50,7 @@ class User < ActiveRecord::Base
 	end
 
 	def follow!(eventID)
-		#Need to check wether or not it's unique
 		return EventUser.create(user_id: self.id, event_id: eventID);
 	end
 
-	def following?(eventID)
-		response  = EventUser.where({:user_id => self.id, :event_id => eventID});
-		if response.exists?
-			return true;
-		else 
-			return false;
-		end
-	end
 end
