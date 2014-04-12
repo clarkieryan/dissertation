@@ -17,7 +17,6 @@
     NSString *url;
     NSArray *sortedArray;
     NSArray *searchResults;
-    NSArray *following;
 }
 
 @end
@@ -71,18 +70,9 @@
             [request setParameters:parameters];
         }] asJson];
         
-        UNIHTTPJsonResponse* followingResponse = [[UNIRest get:^(UNISimpleRequest* request) {
-            [request setUrl:USER_FOLLOWING];
-            [request setHeaders:headers];
-            [request setParameters:parameters];
-        }] asJson];
-
-        
         for (id event in response.body.array) {
             [events addObject:[[Event alloc] initWithEvent:event]];
         }
-        
-        following = followingResponse.body.array;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //Sort the output
@@ -176,6 +166,12 @@
     return YES;
 }
 
+- (void)addItemViewController:(IndivEventViewController *)controller didFinishEnteringItem:(Event *)event
+{
+    
+    //Check if the following has been updated!
+    
+}
 
 
 
@@ -197,7 +193,7 @@
     
     IndivEventViewController *detailViewController = (IndivEventViewController *)segue.destinationViewController;
     detailViewController.event = event;
-    detailViewController.following = following;
+    detailViewController.delegate = self;
 }
 
 @end

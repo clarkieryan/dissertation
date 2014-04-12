@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
+@class IndivEventViewController;
+
+@protocol IndivEventViewControllerDelegate <NSObject>
+- (void)addItemViewController:(IndivEventViewController *)controller didFinishEnteringItem:(Event *)event;
+@end
+
 @interface IndivEventViewController : UIViewController
 @property (strong, nonatomic)Event *event;
-@property (strong, nonatomic)NSArray *following;
+@property (nonatomic, weak) id <IndivEventViewControllerDelegate> delegate;
 @end

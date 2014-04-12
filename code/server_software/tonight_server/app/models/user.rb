@@ -53,4 +53,16 @@ class User < ActiveRecord::Base
 		return EventUser.create(user_id: self.id, event_id: eventID);
 	end
 
+	def following?(eventID)
+		response  = EventUser.where({:user_id => self.id, :event_id => eventID});
+		if response.exists?
+			return true;
+		else 
+			return false;
+		end
+	end
+
+	def unfollow!(eventID)
+		self.events.delete(eventID);
+	end	
 end

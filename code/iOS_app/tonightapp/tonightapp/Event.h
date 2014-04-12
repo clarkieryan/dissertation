@@ -17,6 +17,7 @@
 @property(nonatomic, copy) NSString *ref_id;
 @property(nonatomic, copy) NSDate *start_time;
 @property(nonatomic, copy) NSDate *end_time;
+@property BOOL following;
 @property(nonatomic, copy) UIImage *cover_image;
 @property(nonatomic, copy) Venue *venue;
 

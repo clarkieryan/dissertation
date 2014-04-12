@@ -9,6 +9,8 @@
 #import "Event.h"
 #import "Venue.h"
 
+
+
 @implementation Event
 
 
@@ -22,6 +24,12 @@
     _desc = [self checkNullString:[event valueForKey:@"desc"]];
     _start_time = [self convertDate:[event valueForKey:@"start_time"]];
     _end_time = [self convertDate:[event valueForKey:@"end_time"]];
+    //Check if it's being followed or not
+    
+    NSLog(@"%@", [[event valueForKey:@"following"] boolValue] ? @"YES" : @"NO");
+    
+    _following = [[event valueForKey:@"following"] boolValue];
+    
     
     //Need to set this as a venue object
     _venue = [[Venue alloc] initWithVenue:[event valueForKey:@"venue"]];

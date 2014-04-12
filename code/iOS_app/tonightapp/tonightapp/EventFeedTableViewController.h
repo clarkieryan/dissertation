@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventFeedTableViewController : UITableViewController
+#import "IndivEventViewController.h"
+
+@interface EventFeedTableViewController : UITableViewController <IndivEventViewControllerDelegate>
     @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
     @property (strong, nonatomic) NSDictionary *venue;
     @property (strong, nonatomic) NSDictionary *category;

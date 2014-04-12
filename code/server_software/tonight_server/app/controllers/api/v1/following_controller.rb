@@ -20,6 +20,15 @@ class API::V1::FollowingController < ApplicationController
 		end
 	end
 
+	def unfollowEvent 
+		relation = current_resource_owner.unfollow(event_params[:id]);
+		if relation.errors.any?
+			render json: {:error => "400", :message => relation.errors.full_messages}
+		else 
+			render json: {:code => "201", :message => "User is not following event"}
+		end
+	end
+
 	#Implement later
 	def followVenue
 

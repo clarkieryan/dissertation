@@ -10,6 +10,8 @@
 #import "Event.h"
 #import <MBProgressHUD.h>
 
+
+
 @interface IndivEventViewController ()
     @property (weak, nonatomic) IBOutlet UIButton *followButton;
     @property (weak, nonatomic) IBOutlet UILabel *nameField;
@@ -17,7 +19,9 @@
     @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
     @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 
+
 @end
+
 
 @implementation IndivEventViewController
 
@@ -27,6 +31,9 @@
     if (self) {
         // Custom initialization
     }
+    
+
+    
     return self;
 }
 - (IBAction)vistEventButton:(id)sender {
@@ -76,17 +83,12 @@
     _descField.dataDetectorTypes = UIDataDetectorTypeLink;
     
     
-    //Check if it's following
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id = %@", _event.event_id];
-    NSArray *results = [_following filteredArrayUsingPredicate:predicate];
-    
-    if([results count] > 0){
+    if(_event.following){
         [_followButton setTitle: @"Following" forState: UIControlStateNormal];
         [_followButton setTitleColor:UIColorFromRGB(0x0BD318) forState:UIControlStateNormal];
     } else {
         _followButton.titleLabel.text = @"Follow";
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +96,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        //Pass back the event to update the root view
+        [self.delegate addItemViewController:self didFinishEnteringItem:_event];
+    }
+    [super viewWillDisappear:animated];
+}
+
 
 @end
 
