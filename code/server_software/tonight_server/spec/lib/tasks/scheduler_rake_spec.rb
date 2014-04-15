@@ -26,7 +26,7 @@ describe "RunJobs" do
 		stub_request(:get, "https://graph.facebook.com/224699987546240/events/?access_token=dmmsddd%7Cndm%3Bnnl").to_return(:status => 200, :body => events, :headers => {});
 
 		event = File.read('spec/fixtures/facebook/event.json')
-		stub_request(:get, "https://graph.facebook.com/204504813084059/?access_token=dmmsddd%7Cndm%3Bnnl").to_return(:status => 200, :body => event, :headers => {});
+		stub_request(:get, "https://graph.facebook.com/204504813084059/?access_token=dmmsddd%7Cndm%3Bnnl&fields=cover,name,end_time,picture,description,timezone,id,owner,venue,location").to_return(:status => 200, :body => event, :headers => {});
 		    
 
 		FactoryGirl.create(:job)

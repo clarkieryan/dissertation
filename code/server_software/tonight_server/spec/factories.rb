@@ -39,7 +39,7 @@ FactoryGirl.define do
 		timezone "Europe/London"
 		venue { |p| p.association(:venue) }
 		updated_at "2014-05-05 05:00:00 UTC"
-		
+
 		factory :event_with_category do
 			ignore do
         			count 1

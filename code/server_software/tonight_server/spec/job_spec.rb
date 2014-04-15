@@ -1,4 +1,4 @@
-require_relative "../lib/scheduler/job";
+require_relative "../lib/scheduler/jobs";
 require_relative "../lib/resources/facebook";
 
 require 'yaml'

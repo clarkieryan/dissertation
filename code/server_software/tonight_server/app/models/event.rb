@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
 	validates :ref_id, uniqueness: true
 
 	def following(user = nil)
-		 user ||= current_user
+		user ||= current_user
 		if self.users.where(:id => user.id).empty?
 			return true
 		else

@@ -32,7 +32,7 @@ describe API::V1::EventsController do
 		it 'get\'s an individual page' do
 			get :eventByID, :id => @event.id
 			expect(response).to be_success
-			 expect(response.body).to eq(@event.to_json) 
+			expect(response.body).to eq(@event.to_json(:methods => :following)) 
 		end
 
 	end
@@ -41,7 +41,7 @@ describe API::V1::EventsController do
 
 		it 'gets the events by venue' do
 			get :eventsByVenue, :id => @venue.id
-			expect(response.body).to eq(@venue.events.to_json)
+			expect(response.body).to eq(@venue.events.to_json(:methods => :following))
 		end
 	
 	end

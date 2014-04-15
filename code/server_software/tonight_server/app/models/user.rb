@@ -63,6 +63,6 @@ class User < ActiveRecord::Base
 	end
 
 	def unfollow!(eventID)
-		self.events.delete(eventID);
+		self.events(eventID).first.delete;
 	end	
 end

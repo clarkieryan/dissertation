@@ -50,7 +50,7 @@ describe User do
 	  	end
 
               it 'unfollows a user' do
-              		expect(@user.unfollow!(@event.id)).to eq(true)
+              		expect(@user.unfollow!(@event.id).destroyed?).to eq(true)
              	end              
 
   	end
