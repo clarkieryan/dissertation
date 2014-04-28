@@ -47,6 +47,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
 
+# To generate ERD diagram from the code
+group :development do
+  gem "rails-erd"
+end
+
 group :test do
 	gem "webmock", "~> 1.17.3"
 	gem 'factory_girl_rails'
