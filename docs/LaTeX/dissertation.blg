@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
+This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: dissertation.aux
 A level-1 auxiliary file: cover.aux
@@ -19,55 +19,72 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: References/references.bib
-Warning--entry type for "apache_poi" isn't style-file defined
---line 57 of file References/references.bib
-Warning--entry type for "apache_license" isn't style-file defined
---line 66 of file References/references.bib
+Warning--entry type for "cocoapods" isn't style-file defined
+--line 14 of file References/references.bib
+Warning--entry type for "trello" isn't style-file defined
+--line 23 of file References/references.bib
+Warning--entry type for "github" isn't style-file defined
+--line 32 of file References/references.bib
+Warning--entry type for "theRainbow" isn't style-file defined
+--line 41 of file References/references.bib
+Warning--entry type for "eventStats" isn't style-file defined
+--line 50 of file References/references.bib
+Warning--entry type for "heroku" isn't style-file defined
+--line 59 of file References/references.bib
+Warning--entry type for "spotnight" isn't style-file defined
+--line 67 of file References/references.bib
+Warning--entry type for "lineup" isn't style-file defined
+--line 74 of file References/references.bib
+Warning--entry type for "songkick" isn't style-file defined
+--line 81 of file References/references.bib
+Warning--I didn't find a database entry for "apache_poi"
+Warning--I didn't find a database entry for "apache_license"
+Warning--I didn't find a database entry for "NumericalRecipes"
 -- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for use with work to be submitted to the IEEE.
 
 Done.
-You've used 7 entries,
+You've used 9 entries,
             4538 wiz_defined-function locations,
-            944 strings with 9409 characters,
-and the built_in function-call counts, 4927 in all, are:
-= -- 426
-> -- 105
-< -- 27
-+ -- 54
-- -- 24
-* -- 237
-:= -- 781
-add.period$ -- 15
-call.type$ -- 7
-change.case$ -- 33
-chr.to.int$ -- 69
-cite$ -- 7
-duplicate$ -- 325
-empty$ -- 402
-format.name$ -- 27
-if$ -- 1082
+            941 strings with 9173 characters,
+and the built_in function-call counts, 4109 in all, are:
+= -- 377
+> -- 63
+< -- 0
++ -- 27
+- -- 18
+* -- 152
+:= -- 747
+add.period$ -- 18
+call.type$ -- 9
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 297
+empty$ -- 370
+format.name$ -- 18
+if$ -- 857
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 57
-newline$ -- 48
-num.names$ -- 14
-pop$ -- 161
+int.to.str$ -- 9
+missing$ -- 63
+newline$ -- 56
+num.names$ -- 18
+pop$ -- 180
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 27
 quote$ -- 2
-skip$ -- 372
+skip$ -- 333
 stack$ -- 0
-substring$ -- 206
-swap$ -- 228
-text.length$ -- 4
+substring$ -- 54
+swap$ -- 153
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 55
+type$ -- 81
 warning$ -- 0
-while$ -- 25
-width$ -- 8
-write$ -- 87
-(There were 2 warnings)
+while$ -- 18
+width$ -- 10
+write$ -- 100
+(There were 12 warnings)
