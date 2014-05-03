@@ -19,8 +19,22 @@
 
 % you will end up with dissertation.pdf 
 \usepackage{mmp}
+
+% User added stuff
 \usepackage{fontspec} % Provide features for AAT and OpenType fonts
  \setmainfont{Helvetica Neue Light}
+
+\usepackage{caption}
+ \captionsetup{belowskip=12pt,aboveskip=4pt}
+
+
+ \usepackage{float}
+ \usepackage{listings}
+ \usepackage{color}
+
+\floatstyle{ruled}
+\newfloat{program}{thp}{lop}
+\floatname{program}{Example Code}
  
 % the following packages are used for citations - You only need to include one. 
 %

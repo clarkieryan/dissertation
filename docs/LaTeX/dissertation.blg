@@ -19,24 +19,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: References/references.bib
-Warning--entry type for "cocoapods" isn't style-file defined
+Warning--entry type for "WebMock" isn't style-file defined
 --line 14 of file References/references.bib
-Warning--entry type for "trello" isn't style-file defined
---line 23 of file References/references.bib
-Warning--entry type for "github" isn't style-file defined
---line 32 of file References/references.bib
-Warning--entry type for "theRainbow" isn't style-file defined
---line 41 of file References/references.bib
-Warning--entry type for "eventStats" isn't style-file defined
---line 50 of file References/references.bib
-Warning--entry type for "heroku" isn't style-file defined
---line 59 of file References/references.bib
-Warning--entry type for "spotnight" isn't style-file defined
---line 67 of file References/references.bib
-Warning--entry type for "lineup" isn't style-file defined
+Warning--entry type for "FactoryGirl" isn't style-file defined
+--line 24 of file References/references.bib
+Warning--entry type for "RSpecRails" isn't style-file defined
+--line 34 of file References/references.bib
+Warning--entry type for "sublime" isn't style-file defined
+--line 44 of file References/references.bib
+Warning--entry type for "RDS" isn't style-file defined
+--line 54 of file References/references.bib
+Warning--entry type for "RubyTest" isn't style-file defined
+--line 64 of file References/references.bib
+Warning--entry type for "RSpecSub" isn't style-file defined
 --line 74 of file References/references.bib
+Warning--entry type for "schemaEvent" isn't style-file defined
+--line 84 of file References/references.bib
+Warning--entry type for "facebookapi" isn't style-file defined
+--line 93 of file References/references.bib
+Warning--entry type for "raywender" isn't style-file defined
+--line 102 of file References/references.bib
+Warning--entry type for "cocoapods" isn't style-file defined
+--line 111 of file References/references.bib
+Warning--entry type for "trello" isn't style-file defined
+--line 120 of file References/references.bib
+Warning--entry type for "github" isn't style-file defined
+--line 129 of file References/references.bib
+Warning--entry type for "theRainbow" isn't style-file defined
+--line 138 of file References/references.bib
+Warning--entry type for "eventStats" isn't style-file defined
+--line 147 of file References/references.bib
+Warning--entry type for "heroku" isn't style-file defined
+--line 156 of file References/references.bib
+Warning--entry type for "spotnight" isn't style-file defined
+--line 164 of file References/references.bib
+Warning--entry type for "lineup" isn't style-file defined
+--line 171 of file References/references.bib
 Warning--entry type for "songkick" isn't style-file defined
---line 81 of file References/references.bib
+--line 178 of file References/references.bib
 Warning--I didn't find a database entry for "apache_poi"
 Warning--I didn't find a database entry for "apache_license"
 Warning--I didn't find a database entry for "NumericalRecipes"
@@ -46,45 +66,45 @@ Warning--I didn't find a database entry for "NumericalRecipes"
 ** Sorting version - not for use with work to be submitted to the IEEE.
 
 Done.
-You've used 9 entries,
+You've used 19 entries,
             4538 wiz_defined-function locations,
-            941 strings with 9173 characters,
-and the built_in function-call counts, 4109 in all, are:
-= -- 377
-> -- 63
+            988 strings with 10255 characters,
+and the built_in function-call counts, 8585 in all, are:
+= -- 797
+> -- 133
 < -- 0
-+ -- 27
-- -- 18
-* -- 152
-:= -- 747
-add.period$ -- 18
-call.type$ -- 9
-change.case$ -- 36
++ -- 57
+- -- 38
+* -- 316
+:= -- 1549
+add.period$ -- 38
+call.type$ -- 19
+change.case$ -- 76
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 297
-empty$ -- 370
-format.name$ -- 18
-if$ -- 857
+cite$ -- 19
+duplicate$ -- 627
+empty$ -- 780
+format.name$ -- 38
+if$ -- 1807
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 63
-newline$ -- 56
-num.names$ -- 18
-pop$ -- 180
+int.to.str$ -- 19
+missing$ -- 133
+newline$ -- 96
+num.names$ -- 38
+pop$ -- 380
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 57
 quote$ -- 2
-skip$ -- 333
+skip$ -- 702
 stack$ -- 0
-substring$ -- 54
-swap$ -- 153
+substring$ -- 114
+swap$ -- 323
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 81
+type$ -- 171
 warning$ -- 0
-while$ -- 18
-width$ -- 10
-write$ -- 100
-(There were 12 warnings)
+while$ -- 38
+width$ -- 21
+write$ -- 190
+(There were 22 warnings)

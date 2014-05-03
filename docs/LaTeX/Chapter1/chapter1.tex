@@ -8,7 +8,6 @@
 
 	At this time there is a wide selection of similar applications available to download from the Apple AppStore. Each of these applications differ slightly be it the way the information is presented or the key functionality they provide. Many of the applications are only suited towards a particular city or specific headlining artists, by doing this they are somewhat limiting the scope of their audience. Many of the solutions out there also currently only utilise data that's being input by employees, this means that only a representative of all the events happening are selected and presented by the application. 
 
-	\subsection{The }
 
 	\subsection{Current Solutions}
 		Here are some of the current applications that are available to download from the Apple AppStore. All of the applications are free downloads, along with free registration to use the features. All of the applications as standard provide a feed of events (in a relevant order), and the ability to filter them in various ways. 
@@ -70,6 +69,8 @@
 				The server must be able to pull in information from a number of different API's and 
 			\item[Application - Server interoperability] \hfill \\
 				The application and server need to be able to pass information to each using some form of interoperability. 
+			\item[Interoperability authentication] \hfill \\
+				The implementation of the interoperability must utilise some form of authentication for access. 
 		\end{description}
 
 	\subsection{Secondary objectives}
@@ -84,6 +85,18 @@
 				The application should show a users profile, showing the events they are following and their personal details.
 			\item[Link to purchase the events] \hfill \\
 				The application should provide some sort of back link to enable a user to purchase tickets through a 3rd party service. 
+			\item[Ability to administer data from an administration panel] \hfill \\
+				The server application must give the ability to administer the data stored from an administration panel.
+			\item[Ability to administer jobs from an administration panel] \hfill \\
+				The server application must be able to administer data mining jobs from an administration panel
+		\end{description}
+
+	\subsection{Non-Functional requirements}
+		\begin{description}
+			\item[Application needs to training to be used] \hfill \\
+				The user should not need any training to use the application
+			% \item[] \hfill \\
+				
 		\end{description}
 
 	\subsection{Hardware requirements}
@@ -99,7 +112,7 @@
 	\subsection{iOS Development}
 	The application itself will be based on the iOS platform for Apple iPhones, being programmed using Apples Objective C language. This decision was made based on some Google Analytics information, which was provided by a popular events company in Birmingham. Figure \ref{fig:googleAnalyticsRainbow} shows us the statistics that's been produced by Google Analytics showing that over 70\% of their traffic was coming from Apple iPhones. The programmer also had readily available access to an iPhone to assist with the development process underlined. 
 
-	\begin{figure}[H] % H - For exact position 
+	\begin{figure}[h] % H - For exact position 
 		\caption[Image of Google Analytics for popular events site]{This image shows within a month their main traffic is through Apple iPhones, with secondary traffic of Android being a much smaller percentage. }
 		\centering
 		\includegraphics[scale=1]{Images/google-analytics}
@@ -112,7 +125,76 @@
 
 	\subsection{Server Development}
 
-	The project will also require a server side element to be able to mine the data and provide the data to the application, this will be written in Ruby using the Ruby on Rails framework. Using the framework gives access to lots of functionality not built into the core of Ruby and provides a production ready environment. Due to the explosive nature of applications, it's been decided to use cloud computing to be able to effectively manage the demand of resources used by the application. For this it was decided the best cloud platform is Heroku\cite{heroku} this was mainly due to the ease of deployment, which involved a git push to their remote server, and they provided a free tier during development. 
+	The project will also require a server side element to be able to mine the data and provide the data to the application, this will be written in Ruby using the Ruby on Rails framework. Using the framework gives access to lots of functionality not built into the core of Ruby and provides a production ready environment. Due to the explosive nature of applications, it's been decided to use cloud computing to be able to effectively manage the demand of resources used by the application. For this it was decided the best cloud platform is Heroku\cite{heroku} this was mainly due to the ease of deployment, which involved a git push to their remote server, Heroku also provided a free service to be used during development and for small scale applications. 
+
+
+	\subsection{API Interoperability}
+		To get the data to be used throughout the system, it will need to communicate to a number of API's and store the outputted data to to be processed and outputted through the server element of the project. The main API to communicate with is the Facebook Graph API\cite{facebookapi}, the key event and venue details that have been provided from Facebook have been listed in Table \ref{fig:facebookEventVenues}. 
+		
+		\begin{table}[h]
+			\caption{Data retrieved on events and venues from Facebook API}
+				\begin{minipage}{.5\linewidth}
+					\caption{Event data}
+					\centering
+					    \begin{tabular}{|l|l|}
+					     \hline
+					    Property Name  & Type            \\ \hline
+					    id             & numeric string  \\
+					    cover          & CoverPhoto      \\
+					    description    & string          \\
+					    end\_time      & datetime        \\
+					    is\_date\_only & bool            \\
+					    location       & string          \\
+					    name           & string          \\
+					    owner          & User|Page|Group \\
+					    parent\_group  & Group           \\
+					    privacy        & string          \\
+					    start\_time    & datetime        \\
+					    ticket\_uri    & string          \\
+					    timezone       & string          \\
+					    updated\_time  & datetime        \\
+					    venue          & Page            \\
+					    \hline
+						\end{tabular}
+
+				\end{minipage}%
+				\begin{minipage}{.5\linewidth}
+					\centering
+					\caption{Venue data}
+					    \begin{tabular}{|l|l|}
+					    \hline
+					    Property Name                   & Type                                            \\ \hline
+					    id                              & string                                          \\
+					    about¹                          & string                                          \\
+					    checkins                        & int32                                           \\
+					    company\_overview¹              & string                                          \\
+					    cover¹                          & CoverPhoto                                      \\
+					    current\_location               & string                                          \\
+					    description¹                    & string                                          \\
+					    general\_info¹                  & string                                          \\
+					    hometown                        & string                                          \\
+					    likes                           & int32                                           \\
+					    link                            & string                                          \\
+					    location                        & object                                          \\
+					    country                         & string                                          \\
+					    city                            & string                                          \\
+					    longitude                       & float                                           \\
+					    zip                             & string                                          \\
+					    state                           & string                                          \\
+					    street                          & string                                          \\
+					    latitude                        & float                                           \\
+					    name¹                           & string                                          \\
+					    parking¹                        & object                                          \\
+					    street                          & int32                                           \\
+					    lot                             & int32                                           \\
+					    phone¹                          & string                                          \\
+					    username                        & string                                          \\
+					    website¹                        & string                                          \\
+					    \hline
+					    \end{tabular}
+				\end{minipage} 
+				\label{fig:facebookEventVenues}
+		\end{table}
 
 \section{Process}
 	
@@ -124,3 +206,6 @@
 	\subsection{iOS Application}
 		The development of the iOS application was a lot more conventional, a feature was programmed with relevant unit testing implemented to ensure the functionality produced the correct output. A form of TDD was used as sometimes a test failed so it was required to go back and fix the code to ensure the test passed. After each feature was added, device testing was undertaken ensuring it all ties together well and works on the device.  
 	
+	\subsection{GitHub}
+		
+	\subsection{Trello}

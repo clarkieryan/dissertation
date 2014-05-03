@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{#1}
 \csname url@rmstyle\endcsname
 \providecommand{\newblock}{\relax}
@@ -18,14 +18,31 @@
 \fi
 #2}}
 
+\bibitem{WebMock}
+{Bartosz Blimke}, ``{WebMock},'' \url{https://github.com/bblimke/webmock},
+  2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
 \bibitem{cocoapods}
 {Cocoa Pods}, ``{CocoaPods.org - The Dependency Manager for Objective C. },''
   \url{http://cocoapods.org/}, 2014.
 
 
+\bibitem{facebookapi}
+{Facebook}, ``{Facebook Graph API Documentation},''
+  \url{https://developers.facebook.com/docs/graph-api}, 2014.
+
+
 \bibitem{github}
 {GitHub}, ``{GitHub - Hosted GIT Server},'' \url{http://www.github.com/}, 2014.
 
+
+\bibitem{RSpecSub}
+{Greg Williams}, ``{RSpec Package for Sublime Text 2/3},''
+  \url{https://github.com/SublimeText/RSpec}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
 
 \bibitem{eventStats}
 {HBAA}, ``{Opportunities for Growth in the UK Events Industy},''
@@ -39,9 +56,37 @@
  \begin{quotation}\noindent The cloud server being used to deploy to a
   production ready state \end{quotation}
 
+\bibitem{sublime}
+{Jon Skinner}, ``{Sublime Text 2},'' \url{http://www.sublimetext.com/2}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
 \bibitem{lineup}
 {Line Up}, ``{Line Up - Events in Manchester},'' \url{http://lineupnow.com/},
   2014.
+
+
+\bibitem{RubyTest}
+{Maciej Gajek}, ``{Sublime Text 2 Ruby Tests},''
+  \url{https://github.com/maltize/sublime-text-2-ruby-tests}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
+\bibitem{raywender}
+{Ray Wenderlich}, ``{Ray Wenderlich | Tutorials for iPhone / iOS Developers and
+  GamersRay Wenderlich | Tutorials for iPhone / iOS Developers and Gamers},''
+  \url{www.raywenderlich.com}, 2014.
+
+
+\bibitem{RSpecRails}
+{RSpec}, ``{RSpec Package for Ruby on Rails},''
+  \url{https://github.com/rspec/rspec-rails}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
+\bibitem{schemaEvent}
+{schema.org}, ``{Internationally recognised schema for events},''
+  \url{http://schema.org/Event}, 2014.
 
 
 \bibitem{songkick}
@@ -54,10 +99,22 @@
   \url{http://spotnightapp.com/}, 2014.
 
 
+\bibitem{RDS}
+{Stefano Schiavi}, ``{railsdev-sublime-snippets},''
+  \url{https://github.com/j10io/railsdev-sublime-snippets}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
 \bibitem{theRainbow}
 {The Rainbow Venues}, ``{The Rainbow Venues},''
   \url{http://www.therainbowvenues.co.uk/}, 2014.
 
+
+\bibitem{FactoryGirl}
+{thoughtbot, inc.}, ``{FactoryGirl},''
+  \url{https://github.com/thoughtbot/factory_girl}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
 
 \bibitem{trello}
 {Trello}, ``{Trello - Project Management},'' \url{http://www.trello.com/},
