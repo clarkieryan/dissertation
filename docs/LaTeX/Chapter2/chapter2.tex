@@ -121,7 +121,7 @@
 			\end{figure}
 
 		\subsection{Class diagram}
-			Following on from the MVC design pattern and the fact the API needs to be representational, each controller is representational for each table stored in the database. However in some cases there are filters such as being able to get the events via the venue, since this will return a list of events rather than venues the method to do this is inside the events controller. Figure \ref{fig:controllers} shows the structure of the controllers, and the methods inside of them. 
+			Following on from the MVC design pattern and the fact the API needs to be representational, each set of data (table) is represented by a controller. However in some cases there are filters such as being able to get the events via the venue, since this will return a list of events rather than venues the method to do this is inside the events controller. Figure \ref{fig:controllers} shows the structure of the controllers, and the methods inside of them. 
 
 			\begin{figure}[ht] % H - For exact position 
 				\caption[Controllers Class Diagram]{This diagram shows the classes along with the methods and class variables}

@@ -1,23 +1,31 @@
 \chapter{Testing}
 
-Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
-
-Have you tested your system on ’real users’? For example, if your system is supposed to solve a problem for a business, then it would be appropriate to present your approach to involve the users in the testing process and to record the results that you obtained. Depending on the level of detail, it is likely that you would put any detailed results in an appendix.
-
-The following sections indicate some areas you might include. Other sections may be more appropriate to your project. 
+	This section describes the approach to testing undertaken throughout the project, along with some results from the tests that where undertaken.
 
 \section{Overall Approach to Testing}
+	To develop the server side element of the project the programmer followed a test driven approach utilising the red-green-refactor principle.  By doing this it enabled the code to be as efficient as possible whilst still undertaking the task that block of code was expected to do. This method was chosen as the majority of the code required on the server side application didn't utilise a GUI and benefited from a much more pragmatic  approach to testing. As part of the server element had to pull in information from external sources `WebMock' was used to mock HTTP connections to the external API's, this was used to serve test data to the code and to be able to check any transformations on the data. 
 
+	To develop the mobile application a more behaviour driven approach was used, by writing the code and conducting  a manual test seemed the more logical way. As most of the code was by use of target-action concept, meaning that the bulk of code was methods to be ran when a particular button is selected in the GUI. This also helped with the requirement testing, by ensuring that the requirements where in place and functioning on the mobile device itself. 
+	
 \section{Automated Testing}
-
-\subsection{Unit Tests}
-
-\subsection{User Interface Testing}
-
-\subsection{Stress Testing}
-	%Irrelevant - Heroku
+	To conduct the automated tests on the server element of the project I used RSpec which is a testing environment for Ruby. RSpec has a version that's designed for the use within Ruby on Rails of which is the version used, RSpec gives the programmer the ability to test all aspects of the code including models, controllers and views. The programmer first wrote the tests that where needed for a particular feature or element of the program, and then implemented the function. However sometimes the test needed to be reviewed to ensure that it was testing the code correctly as, occasional odd results would appear after implementing a feature. 
+	
 \subsection{Other types of testing}
 
-\section{Integration Testing}
+\subsection{Stress Testing}
+	Stress testing the server side element is pretty irrelevant due to the nature of the cloud based server it's running on we almost have unlimited resources to utilise if the server comes under significant stress. Heroku gives you the ability to add and remove physical resources such as CPU power and RAM whenever the demand is so high it's required. With the current scale of the application there is plenty of leeway to supply to the potential demand. If this demand became more persistent then it would be an adequate time to ensure the code is running as leanly as possible. 
 
-\section{User Testing}
+	XCode 5 gives some great tools to be able to visualise how well the application is running on the mobile device, 
+
+	% Run app in XCode and test from there.
+
+\section{Integration Testing}
+	For the most part the 
+
+
+
+Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
+
+Have you tested your system on real users? For example, if your system is supposed to solve a problem for a business, then it would be appropriate to present your approach to involve the users in the testing process and to record the results that you obtained. Depending on the level of detail, it is likely that you would put any detailed results in an appendix.
+
+The following sections indicate some areas you might include. Other sections may be more appropriate to your project. 

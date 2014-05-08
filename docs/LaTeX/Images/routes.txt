@@ -1,0 +1,95 @@
+                       Prefix Verb   URI Pattern                                  Controller#Action
+                         root GET    /                                            static#index
+                   admin_root GET    /admin(.:format)                             admin/static#index
+                   admin_jobs GET    /admin/jobs(.:format)                        admin/jobs#index
+                              POST   /admin/jobs(.:format)                        admin/jobs#create
+                new_admin_job GET    /admin/jobs/new(.:format)                    admin/jobs#new
+               edit_admin_job GET    /admin/jobs/:id/edit(.:format)               admin/jobs#edit
+                    admin_job GET    /admin/jobs/:id(.:format)                    admin/jobs#show
+                              PATCH  /admin/jobs/:id(.:format)                    admin/jobs#update
+                              PUT    /admin/jobs/:id(.:format)                    admin/jobs#update
+                              DELETE /admin/jobs/:id(.:format)                    admin/jobs#destroy
+                  admin_users GET    /admin/users(.:format)                       admin/users#index
+                              POST   /admin/users(.:format)                       admin/users#create
+               new_admin_user GET    /admin/users/new(.:format)                   admin/users#new
+              edit_admin_user GET    /admin/users/:id/edit(.:format)              admin/users#edit
+                   admin_user GET    /admin/users/:id(.:format)                   admin/users#show
+                              PATCH  /admin/users/:id(.:format)                   admin/users#update
+                              PUT    /admin/users/:id(.:format)                   admin/users#update
+                              DELETE /admin/users/:id(.:format)                   admin/users#destroy
+                 admin_venues GET    /admin/venues(.:format)                      admin/venues#index
+                              POST   /admin/venues(.:format)                      admin/venues#create
+              new_admin_venue GET    /admin/venues/new(.:format)                  admin/venues#new
+             edit_admin_venue GET    /admin/venues/:id/edit(.:format)             admin/venues#edit
+                  admin_venue GET    /admin/venues/:id(.:format)                  admin/venues#show
+                              PATCH  /admin/venues/:id(.:format)                  admin/venues#update
+                              PUT    /admin/venues/:id(.:format)                  admin/venues#update
+                              DELETE /admin/venues/:id(.:format)                  admin/venues#destroy
+                 admin_events GET    /admin/events(.:format)                      admin/events#index
+                              POST   /admin/events(.:format)                      admin/events#create
+              new_admin_event GET    /admin/events/new(.:format)                  admin/events#new
+             edit_admin_event GET    /admin/events/:id/edit(.:format)             admin/events#edit
+                  admin_event GET    /admin/events/:id(.:format)                  admin/events#show
+                              PATCH  /admin/events/:id(.:format)                  admin/events#update
+                              PUT    /admin/events/:id(.:format)                  admin/events#update
+                              DELETE /admin/events/:id(.:format)                  admin/events#destroy
+                              GET    /oauth/authorize/:code(.:format)             doorkeeper/authorizations#show
+          oauth_authorization GET    /oauth/authorize(.:format)                   doorkeeper/authorizations#new
+                              POST   /oauth/authorize(.:format)                   doorkeeper/authorizations#create
+                              PATCH  /oauth/authorize(.:format)                   doorkeeper/authorizations#update
+                              PUT    /oauth/authorize(.:format)                   doorkeeper/authorizations#update
+                              DELETE /oauth/authorize(.:format)                   doorkeeper/authorizations#destroy
+                  oauth_token POST   /oauth/token(.:format)                       doorkeeper/tokens#create
+           oauth_applications GET    /oauth/applications(.:format)                doorkeeper/applications#index
+                              POST   /oauth/applications(.:format)                doorkeeper/applications#create
+        new_oauth_application GET    /oauth/applications/new(.:format)            doorkeeper/applications#new
+       edit_oauth_application GET    /oauth/applications/:id/edit(.:format)       doorkeeper/applications#edit
+            oauth_application GET    /oauth/applications/:id(.:format)            doorkeeper/applications#show
+                              PATCH  /oauth/applications/:id(.:format)            doorkeeper/applications#update
+                              PUT    /oauth/applications/:id(.:format)            doorkeeper/applications#update
+                              DELETE /oauth/applications/:id(.:format)            doorkeeper/applications#destroy
+oauth_authorized_applications GET    /oauth/authorized_applications(.:format)     doorkeeper/authorized_applications#index
+ oauth_authorized_application DELETE /oauth/authorized_applications/:id(.:format) doorkeeper/authorized_applications#destroy
+             oauth_token_info GET    /oauth/token/info(.:format)                  doorkeeper/token_info#show
+                
+
+GET,   /api/v1/events(.:format) ,                    api/v1/events#index
+GET,   /api/v1/events/:id(.:format) ,                api/v1/events#eventByID
+GET,    /api/v1/venues(.:format),                     api/v1/venues#index
+GET,    /api/v1/venues/:id(.:format),                 api/v1/venues#show
+GET,    /api/v1/venues/:id/events(.:format),          api/v1/events#eventsByVenue
+POST,   /api/v1/register(.:format),                   api/v1/user#register
+GET,    /api/v1/user(.:format),                       api/v1/user#index
+POST,   /api/v1/user(.:format) ,                      api/v1/user#update
+GET,    /api/v1/user/feed(.:format) ,                 api/v1/user#feed
+GET,   /api/v1/categories(.:format),                 api/v1/categories#index
+GET,    /api/v1/categories/:id(.:format),             api/v1/categories#show
+GET,    /api/v1/categories/:id/events(.:format) ,     api/v1/events#eventsByCategory
+GET,    /api/v1/cities(.:format),                     api/v1/cities#index
+GET,    /api/v1/cities/:id(.:format),                 api/v1/cities#show
+GET,    /api/v1/cities/:id/events(.:format),          api/v1/events#eventsByCity
+GET,    /api/v1/cities/:city_id/venues(.:format) ,    api/v1/venues#venuesByCity
+GET,    /api/v1/cities/:city_id/categories(.:format), api/v1/categories#catsByCity
+GET,    /api/v1/user/following(.:format),             api/v1/following#index
+POST,   /api/v1/user/follow(.:format),                api/v1/following#followEvent
+POST,   /api/v1/user/unfollow(.:format),              api/v1/following#unfollowEvent
+
+
+GET,    /oauth/authorize/:code(.:format) ,            doorkeeper/authorizations#show
+GET,    /oauth/authorize(.:format),                   doorkeeper/authorizations#new
+POST,   /oauth/authorize(.:format),                   doorkeeper/authorizations#create
+PATCH,  /oauth/authorize(.:format),                   doorkeeper/authorizations#update
+PUT,    /oauth/authorize(.:format),                   doorkeeper/authorizations#update
+DELETE, /oauth/authorize(.:format),                   doorkeeper/authorizations#destroy
+POST,   /oauth/token(.:format),                       doorkeeper/tokens#create
+GET,    /oauth/applications(.:format),                doorkeeper/applications#index
+POST,   /oauth/applications(.:format),                doorkeeper/applications#create
+GET,    /oauth/applications/new(.:format),            doorkeeper/applications#new
+GET,    /oauth/applications/:id/edit(.:format),       doorkeeper/applications#edit
+GET,    /oauth/applications/:id(.:format),            doorkeeper/applications#show
+PATCH,  /oauth/applications/:id(.:format),            doorkeeper/applications#update
+PUT,    /oauth/applications/:id(.:format),           doorkeeper/applications#update
+DELETE, /oauth/applications/:id(.:format),            doorkeeper/applications#destroy
+GET,    /oauth/authorized_applications(.:format),     doorkeeper/authorized_applications#index
+DELETE, /oauth/authorized_applications/:id(.:format), doorkeeper/authorized_applications#destroy
+GET,    /oauth/token/info(.:format),                  doorkeeper/token_info#show

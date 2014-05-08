@@ -17,32 +17,40 @@
 \contentsline {subsection}{\numberline {1.4.1}Server application}{9}
 \contentsline {subsection}{\numberline {1.4.2}iOS Application}{9}
 \contentsline {subsection}{\numberline {1.4.3}GitHub}{9}
-\contentsline {subsection}{\numberline {1.4.4}Trello}{9}
-\contentsline {chapter}{\numberline {2}Design}{10}
-\contentsline {section}{\numberline {2.1}Database}{10}
-\contentsline {section}{\numberline {2.2}Server Application}{11}
-\contentsline {subsection}{\numberline {2.2.1}Development tools}{11}
-\contentsline {subsection}{\numberline {2.2.2}OAuth}{11}
-\contentsline {subsection}{\numberline {2.2.3}Routes}{11}
-\contentsline {subsection}{\numberline {2.2.4}Data mining element}{12}
-\contentsline {subsection}{\numberline {2.2.5}Class diagram}{13}
-\contentsline {section}{\numberline {2.3}iOS Application}{13}
-\contentsline {subsection}{\numberline {2.3.1}Development tools}{13}
-\contentsline {subsection}{\numberline {2.3.2}Wireframes}{13}
-\contentsline {subsection}{\numberline {2.3.3}Class diagrams}{14}
-\contentsline {chapter}{\numberline {3}Implementation}{18}
-\contentsline {chapter}{\numberline {4}Testing}{19}
-\contentsline {section}{\numberline {4.1}Overall Approach to Testing}{19}
-\contentsline {section}{\numberline {4.2}Automated Testing}{19}
-\contentsline {subsection}{\numberline {4.2.1}Unit Tests}{19}
-\contentsline {subsection}{\numberline {4.2.2}User Interface Testing}{19}
-\contentsline {subsection}{\numberline {4.2.3}Stress Testing}{19}
-\contentsline {subsection}{\numberline {4.2.4}Other types of testing}{19}
-\contentsline {section}{\numberline {4.3}Integration Testing}{19}
-\contentsline {section}{\numberline {4.4}User Testing}{19}
-\contentsline {chapter}{\numberline {5}Evaluation}{20}
-\contentsline {chapter}{Appendices}{21}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{22}
-\contentsline {chapter}{\numberline {B}Code samples}{23}
-\contentsline {section}{\numberline {2.1}Random Number Generator}{23}
-\contentsline {chapter}{Annotated Bibliography}{26}
+\contentsline {subsection}{\numberline {1.4.4}Trello}{10}
+\contentsline {chapter}{\numberline {2}Design}{11}
+\contentsline {section}{\numberline {2.1}Database}{11}
+\contentsline {section}{\numberline {2.2}Server Application}{12}
+\contentsline {subsection}{\numberline {2.2.1}Development tools}{12}
+\contentsline {subsection}{\numberline {2.2.2}OAuth}{12}
+\contentsline {subsection}{\numberline {2.2.3}Routes}{12}
+\contentsline {subsection}{\numberline {2.2.4}Data mining element}{13}
+\contentsline {subsection}{\numberline {2.2.5}Class diagram}{14}
+\contentsline {section}{\numberline {2.3}iOS Application}{14}
+\contentsline {subsection}{\numberline {2.3.1}Development tools}{14}
+\contentsline {subsection}{\numberline {2.3.2}Wireframes}{14}
+\contentsline {subsection}{\numberline {2.3.3}Class diagrams}{15}
+\contentsline {chapter}{\numberline {3}Implementation}{19}
+\contentsline {section}{\numberline {3.1}Personalised feed}{19}
+\contentsline {section}{\numberline {3.2}Storing passwords}{19}
+\contentsline {section}{\numberline {3.3}Search functionality}{20}
+\contentsline {section}{\numberline {3.4}Adding in the following functionality}{20}
+\contentsline {section}{\numberline {3.5}Retrieving events from the jobs}{21}
+\contentsline {section}{\numberline {3.6}Interoperability}{22}
+\contentsline {section}{\numberline {3.7}OAuth}{22}
+\contentsline {section}{\numberline {3.8}Evaluation}{23}
+\contentsline {chapter}{\numberline {4}Testing}{24}
+\contentsline {section}{\numberline {4.1}Overall Approach to Testing}{24}
+\contentsline {section}{\numberline {4.2}Automated Testing}{24}
+\contentsline {subsection}{\numberline {4.2.1}Unit Tests}{24}
+\contentsline {subsection}{\numberline {4.2.2}User Interface Testing}{24}
+\contentsline {subsection}{\numberline {4.2.3}Stress Testing}{24}
+\contentsline {subsection}{\numberline {4.2.4}Other types of testing}{24}
+\contentsline {section}{\numberline {4.3}Integration Testing}{24}
+\contentsline {section}{\numberline {4.4}User Testing}{24}
+\contentsline {chapter}{\numberline {5}Evaluation}{25}
+\contentsline {chapter}{Appendices}{26}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{27}
+\contentsline {chapter}{\numberline {B}Code samples}{28}
+\contentsline {section}{\numberline {2.1}Random Number Generator}{28}
+\contentsline {chapter}{Annotated Bibliography}{31}
