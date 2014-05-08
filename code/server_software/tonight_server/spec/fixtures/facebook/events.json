@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "Godskitchen Presents Clash Of The Gods", 
+      "start_time": "2014-04-26T22:00:00+0100", 
+      "end_time": "2014-04-27T06:00:00+0100", 
+      "timezone": "Europe/London", 
+      "location": "The Rainbow Venues", 
+      "id": "204504813084059"
+    }
+  ], 
+  "paging": {
+    "cursors": {
+      "after": "MzI5Mzc5MDYzODYwOTM5", 
+      "before": "MjA0NTA0ODEzMDg0MDU5"
+    }, 
+    "next": "https://graph.facebook.com/224699987546240/events?limit=25&after=MzI5Mzc5MDYzODYwOTM5"
+  }
+}

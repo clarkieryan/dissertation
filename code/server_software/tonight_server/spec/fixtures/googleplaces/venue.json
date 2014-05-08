@@ -1,0 +1,156 @@
+{
+   "html_attributions" : [],
+   "result" : {
+
+      "events" : [
+        {
+          "event_id" : "9lJ_jK1GfhX",
+          "start_time" : 1293865200,
+          "summary" : "<p>A visit from author John Doe, who will read from his latest book.</p><p>A limited number of signed copies will be available.</p>",
+          "url" : "http://www.example.com/john_doe_visit.html"
+        }
+      ],
+      "address_components" : [
+         {
+            "long_name" : "Station Buildings",
+            "short_name" : "Station Buildings",
+            "types" : [ "premise" ]
+         },
+         {
+            "long_name" : "Alexandra Rd",
+            "short_name" : "Alexandra Rd",
+            "types" : [ "route" ]
+         },
+         {
+            "long_name" : "United Kingdom",
+            "short_name" : "GB",
+            "types" : [ "country", "political" ]
+         },
+         {
+            "long_name" : "SY23 1LH",
+            "short_name" : "SY23 1LH",
+            "types" : [ "postal_code" ]
+         },
+         {
+            "long_name" : "Aberystwyth",
+            "short_name" : "Aberystwyth",
+            "types" : [ "postal_town" ]
+         },
+         {
+            "long_name" : "Alexandra Rd",
+            "short_name" : "Alexandra Rd",
+            "types" : [ "route" ]
+         },
+         {
+            "long_name" : "Aberystwyth",
+            "short_name" : "Aberystwyth",
+            "types" : [ "locality", "political" ]
+         },
+         {
+            "long_name" : "GB",
+            "short_name" : "GB",
+            "types" : [ "country", "political" ]
+         },
+         {
+            "long_name" : "SY23 1LH",
+            "short_name" : "SY23 1LH",
+            "types" : [ "postal_code" ]
+         }
+      ],
+      "adr_address" : "Station Buildings, \u003cspan class=\"street-address\"\u003eAlexandra Rd\u003c/span\u003e, \u003cspan class=\"locality\"\u003eAberystwyth\u003c/span\u003e \u003cspan class=\"postal-code\"\u003eSY23 1LH\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eUnited Kingdom\u003c/span\u003e",
+      "formatted_address" : "Station Buildings, Alexandra Rd, Aberystwyth, United Kingdom",
+      "formatted_phone_number" : "01970 615015",
+      "geometry" : {
+         "location" : {
+            "lat" : 52.413954,
+            "lng" : -4.08183
+         }
+      },
+      "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+      "id" : "328e4dc5e8f41286bddd70df00d4e56ec76facc3",
+      "international_phone_number" : "+44 1970 615015",
+      "name" : "Shilam Tandoori",
+      "rating" : 3.6,
+      "reference" : "CoQBcQAAANpaPWHndWcLroFqCQdiwhmX9lQ_HkX5MZva-3nKJkCechlxBJqI2fABz-iJwu9DZ_Q4CglBRPN4UH2Jy4-vgvUs0u74xyJW1Q7_e5u__SlJKrmPJjoExkVyo5dQF2RLPCu4PBmnFjt7_uOuqrAhuF6higsGOXiw-UXOXAXfP_4-EhBH0PvkJAUd6BjkAG8QTR56GhQeAZV_8HL7QOpm6Rv1zBVpsloVKQ",
+      "reviews" : [
+         {
+            "aspects" : [
+               {
+                  "rating" : 0,
+                  "type" : "food"
+               },
+               {
+                  "rating" : 1,
+                  "type" : "decor"
+               },
+               {
+                  "rating" : 0,
+                  "type" : "service"
+               }
+            ],
+            "author_name" : "Paul Vawer",
+            "author_url" : "https://plus.google.com/116810765074695656217",
+            "language" : "en",
+            "rating" : 2,
+            "text" : "Ate here last night. Food and service was ok until a dish of mint sauce was brought out and placed on our table which was crawling with ants. We complained to the waiter who took the dish away, wiped the ants off and promptly brought it back. Needless to say, we had second thoughts about finishing our meals.",
+            "time" : 1371982734
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "food"
+               },
+               {
+                  "rating" : 1,
+                  "type" : "decor"
+               },
+               {
+                  "rating" : 2,
+                  "type" : "service"
+               }
+            ],
+            "author_name" : "Ken Howell",
+            "author_url" : "https://plus.google.com/110259339691818856463",
+            "language" : "en",
+            "rating" : 4,
+            "text" : "What a great surprise to find such a fine Indian restaurant down here. We&#39;re regulars already!",
+            "time" : 1365954270
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Jack Hynes",
+            "author_url" : "https://plus.google.com/115749387694032798324",
+            "language" : "en",
+            "rating" : 5,
+            "text" : "Excellent food, with large menu. Professional service.",
+            "time" : 1289905270
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 0,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "A Google User",
+            "language" : "en",
+            "rating" : 2,
+            "text" : "Good location and friendly staff. The lunch buffet isnt very good though.",
+            "time" : 1334600800
+         }
+      ],
+      "types" : [ "meal_takeaway", "restaurant", "food", "establishment" ],
+      "url" : "https://plus.google.com/118172276277442136682/about?hl=en-US",
+      "website": "http://test.com",
+      "user_ratings_total" : 7,
+      "utc_offset" : 0,
+      "vicinity" : "Station Buildings, Alexandra Rd, Aberystwyth"
+   },
+   "status" : "OK"
+}

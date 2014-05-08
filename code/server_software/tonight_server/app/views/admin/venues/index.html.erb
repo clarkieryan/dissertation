@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1>Venues</h1>
+		<p>Administer the venues that are set up with the system</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Events
+			</div>
+			<div class="panel-body table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Description</td>
+							<td>City</td>
+							<td>Phone</td>
+							<td>Events</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% @venues.each do |venue| %>
+							<tr>
+								<td><%= venue.name %></td>
+								<td><%= venue.desc %></td>
+								<td><%= venue.city_id %></td>
+								<td><%= venue.phone %></td>
+								<td>link to events</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<%= paginate @venues %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+PODS:
+  - MBProgressHUD (0.8)
+  - UICKeyChainStore (1.0.4)
+  - Unirest (1.1.2)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 0.8)
+  - UICKeyChainStore
+  - Unirest (~> 1.1.2)
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  UICKeyChainStore: b42c6252b8bfd7fbf6326668467572b6b231e11a
+  Unirest: 7795e10dc5710bd6f759b7c66e4864ae8e2b552b
+
+COCOAPODS: 0.29.0

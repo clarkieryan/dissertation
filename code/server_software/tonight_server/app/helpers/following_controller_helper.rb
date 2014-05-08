@@ -1,0 +1,2 @@
+module FollowingControllerHelper
+end

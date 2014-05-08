@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+         "category": "Arts/entertainment/nightlife",
+         "category_list": [
+            {
+               "id": "211155112228091",
+               "name": "Event Venue"
+            },
+            {
+               "id": "191478144212980",
+               "name": "Night Club"
+            },
+            {
+               "id": "179943432047564",
+               "name": "Concert Venue"
+            }
+         ],
+         "name": "The Rainbow Venues",
+         "id": "224699987546240"
+      }
+  ], 
+  "paging": {
+    "next": "https://graph.facebook.com/search?type=place&center=52.41649271,-4.07785633&distance=500&limit=5000&offset=5000&__after_id=134964199922380"
+  }
+}

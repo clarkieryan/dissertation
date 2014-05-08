@@ -7,11 +7,17 @@ require 'rails/all'
 Bundler.require(:default, Rails.env)
 
 module TonightServer
+
+    ADMIN_USERNAME = "admin";
+    ADMIN_PASSWORD = "P4ssw0rd"
+
+    FACEBOOK_API_TOKENS = {:app_id => "230119533786354", :app_secret => "2021cab2843592bfaee52fa8e0ea001e" }
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    config.autoload_paths += Dir["#{config.root}/lib", "#{config.root}/lib/**/"]
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
