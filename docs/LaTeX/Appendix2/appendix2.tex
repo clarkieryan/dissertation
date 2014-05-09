@@ -1,94 +1,137 @@
-\chapter{Code samples}
+\chapter{Test Results}
 
-\section{Random Number Generator}
+\section{RSpec Results}
 
-The Bayes Durham Shuffle ensures that the psuedo random numbers used in the simulation are further shuffled, ensuring minimal correlation between subsequent random outputs \cite{NumericalRecipes}.
+\begin{lstlisting}
+...FF...F..*....*.......*..............*.........*.*.F.............*.......*..******..............*.*...........*
 
-\begin{verbatim}
- #define IM1 2147483563
- #define IM2 2147483399
- #define AM (1.0/IM1)
- #define IMM1 (IM1-1)
- #define IA1 40014
- #define IA2 40692 
- #define IQ1 53668
- #define IQ2 52774
- #define IR1 12211
- #define IR2 3791
- #define NTAB 32
- #define NDIV (1+IMM1/NTAB)
- #define EPS 1.2e-7
- #define RNMX (1.0 - EPS)
- 
- double ran2(long *idum)
- {
-   /*---------------------------------------------------*/
-   /* Minimum Standard Random Number Generator          */
-   /* Taken from Numerical recipies in C                */
-   /* Based on Park and Miller with Bays Durham Shuffle */
-   /* Coupled Schrage methods for extra periodicity     */
-   /* Always call with negative number to initialise    */
-   /*---------------------------------------------------*/	
- 
-   int j;
-   long k;
-   static long idum2=123456789;
-   static long iy=0;
-   static long iv[NTAB];
-   double temp;
- 
-   if (*idum <=0)
-   {
-     if (-(*idum) < 1)
-     {
-       *idum = 1;
-     }else
-     {
-       *idum = -(*idum);
-     }
-     idum2=(*idum);
-     for (j=NTAB+7;j>=0;j--)
-     {
-       k = (*idum)/IQ1;
-       *idum = IA1 *(*idum-k*IQ1) - IR1*k;
-       if (*idum < 0)
-       {
-         *idum += IM1;
-       }
-       if (j < NTAB)
-       {
-         iv[j] = *idum;
-       }
-     }
-     iy = iv[0];	
-   }
-   k = (*idum)/IQ1;
-   *idum = IA1*(*idum-k*IQ1) - IR1*k;
-   if (*idum < 0)
-   {
-     *idum += IM1;
-   }
-   k = (idum2)/IQ2;
-   idum2 = IA2*(idum2-k*IQ2) - IR2*k;
-   if (idum2 < 0)
-   {
-     idum2 += IM2;
-   }
-   j = iy/NDIV;
-   iy=iv[j] - idum2;
-   iv[j] = *idum;
-   if (iy < 1)
-   {
-     iy += IMM1;
-   }
-   if ((temp=AM*iy) > RNMX)
-   {
-     return RNMX;
-   }else
-   {
-     return temp;	
-   }
- }
- 
-\end{verbatim}
+Pending:
+  API::V1::UserController.feed Implement the feed
+    # Not yet implemented
+    # ./spec/controllers/api/v1/user_controller_spec.rb:45
+  Admin::EventsController.update redirects to index after update
+    # Not yet implemented
+    # ./spec/controllers/admin/events_controller_spec.rb:46
+  Admin::EventsController.create shows flash message when an error occurs
+    # Not yet implemented
+    # ./spec/controllers/admin/events_controller_spec.rb:31
+  Admin::UsersHelper add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/helpers/admin/users_helper_spec.rb
+    # Not yet implemented
+    # ./spec/helpers/admin/users_helper_spec.rb:14
+  Admin::JobsController.create shows flash message when an error occurs
+    # Not yet implemented
+    # ./spec/controllers/admin/jobs_controller_spec.rb:35
+  Admin::UsersController.update redirects to the index page
+    # Not yet implemented
+    # ./spec/controllers/admin/users_controller_spec.rb:50
+  Admin::VenuesController.update redirects to the index page
+    # Not yet implemented
+    # ./spec/controllers/admin/venues_controller_spec.rb:46
+  Admin::VenuesController.create shows flash message when an error occurs
+    # Not yet implemented
+    # ./spec/controllers/admin/venues_controller_spec.rb:31
+  Venue add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/models/venue_spec.rb
+    # Not yet implemented
+    # ./spec/models/venue_spec.rb:4
+  FollowingControllerHelper add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/helpers/following_controller_helper_spec.rb
+    # Not yet implemented
+    # ./spec/helpers/following_controller_helper_spec.rb:14
+  Admin::EventsHelper add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/helpers/admin/events_helper_spec.rb
+    # Not yet implemented
+    # ./spec/helpers/admin/events_helper_spec.rb:14
+  Admin::VenuesHelper add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/helpers/admin/venues_helper_spec.rb
+    # Not yet implemented
+    # ./spec/helpers/admin/venues_helper_spec.rb:14
+  StaticHelper add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/helpers/static_helper_spec.rb
+    # Not yet implemented
+    # ./spec/helpers/static_helper_spec.rb:14
+  Admin::JobsHelper add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/helpers/admin/jobs_helper_spec.rb
+    # Not yet implemented
+    # ./spec/helpers/admin/jobs_helper_spec.rb:14
+  API::V1::FollowingController Implement the following venue stuff
+    # Not yet implemented
+    # ./spec/controllers/api/v1/following_controller_spec.rb:34
+  API::V1::FollowingController.index responds with events logged in user follows
+    # Not yet implemented
+    # ./spec/controllers/api/v1/following_controller_spec.rb:20
+  City add some examples to (or delete) /Users/user/Dropbox/dissertation/code/server_software/tonight_server/spec/models/city_spec.rb
+    # Not yet implemented
+    # ./spec/models/city_spec.rb:4
 
+Failures:
+
+  1) Facebook gets an event from it's ID
+     Failure/Error: stub_request(:get, "https://graph.facebook.com/204504813084059/?access_token=accesstoken").to_return(:body => event);
+     NameError:
+       undefined local variable or method `event' for #<RSpec::ExampleGroups::Facebook_2:0x007f8e3f0532a8>
+     # ./spec/facebook_spec.rb:49:in `block (2 levels) in <top (required)>'
+
+  2) Facebook searches for various venues
+     Failure/Error: expect(@facebook.getVenues(params)).to eq(venuesJSON);
+       
+       expected: {"data"=>[{"category"=>"Arts/entertainment/nightlife", "category_list"=>[{"id"=>"211155112228091", "name"=>"Event Venue"}, {"id"=>"191478144212980", "name"=>"Night Club"}, {"id"=>"179943432047564", "name"=>"Concert Venue"}], "name"=>"The Rainbow Venues", "id"=>"224699987546240"}], "paging"=>{"next"=>"https://graph.facebook.com/search?type=place&center=52.41649271,-4.07785633&distance=500&limit=5000&offset=5000&__after_id=134964199922380"}}
+            got: [{"category"=>"Arts/entertainment/nightlife", "category_list"=>[{"id"=>"211155112228091", "name"=>"Event Venue"}, {"id"=>"191478144212980", "name"=>"Night Club"}, {"id"=>"179943432047564", "name"=>"Concert Venue"}], "name"=>"The Rainbow Venues", "id"=>"224699987546240"}]
+       
+       (compared using ==)
+       
+       Diff:
+       @@ -1,3 +1,8 @@
+       -"data" => [{"category"=>"Arts/entertainment/nightlife", "category_list"=>[{"id"=>"211155112228091", "name"=>"Event Venue"}, {"id"=>"191478144212980", "name"=>"Night Club"}, {"id"=>"179943432047564", "name"=>"Concert Venue"}], "name"=>"The Rainbow Venues", "id"=>"224699987546240"}],
+       -"paging" => {"next"=>"https://graph.facebook.com/search?type=place&center=52.41649271,-4.07785633&distance=500&limit=5000&offset=5000&__after_id=134964199922380"},
+       +[{"category"=>"Arts/entertainment/nightlife",
+       +  "category_list"=>
+       +   [{"id"=>"211155112228091", "name"=>"Event Venue"},
+       +    {"id"=>"191478144212980", "name"=>"Night Club"},
+       +    {"id"=>"179943432047564", "name"=>"Concert Venue"}],
+       +  "name"=>"The Rainbow Venues",
+       +  "id"=>"224699987546240"}]
+       
+     # ./spec/facebook_spec.rb:76:in `block (2 levels) in <top (required)>'
+
+  3) Facebook gets a list of events from a venue
+     Failure/Error: @facebook.getEvents("204504813084059").should eq(eventsJSON);
+       
+       expected: {"data"=>[{"name"=>"Godskitchen Presents Clash Of The Gods", "start_time"=>"2014-04-26T22:00:00+0100", "end_time"=>"2014-04-27T06:00:00+0100", "timezone"=>"Europe/London", "location"=>"The Rainbow Venues", "id"=>"204504813084059"}], "paging"=>{"cursors"=>{"after"=>"MzI5Mzc5MDYzODYwOTM5", "before"=>"MjA0NTA0ODEzMDg0MDU5"}, "next"=>"https://graph.facebook.com/224699987546240/events?limit=25&after=MzI5Mzc5MDYzODYwOTM5"}}
+            got: [{"name"=>"Godskitchen Presents Clash Of The Gods", "start_time"=>"2014-04-26T22:00:00+0100", "end_time"=>"2014-04-27T06:00:00+0100", "timezone"=>"Europe/London", "location"=>"The Rainbow Venues", "id"=>"204504813084059"}]
+       
+       (compared using ==)
+       
+       Diff:
+       @@ -1,3 +1,7 @@
+       -"data" => [{"name"=>"Godskitchen Presents Clash Of The Gods", "start_time"=>"2014-04-26T22:00:00+0100", "end_time"=>"2014-04-27T06:00:00+0100", "timezone"=>"Europe/London", "location"=>"The Rainbow Venues", "id"=>"204504813084059"}],
+       -"paging" => {"cursors"=>{"after"=>"MzI5Mzc5MDYzODYwOTM5", "before"=>"MjA0NTA0ODEzMDg0MDU5"}, "next"=>"https://graph.facebook.com/224699987546240/events?limit=25&after=MzI5Mzc5MDYzODYwOTM5"},
+       +[{"name"=>"Godskitchen Presents Clash Of The Gods",
+       +  "start_time"=>"2014-04-26T22:00:00+0100",
+       +  "end_time"=>"2014-04-27T06:00:00+0100",
+       +  "timezone"=>"Europe/London",
+       +  "location"=>"The Rainbow Venues",
+       +  "id"=>"204504813084059"}]
+       
+     # ./spec/facebook_spec.rb:67:in `block (2 levels) in <top (required)>'
+
+  4) Admin::UsersController.update updates a record
+     Failure/Error: expect(@user[:updated_at]).to_not eq(prev_updated);
+       
+       expected: value != 2014-05-09 08:05:21.088558000 +0000
+            got: 2014-05-09 08:05:21.088558000 +0000
+       
+       (compared using ==)
+       
+       Diff:
+       
+     # ./spec/controllers/admin/users_controller_spec.rb:56:in `block (3 levels) in <top (required)>'
+
+Finished in 6.21 seconds
+112 examples, 4 failures, 17 pending
+
+Failed examples:
+
+rspec ./spec/facebook_spec.rb:44 # Facebook gets an event from it's ID
+rspec ./spec/facebook_spec.rb:70 # Facebook searches for various venues
+rspec ./spec/facebook_spec.rb:62 # Facebook gets a list of events from a venue
+rspec ./spec/controllers/admin/users_controller_spec.rb:52 # Admin::UsersController.update updates a record
+
+
+Randomized with seed 47516
+
+\end{lstlisting}

@@ -11,7 +11,6 @@ A level-1 auxiliary file: Chapter3/chapter3.aux
 A level-1 auxiliary file: Chapter4/chapter4.aux
 A level-1 auxiliary file: Chapter5/chapter5.aux
 A level-1 auxiliary file: Appendix1/appendix1.aux
-A level-1 auxiliary file: Appendix2/appendix2.aux
 The style file: IEEEannot.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -19,92 +18,110 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: References/references.bib
-Warning--entry type for "WebMock" isn't style-file defined
+Warning--entry type for "progress" isn't style-file defined
 --line 14 of file References/references.bib
+Warning--entry type for "unirest" isn't style-file defined
+--line 23 of file References/references.bib
+Warning--entry type for "keychain" isn't style-file defined
+--line 32 of file References/references.bib
+Warning--entry type for "httparty" isn't style-file defined
+--line 41 of file References/references.bib
+Warning--entry type for "child" isn't style-file defined
+--line 51 of file References/references.bib
+Warning--entry type for "spork" isn't style-file defined
+--line 61 of file References/references.bib
+Warning--entry type for "kaminari" isn't style-file defined
+--line 71 of file References/references.bib
+Warning--entry type for "mit" isn't style-file defined
+--line 81 of file References/references.bib
+Warning--entry type for "rails" isn't style-file defined
+--line 91 of file References/references.bib
+Warning--entry type for "paginate" isn't style-file defined
+--line 101 of file References/references.bib
+Warning--entry type for "WebMock" isn't style-file defined
+--line 110 of file References/references.bib
 Warning--entry type for "FactoryGirl" isn't style-file defined
---line 24 of file References/references.bib
-Warning--entry type for "RSpecRails" isn't style-file defined
---line 34 of file References/references.bib
-Warning--entry type for "sublime" isn't style-file defined
---line 44 of file References/references.bib
-Warning--entry type for "RDS" isn't style-file defined
---line 54 of file References/references.bib
-Warning--entry type for "RubyTest" isn't style-file defined
---line 64 of file References/references.bib
-Warning--entry type for "RSpecSub" isn't style-file defined
---line 74 of file References/references.bib
-Warning--entry type for "schemaEvent" isn't style-file defined
---line 84 of file References/references.bib
-Warning--entry type for "facebookapi" isn't style-file defined
---line 93 of file References/references.bib
-Warning--entry type for "raywender" isn't style-file defined
---line 102 of file References/references.bib
-Warning--entry type for "cocoapods" isn't style-file defined
---line 111 of file References/references.bib
-Warning--entry type for "trello" isn't style-file defined
 --line 120 of file References/references.bib
+Warning--entry type for "RSpecRails" isn't style-file defined
+--line 130 of file References/references.bib
+Warning--entry type for "sublime" isn't style-file defined
+--line 140 of file References/references.bib
+Warning--entry type for "RDS" isn't style-file defined
+--line 150 of file References/references.bib
+Warning--entry type for "RubyTest" isn't style-file defined
+--line 160 of file References/references.bib
+Warning--entry type for "RSpecSub" isn't style-file defined
+--line 170 of file References/references.bib
+Warning--entry type for "schemaEvent" isn't style-file defined
+--line 180 of file References/references.bib
+Warning--entry type for "facebookapi" isn't style-file defined
+--line 189 of file References/references.bib
+Warning--entry type for "raywender" isn't style-file defined
+--line 198 of file References/references.bib
+Warning--entry type for "cocoapods" isn't style-file defined
+--line 207 of file References/references.bib
+Warning--entry type for "trello" isn't style-file defined
+--line 216 of file References/references.bib
 Warning--entry type for "github" isn't style-file defined
---line 129 of file References/references.bib
+--line 225 of file References/references.bib
 Warning--entry type for "theRainbow" isn't style-file defined
---line 138 of file References/references.bib
+--line 234 of file References/references.bib
 Warning--entry type for "eventStats" isn't style-file defined
---line 147 of file References/references.bib
+--line 243 of file References/references.bib
 Warning--entry type for "heroku" isn't style-file defined
---line 156 of file References/references.bib
+--line 252 of file References/references.bib
 Warning--entry type for "spotnight" isn't style-file defined
---line 164 of file References/references.bib
+--line 260 of file References/references.bib
 Warning--entry type for "lineup" isn't style-file defined
---line 171 of file References/references.bib
+--line 267 of file References/references.bib
 Warning--entry type for "songkick" isn't style-file defined
---line 178 of file References/references.bib
-Warning--I didn't find a database entry for "apache_poi"
-Warning--I didn't find a database entry for "apache_license"
-Warning--I didn't find a database entry for "NumericalRecipes"
+--line 274 of file References/references.bib
+Warning--I didn't find a database entry for "rspec"
 -- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for use with work to be submitted to the IEEE.
 
 Done.
-You've used 19 entries,
+You've used 29 entries,
             4538 wiz_defined-function locations,
-            988 strings with 10255 characters,
-and the built_in function-call counts, 8585 in all, are:
-= -- 797
-> -- 133
+            1024 strings with 10953 characters,
+and the built_in function-call counts, 13057 in all, are:
+= -- 1217
+> -- 203
 < -- 0
-+ -- 57
-- -- 38
-* -- 316
-:= -- 1549
-add.period$ -- 38
-call.type$ -- 19
-change.case$ -- 76
++ -- 87
+- -- 58
+* -- 478
+:= -- 2349
+add.period$ -- 58
+call.type$ -- 29
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 627
-empty$ -- 780
-format.name$ -- 38
-if$ -- 1807
+cite$ -- 29
+duplicate$ -- 957
+empty$ -- 1190
+format.name$ -- 58
+if$ -- 2757
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 133
-newline$ -- 96
-num.names$ -- 38
-pop$ -- 380
+int.to.str$ -- 29
+missing$ -- 203
+newline$ -- 136
+num.names$ -- 58
+pop$ -- 580
 preamble$ -- 1
-purify$ -- 57
+purify$ -- 87
 quote$ -- 2
-skip$ -- 702
+skip$ -- 1072
 stack$ -- 0
-substring$ -- 114
-swap$ -- 323
+substring$ -- 174
+swap$ -- 493
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 171
+type$ -- 261
 warning$ -- 0
-while$ -- 38
-width$ -- 21
-write$ -- 190
-(There were 22 warnings)
+while$ -- 58
+width$ -- 31
+write$ -- 280
+(There were 30 warnings)

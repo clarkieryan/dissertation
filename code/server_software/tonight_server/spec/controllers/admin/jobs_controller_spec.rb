@@ -32,9 +32,7 @@ describe Admin::JobsController do
 			expect(response).to redirect_to(:action => "index")
 		end
 
-		it 'shows flash message when an error occurs' do
-			pending "Implement this"
-		end
+		pending('shows flash message when an error occurs')
 
 		it 'shows flash when succesfully added' do
 			post :create, job: @jobDetails

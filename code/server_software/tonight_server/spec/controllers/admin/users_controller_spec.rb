@@ -47,9 +47,7 @@ describe Admin::UsersController do
 			@user = FactoryGirl.create(:user);
 		end
 
-		it 'redirects to the index page' do
-			pending("implement this")
-		end
+		pending('redirects to the index page' )
 
 		it 'updates a record' do
 			prev_updated = @user[:updated_at];

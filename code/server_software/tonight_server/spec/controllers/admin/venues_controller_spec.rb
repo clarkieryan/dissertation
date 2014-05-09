@@ -28,9 +28,7 @@ describe Admin::VenuesController do
 			expect(response).to redirect_to(:action => "index")
 		end
 
-		it "shows flash message when an error occurs" do
-			pending("implement this");
-		end  
+		pending('shows flash message when an error occurs')
 
 		it "shows flash when successfully added" do
 			post :create, venue: @venue;
@@ -45,9 +43,7 @@ describe Admin::VenuesController do
 			@venue = FactoryGirl.create(:venue);
 		end
 
-		it 'redirects to the index page' do
-			pending("implement this")
-		end
+		pending('redirects to the index page')
 
 		it 'updates a record' do
 			prev_updated = @venue[:updated_at];

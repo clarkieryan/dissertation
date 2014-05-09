@@ -18,6 +18,12 @@
 \fi
 #2}}
 
+\bibitem{kaminari}
+{Akira Matsuda}, ``{Kaminari},'' \url{https://github.com/amatsuda/kaminari},
+  2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
 \bibitem{WebMock}
 {Bartosz Blimke}, ``{WebMock},'' \url{https://github.com/bblimke/webmock},
   2014.
@@ -27,6 +33,11 @@
 \bibitem{cocoapods}
 {Cocoa Pods}, ``{CocoaPods.org - The Dependency Manager for Objective C. },''
   \url{http://cocoapods.org/}, 2014.
+
+
+\bibitem{paginate}
+{David Celis}, ``{Rails API Pagination},''
+  \url{https://github.com/davidcelis/api-pagination}, 2014.
 
 
 \bibitem{facebookapi}
@@ -56,10 +67,32 @@
  \begin{quotation}\noindent The cloud server being used to deploy to a
   production ready state \end{quotation}
 
+\bibitem{child}
+{Jari Bakken}, ``{childprocess},'' \url{https://github.com/jarib/childprocess},
+  2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
+\bibitem{httparty}
+{John Nunemaker}, ``{httparty},'' \url{https://github.com/jnunemaker/httparty},
+  2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
 \bibitem{sublime}
 {Jon Skinner}, ``{Sublime Text 2},'' \url{http://www.sublimetext.com/2}, 2014.
  \begin{quotation}\noindent The cloud server being used to deploy to a
   production ready state \end{quotation}
+
+\bibitem{progress}
+{Jonathan George}, ``{MBProgressHUD},''
+  \url{https://github.com/jdg/MBProgressHUD}, 2014.
+
+
+\bibitem{keychain}
+{kishikawa katsumi}, ``{UICKeyChainStore},''
+  \url{https://github.com/kishikawakatsumi/UICKeyChainStore}, 2014.
+
 
 \bibitem{lineup}
 {Line Up}, ``{Line Up - Events in Manchester},'' \url{http://lineupnow.com/},
@@ -69,6 +102,20 @@
 \bibitem{RubyTest}
 {Maciej Gajek}, ``{Sublime Text 2 Ruby Tests},''
   \url{https://github.com/maltize/sublime-text-2-ruby-tests}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
+\bibitem{unirest}
+{Mashape}, ``{UniRest},'' \url{https://github.com/Mashape/unirest-obj-c}, 2014.
+
+
+\bibitem{mit}
+{MIT}, ``{MIT Licence},'' \url{http://opensource.org/licenses/MIT}, 2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
+
+\bibitem{rails}
+{Rails}, ``{Ruby on Rails},'' \url{https://github.com/rails/rails}, 2014.
  \begin{quotation}\noindent The cloud server being used to deploy to a
   production ready state \end{quotation}
 
@@ -93,6 +140,12 @@
 {Songkick}, ``{SongKick - Concerts, tour dates, and festivals for your favorite
   artists},'' \url{http://www.songkick.com/}, 2014.
 
+
+\bibitem{spork}
+{sporkrb}, ``{spork-rails},'' \url{https://github.com/sporkrb/spork-rails},
+  2014.
+ \begin{quotation}\noindent The cloud server being used to deploy to a
+  production ready state \end{quotation}
 
 \bibitem{spotnight}
 {Spotnight}, ``{Spotnight -Nights out in London},''

@@ -12,8 +12,8 @@
 		9405EDB818C799FF0031CA28 /* DiscoverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDB718C799FF0031CA28 /* DiscoverTableViewController.m */; };
 		9405EDBB18C7A4CF0031CA28 /* IndivEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */; };
 		9405EDBE18C7C6200031CA28 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 9405EDBD18C7C6200031CA28 /* Event.m */; };
+		940D5E94191B8EC100D543E9 /* Map_Path@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 940D5E93191B8EC100D543E9 /* Map_Path@2x.png */; };
 		941556C118E9B48F00716B45 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 941556C018E9B48F00716B45 /* Venue.m */; };
-		941556C318EA1AE100716B45 /* Map_Path@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 941556C218EA1AE100716B45 /* Map_Path@2x.png */; };
 		941556C618EA219D00716B45 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 941556C518EA219D00716B45 /* User.m */; };
 		9441A2BB18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9441A2BA18D9B9EE0023B124 /* EventFeedTableViewCell.m */; };
 		9441A2BC18D9B9EE0023B124 /* EventFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9441A2BA18D9B9EE0023B124 /* EventFeedTableViewCell.m */; };
@@ -89,9 +89,9 @@
 		9405EDBA18C7A4CF0031CA28 /* IndivEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndivEventViewController.m; sourceTree = "<group>"; };
 		9405EDBC18C7C6200031CA28 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		9405EDBD18C7C6200031CA28 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		940D5E93191B8EC100D543E9 /* Map_Path@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Map_Path@2x.png"; path = "../../../../../../Desktop/pixellove_free/2x_normal/Map_Path@2x.png"; sourceTree = "<group>"; };
 		941556BF18E9B48F00716B45 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		941556C018E9B48F00716B45 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
-		941556C218EA1AE100716B45 /* Map_Path@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Map_Path@2x.png"; path = "../../../../../../Desktop/photos/pixellove_free/2x_normal/Map_Path@2x.png"; sourceTree = "<group>"; };
 		941556C418EA219D00716B45 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		941556C518EA219D00716B45 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9441A2B918D9B9EE0023B124 /* EventFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		947A892118C89AAA00CA40C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				941556C218EA1AE100716B45 /* Map_Path@2x.png */,
+				940D5E93191B8EC100D543E9 /* Map_Path@2x.png */,
 				94A7DF8218D07A7F0074B831 /* 2014-03-06 16.45.44.png */,
 				94B9823C18C9232400D32125 /* feed@2x.png */,
 				947A892A18C89CCB00CA40C3 /* 1175131_10152135066287306_734393091_n.jpg */,
@@ -500,7 +500,7 @@
 				94B9827418C92E0600D32125 /* AppIcon50x50@2x.png in Resources */,
 				94B9827E18C92E0600D32125 /* iTunesArtwork@2x.png in Resources */,
 				94B9827A18C92E0600D32125 /* AppIcon72x72@2x.png in Resources */,
-				941556C318EA1AE100716B45 /* Map_Path@2x.png in Resources */,
+				940D5E94191B8EC100D543E9 /* Map_Path@2x.png in Resources */,
 				945D592318C732200061B80F /* InfoPlist.strings in Resources */,
 				94B9826F18C92E0600D32125 /* AppIcon29x29.png in Resources */,
 				947A892618C89ACD00CA40C3 /* Signpost@2x.png in Resources */,

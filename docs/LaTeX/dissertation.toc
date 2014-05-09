@@ -32,25 +32,32 @@
 \contentsline {subsection}{\numberline {2.3.3}Class diagrams}{15}
 \contentsline {chapter}{\numberline {3}Implementation}{19}
 \contentsline {section}{\numberline {3.1}Personalised feed}{19}
-\contentsline {section}{\numberline {3.2}Storing passwords}{19}
-\contentsline {section}{\numberline {3.3}Search functionality}{20}
-\contentsline {section}{\numberline {3.4}Adding in the following functionality}{20}
-\contentsline {section}{\numberline {3.5}Retrieving events from the jobs}{21}
-\contentsline {section}{\numberline {3.6}Interoperability}{22}
-\contentsline {section}{\numberline {3.7}OAuth}{22}
-\contentsline {section}{\numberline {3.8}Evaluation}{23}
-\contentsline {chapter}{\numberline {4}Testing}{24}
-\contentsline {section}{\numberline {4.1}Overall Approach to Testing}{24}
-\contentsline {section}{\numberline {4.2}Automated Testing}{24}
-\contentsline {subsection}{\numberline {4.2.1}Unit Tests}{24}
-\contentsline {subsection}{\numberline {4.2.2}User Interface Testing}{24}
-\contentsline {subsection}{\numberline {4.2.3}Stress Testing}{24}
-\contentsline {subsection}{\numberline {4.2.4}Other types of testing}{24}
-\contentsline {section}{\numberline {4.3}Integration Testing}{24}
-\contentsline {section}{\numberline {4.4}User Testing}{24}
-\contentsline {chapter}{\numberline {5}Evaluation}{25}
-\contentsline {chapter}{Appendices}{26}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{27}
-\contentsline {chapter}{\numberline {B}Code samples}{28}
-\contentsline {section}{\numberline {2.1}Random Number Generator}{28}
-\contentsline {chapter}{Annotated Bibliography}{31}
+\contentsline {section}{\numberline {3.2}Registration and logging in}{19}
+\contentsline {section}{\numberline {3.3}Storing passwords}{20}
+\contentsline {section}{\numberline {3.4}Search functionality}{20}
+\contentsline {section}{\numberline {3.5}Adding in the following functionality}{21}
+\contentsline {section}{\numberline {3.6}Retrieving events from the jobs}{21}
+\contentsline {section}{\numberline {3.7}Interoperability}{22}
+\contentsline {section}{\numberline {3.8}OAuth}{23}
+\contentsline {section}{\numberline {3.9}Storing user credentials}{23}
+\contentsline {section}{\numberline {3.10}Evaluation}{23}
+\contentsline {chapter}{\numberline {4}Testing}{25}
+\contentsline {section}{\numberline {4.1}Overall Approach to Testing}{25}
+\contentsline {section}{\numberline {4.2}Automated Testing}{25}
+\contentsline {subsection}{\numberline {4.2.1}Stress Testing}{26}
+\contentsline {section}{\numberline {4.3}Integration Testing}{26}
+\contentsline {chapter}{\numberline {5}Evaluation}{28}
+\contentsline {section}{\numberline {5.1}Testing}{28}
+\contentsline {section}{\numberline {5.2}Requirements}{28}
+\contentsline {section}{\numberline {5.3}Tools used}{29}
+\contentsline {section}{\numberline {5.4}iOS App}{30}
+\contentsline {section}{\numberline {5.5}Server Application}{30}
+\contentsline {section}{\numberline {5.6}User expectations}{31}
+\contentsline {section}{\numberline {5.7}Reflections}{31}
+\contentsline {chapter}{Appendices}{32}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{33}
+\contentsline {section}{\numberline {1.1}Server side libraries}{33}
+\contentsline {section}{\numberline {1.2}Mobile application libraries}{33}
+\contentsline {chapter}{\numberline {B}Test Results}{34}
+\contentsline {section}{\numberline {2.1}RSpec Results}{34}
+\contentsline {chapter}{Annotated Bibliography}{37}
